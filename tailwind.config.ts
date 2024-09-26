@@ -30,9 +30,23 @@ const config: Config = {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
         },
+        "leaf-move": {
+          "0%": {
+            transform: "translateY(5px) scale(1)",
+          },
+          "50%": {
+            transform: "translateY(-5px) scale(1.05)",
+          },
+          "100%": {
+            transform: "translateY(5px) scale(1)",
+          },
+        },
       },
       animation: {
         fadein: "fade-in .5s ease-in-out forwards",
+        leaf1: "leaf-move 4s ease-in-out 0s infinite forwards",
+        leaf2: "leaf-move 8s ease-in-out 0s infinite forwards",
+        leaf3: "leaf-move 5s ease-in-out 0s infinite forwards",
       },
     },
   },
