@@ -14,7 +14,13 @@ export default function User({ params }: UserProps) {
   const router = useRouter();
 
   useEffect(() => {
-    router.push(`/${params.user}/about`);
+    const specialRoutes = ["login"];
+
+    if (specialRoutes.includes(params.user)) {
+      router.push(`/${params.user}`);
+    } else {
+      router.push(`/${params.user}/about`);
+    }
   }, [router, params]);
 
   return (

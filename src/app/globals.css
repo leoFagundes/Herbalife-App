@@ -5,3 +5,9 @@
 body {
   font-family: "Saira", sans-serif;
 }
+
+@layer components {
+  .active-item {
+    @apply font-semibold text-primary underline;
+  }
+}
