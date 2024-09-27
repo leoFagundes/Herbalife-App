@@ -24,7 +24,7 @@ export default function User({ params }: UserProps) {
   }, [router, params]);
 
   return (
-    <div className="flex h-screen w-full justify-center items-center">
+    <div className="flex h-screen fixed top-0 left-0 w-full justify-center items-center">
       <Loader />
     </div>
   );

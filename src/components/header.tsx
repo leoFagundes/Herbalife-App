@@ -39,7 +39,14 @@ export default function Header() {
     <>
       <header className="flex justify-center items-center fixed top-0 left-0 h-20 w-screen bg-white/50 backdrop-blur-sm z-40">
         <nav className="flex justify-center lg:justify-between gap-8 items-center w-11/12 lg:w-9/12 py-3 box-border relative max-w-[1300px]">
-          <Image width={150} height={0} src={logo.src} alt="herbalife-logo" />
+          <Image
+            className="hover:cursor-pointer"
+            onClick={() => router.push(`/${currentUser}`)}
+            width={150}
+            height={0}
+            src={logo.src}
+            alt="herbalife-logo"
+          />
           <>
             <ul className="hidden items-center gap-8 text-primary font-medium lg:flex">
               {menuItems.map((item) => (
@@ -61,7 +68,7 @@ export default function Header() {
             />
           </>
           <>
-            <label className="flex lg:hidden flex-col gap-2 w-8 scale-75 absolute right-0 hover:cursor-pointer">
+            <label className="flex lg:hidden flex-col gap-2 w-8 scale-75 absolute right-3 hover:cursor-pointer">
               <input
                 className="peer hidden"
                 type="checkbox"
@@ -73,7 +80,7 @@ export default function Header() {
               <div className="rounded-2xl h-[3px] w-1/2 bg-primary duration-500 place-self-end peer-checked:rotate-[225deg] origin-left peer-checked:translate-x-[12px] peer-checked:translate-y-[1px]"></div>
             </label>
             {isMenuOpen && (
-              <div className="flex lg:hidden flex-col animate-fadein opacity-0 absolute -right-4 top-16 z-20 bg-white">
+              <div className="flex lg:hidden flex-col animate-fadein opacity-0 absolute -right-2 top-16 z-20 bg-white">
                 <div className="flex-col border border-white-secondary py-3 flex gap-4 shadow-card rounded-md">
                   {menuItems.map((item, index) => (
                     <div
