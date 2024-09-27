@@ -2,7 +2,7 @@
 
 import Loader from "@/components/loader";
 import { useRouter } from "next/navigation";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 interface UserProps {
   params: {
@@ -11,10 +11,15 @@ interface UserProps {
 }
 
 export default function User({ params }: UserProps) {
+  const [users, setUsers] = useState(["leozin"]);
   const router = useRouter();
 
   useEffect(() => {
     const specialRoutes = ["login"];
+
+    if (!users.includes(params.user)) {
+      router.push("/");
+    }
 
     if (specialRoutes.includes(params.user)) {
       router.push(`/${params.user}`);

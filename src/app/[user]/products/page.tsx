@@ -3,6 +3,8 @@
 import { useRef, useState } from "react";
 import ProductCard from "./productCard";
 import { ProductProps } from "@/types/types";
+import { FiAlertCircle } from "react-icons/fi";
+import { useRouter } from "next/navigation";
 
 interface ProductsProps {
   params: {
@@ -13,6 +15,7 @@ interface ProductsProps {
 export default function Products({ params }: ProductsProps) {
   const [currentType, setCurrentType] = useState("Shakes");
   const ulRef = useRef<HTMLUListElement>(null);
+  const router = useRouter();
 
   const types = [
     "Shakes",
@@ -86,7 +89,10 @@ export default function Products({ params }: ProductsProps) {
         </span>{" "}
         e não estão disponíveis para compra online. Para realizar a aquisição de
         qualquer produto, entre em{" "}
-        <span className="text-primary hover:cursor-pointer underline">
+        <span
+          onClick={() => router.push(`/${params.user}/contact`)}
+          className="text-primary hover:cursor-pointer underline"
+        >
           contato
         </span>{" "}
         diretamente com <span className="text-primary">{params.user}</span>.
@@ -116,10 +122,13 @@ export default function Products({ params }: ProductsProps) {
       <div className="flex justify-center mt-6 gap-8">
         {filterProducts.length > 0 ? (
           filterProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <ProductCard key={product.id} params={params} product={product} />
           ))
         ) : (
-          <p>Nenhum produto encontrado para o tipo selecionado.</p>
+          <p className="flex items-center gap-1">
+            <FiAlertCircle className="" /> Nenhum produto encontrado para o tipo
+            selecionado.
+          </p>
         )}
       </div>
     </div>

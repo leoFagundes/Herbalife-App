@@ -22,7 +22,9 @@ export default function Header() {
   const router = useRouter();
 
   const currentPage = pathname.split("/").slice(-1)[0];
-  const currentUser = pathname.split("/").slice(-2, -1)[0];
+  const currentUser = pathname.split("/").slice(1)[0];
+
+  console.log(currentUser);
 
   const menuItems = [
     { name: "Sobre", path: "about", icon: <FiTrendingUp size={24} /> },
