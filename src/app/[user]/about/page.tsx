@@ -1,5 +1,7 @@
 import Image from "next/image";
-import logo from "@/assets/svg/logo-circ.svg";
+import cr7 from "@/assets/image/cr7.png";
+import woman from "@/assets/image/healthy-woman.png";
+import products from "@/assets/svg/products.svg";
 
 interface AboutProps {
   params: {
@@ -14,8 +16,8 @@ export default function About({ params }: AboutProps) {
         <h2 className="font-semibold text-primary text-3xl">
           O que é a Herbalife?
         </h2>
-        <div className="flex items-center">
-          <article className="flex flex-col gap-3 w-full md:w-1/2 self-start">
+        <div className="flex items-center gap-4 flex-wrap-reverse sm:flex-nowrap">
+          <article className="flex flex-col gap-3 w-full sm:w-1/2 lg:w-2/3 self-start">
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae
               itaque soluta tempora. Harum expedita laudantium consequatur
@@ -30,9 +32,9 @@ export default function About({ params }: AboutProps) {
             </p>
             {params.user}
           </article>
-          <div className="md:flex justify-center items-center w-1/2 hidden">
+          <div className="flex justify-center items-center w-full sm:w-1/2 lg:w-1/3 ">
             <svg
-              className="absolute scale-90 lg:scale-105"
+              className="sm:absolute scale-105 sm:scale-90 lg:scale-100 -translate-y-4 h-full"
               width="371"
               height="382"
               viewBox="0 0 371 382"
@@ -177,10 +179,19 @@ export default function About({ params }: AboutProps) {
 
       <section className="flex flex-col gap-6">
         <h2 className="font-semibold text-primary text-3xl">
-          O que é a Herbalife?
+          Benefícios Nutricionais
         </h2>
-        <div className="flex items-center">
-          <article className="flex flex-col gap-3 w-full md:w-1/2 ">
+        <div className="flex items-center justify-center lg:justify-start gap-4 lg:gap-20 lg:flex-nowrap flex-wrap">
+          <div className="flex justify-center items-center min-w-[300px]">
+            <Image
+              className="rounded-lg shadow-card"
+              width={350}
+              height={0}
+              src={cr7.src}
+              alt="cr7"
+            />
+          </div>
+          <article className="flex flex-col gap-3 w-full self-start max-w-[700px]">
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae
               itaque soluta tempora. Harum expedita laudantium consequatur
@@ -194,14 +205,51 @@ export default function About({ params }: AboutProps) {
               eligendi corporis numquam vel quas totam.
             </p>
             {params.user}
+            <ul className="list-disc list-inside">
+              <li>Lorem ipsum</li>
+              <li>Lorem ipsum</li>
+              <li>Lorem ipsum</li>
+              <li>Lorem ipsum</li>
+              <li>Lorem ipsum</li>
+              <li>Lorem ipsum</li>
+            </ul>
           </article>
-          <div className="md:flex justify-center items-center w-1/2 hidden">
+        </div>
+      </section>
+
+      <section className="flex flex-col gap-6">
+        <h2 className="font-semibold text-primary text-3xl">Quero emagrecer</h2>
+        <div className="flex items-center justify-center lg:justify-start gap-4 lg:gap-20 lg:flex-nowrap flex-wrap-reverse">
+          <article className="flex flex-col gap-3 w-full self-start">
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae
+              itaque soluta tempora. Harum expedita laudantium consequatur
+              cumque placeat porro explicabo, commodi reiciendis deleniti ipsum
+              eligendi corporis numquam vel quas totam.
+            </p>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae
+              itaque soluta tempora. Harum expedita laudantium consequatur
+              cumque placeat porro explicabo, commodi reiciendis deleniti ipsum
+              eligendi corporis numquam vel quas totam.
+            </p>
+            {params.user}
+            <ul className="list-disc list-inside">
+              <li>Lorem ipsum</li>
+              <li>Lorem ipsum</li>
+              <li>Lorem ipsum</li>
+              <li>Lorem ipsum</li>
+              <li>Lorem ipsum</li>
+              <li>Lorem ipsum</li>
+            </ul>
+          </article>
+          <div className="flex justify-center items-center min-w-[300px]">
             <Image
-              className="scale-110 lg:scale-150"
-              width={250}
+              className="rounded-lg shadow-card"
+              width={350}
               height={0}
-              src={logo.src}
-              alt="herbalife-logo"
+              src={woman.src}
+              alt="cr7"
             />
           </div>
         </div>
@@ -209,10 +257,10 @@ export default function About({ params }: AboutProps) {
 
       <section className="flex flex-col gap-6">
         <h2 className="font-semibold text-primary text-3xl">
-          O que é a Herbalife?
+          Sobre os Produtos
         </h2>
-        <div className="flex items-center">
-          <article className="flex flex-col gap-3 w-full md:w-1/2 ">
+        <div className="flex items-center justify-center lg:justify-start gap-4 lg:gap-20 lg:flex-nowrap flex-wrap-reverse">
+          <article className="flex flex-col gap-3 w-full self-start">
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae
               itaque soluta tempora. Harum expedita laudantium consequatur
@@ -227,15 +275,37 @@ export default function About({ params }: AboutProps) {
             </p>
             {params.user}
           </article>
-          <div className="md:flex justify-center items-center w-1/2 hidden">
+          <div className="flex justify-center items-center min-w-[300px]">
             <Image
-              className="scale-110 lg:scale-150"
-              width={250}
+              className="scale-100 lg:scale-150"
+              width={350}
               height={0}
-              src={logo.src}
-              alt="herbalife-logo"
+              src={products.src}
+              alt="cr7"
             />
           </div>
+        </div>
+      </section>
+
+      <section className="flex flex-col gap-6">
+        <h2 className="font-semibold text-primary text-3xl">
+          Como faço para trabalhar na herbalife?
+        </h2>
+        <div className="flex items-center justify-center">
+          <article className="flex flex-col gap-3 w-full self-start">
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae
+              itaque soluta tempora. Harum expedita laudantium consequatur
+              cumque placeat porro explicabo, commodi reiciendis deleniti ipsum
+              eligendi corporis numquam vel quas totam.
+            </p>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae
+              itaque soluta tempora. Harum expedita laudantium consequatur
+              cumque placeat porro explicabo, commodi reiciendis deleniti ipsum
+              eligendi corporis numquam vel quas totam.
+            </p>
+          </article>
         </div>
       </section>
     </>

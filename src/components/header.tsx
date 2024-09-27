@@ -37,8 +37,8 @@ export default function Header() {
 
   return (
     <>
-      <header className="flex justify-center items-center fixed top-0 left-0 h-20 w-screen bg-white/10 backdrop-blur-sm">
-        <nav className="flex justify-center lg:justify-between gap-8 items-center w-11/12 lg:w-9/12 p-3 box-border relative">
+      <header className="flex justify-center items-center fixed top-0 left-0 h-20 w-screen bg-white/50 backdrop-blur-sm z-40">
+        <nav className="flex justify-center lg:justify-between gap-8 items-center w-11/12 lg:w-9/12 py-3 box-border relative max-w-[1300px]">
           <Image width={150} height={0} src={logo.src} alt="herbalife-logo" />
           <>
             <ul className="hidden items-center gap-8 text-primary font-medium lg:flex">
