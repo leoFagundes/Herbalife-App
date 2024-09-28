@@ -17,7 +17,7 @@ export default function About({ params }: AboutProps) {
           O que é a Herbalife?
         </h2>
         <div className="flex items-center gap-4 flex-wrap-reverse sm:flex-nowrap">
-          <article className="flex flex-col gap-3 w-full sm:w-1/2 lg:w-2/3 self-start">
+          <article className="flex flex-col gap-3 w-full sm:w-1/2 lg:w-2/3 self-start min-h-[200px]">
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae
               itaque soluta tempora. Harum expedita laudantium consequatur
