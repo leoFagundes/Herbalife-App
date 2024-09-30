@@ -4,6 +4,7 @@ import Image from "next/image";
 import financialIndependence1 from "@/assets/image/Indepedência Financeira_01.png";
 import financialIndependence3 from "@/assets/image/Indepedência Financeira_03.png";
 import lifesGood from "@/assets/image/Viva sua melhor vida.png";
+import React from "react";
 
 interface EmployProps {
   params: {

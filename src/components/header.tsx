@@ -13,6 +13,7 @@ import {
   FiMinimize2,
   FiMaximize2,
 } from "react-icons/fi";
+import React from "react";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
