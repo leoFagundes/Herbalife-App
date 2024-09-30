@@ -11,7 +11,26 @@ interface UserProps {
 }
 
 export default function User({ params }: UserProps) {
-  const [users, setUsers] = useState(["leozin"]);
+  const [users, setUsers] = useState([
+    "Leonardo",
+    "Rodrigo",
+    "Valéria",
+    "Juliana",
+    "Marcelo",
+    "Patrícia",
+    "Carlos",
+    "Fernanda",
+    "Rafael",
+    "Mariana",
+    "Gustavo",
+    "Renata",
+    "Paulo",
+    "Thiago",
+    "Isabela",
+    "Eduardo",
+    "Camila",
+    "Bruno",
+  ]);
   const router = useRouter();
 
   useEffect(() => {
