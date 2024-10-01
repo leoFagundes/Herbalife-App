@@ -21,7 +21,7 @@ export default function Sidebar() {
     <>
       <div className="w-[50px] sm:hidden"></div>
       <aside
-        className={`w-[280px] border-r border-primary flex flex-col items-center p-8 pb-14 gap-8 sm:relative duration-300 bg-white fixed h-full sm:translate-x-0 z-20 ${
+        className={`w-[280px] min-h-screen border-r border-primary flex flex-col items-center p-8 pb-14 gap-8 sm:relative duration-300 bg-white fixed sm:translate-x-0 z-20 ${
           !isMenuOpen && "-translate-x-[230px]"
         }`}
       >
@@ -32,8 +32,8 @@ export default function Sidebar() {
           src={logo.src}
           alt="herbalife-logo"
         />
-        <section className="flex flex-col h-full">
-          <div className="flex flex-col flex-1 gap-2">
+        <section className="flex flex-col h-full gap-2">
+          <div className="flex flex-col gap-2">
             {menuItems.map((item, index) => (
               <span
                 onClick={() => router.push(`/admin/${item.path}`)}

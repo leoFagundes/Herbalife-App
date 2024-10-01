@@ -35,6 +35,7 @@ export default function Products({ params }: ProductsProps) {
       description: "Delicioso shake de morango",
       type: "Shakes",
       isFavorite: true,
+      isVisible: true,
       image:
         "https://cdn.clienteherbalife.com.br/upload/produtos/1i-4996-shake-mo.webp",
       weight: 300,
@@ -45,6 +46,7 @@ export default function Products({ params }: ProductsProps) {
       description: "Delicioso shake de cockies",
       type: "Shakes",
       isFavorite: false,
+      isVisible: true,
       image:
         "https://cdn.clienteherbalife.com.br/upload/produtos/1i-4996-shake-mo.webp",
       weight: 300,
@@ -55,6 +57,7 @@ export default function Products({ params }: ProductsProps) {
       description: "Suplemento de proteína Whey",
       type: "Proteínas",
       isFavorite: false,
+      isVisible: true,
       image:
         "https://cdn.clienteherbalife.com.br/upload/produtos/1r-1309-whey-pro.webp",
       weight: 500,
