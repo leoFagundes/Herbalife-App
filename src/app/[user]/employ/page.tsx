@@ -35,10 +35,10 @@ export default function Employ({ params }: EmployProps) {
             </p>
             {params.user}
           </article>
-          <div className="flex justify-center items-center min-w-[350px]">
+          <div className="flex justify-center items-center min-w-[250px]">
             <Image
               className="rounded-lg shadow-card"
-              width={350}
+              width={300}
               height={0}
               src={financialIndependence3.src}
               alt="financialIndependence"
@@ -52,10 +52,10 @@ export default function Employ({ params }: EmployProps) {
           Alcance sua liberdade financeira
         </h2>
         <div className="flex items-center justify-center lg:justify-start gap-4 lg:gap-20 lg:flex-nowrap flex-wrap">
-          <div className="flex justify-center items-center min-w-[350px]">
+          <div className="flex justify-center items-center min-w-[250px]">
             <Image
               className="rounded-lg shadow-card"
-              width={350}
+              width={300}
               height={0}
               src={financialIndependence1.src}
               alt="financialIndependence"
@@ -99,10 +99,10 @@ export default function Employ({ params }: EmployProps) {
             </p>
             {params.user}
           </article>
-          <div className="flex justify-center items-center min-w-[350px]">
+          <div className="flex justify-center items-center min-w-[250px]">
             <Image
               className="rounded-lg shadow-card"
-              width={350}
+              width={300}
               height={0}
               src={lifesGood.src}
               alt="financialIndependence"

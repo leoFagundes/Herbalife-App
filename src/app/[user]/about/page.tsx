@@ -2,6 +2,7 @@ import Image from "next/image";
 import cr7 from "@/assets/image/cr7.png";
 import woman from "@/assets/image/healthy-woman.png";
 import products from "@/assets/svg/products.svg";
+import React from "react";
 
 interface AboutProps {
   params: {
@@ -182,10 +183,10 @@ export default function About({ params }: AboutProps) {
           Benefícios Nutricionais
         </h2>
         <div className="flex items-center justify-center lg:justify-start gap-4 lg:gap-20 lg:flex-nowrap flex-wrap">
-          <div className="flex justify-center items-center min-w-[300px]">
+          <div className="flex justify-center items-center min-w-[250px]">
             <Image
               className="rounded-lg shadow-card"
-              width={350}
+              width={300}
               height={0}
               src={cr7.src}
               alt="cr7"
@@ -243,16 +244,22 @@ export default function About({ params }: AboutProps) {
               <li>Lorem ipsum</li>
             </ul>
           </article>
-          <div className="flex justify-center items-center min-w-[300px]">
+          <div className="flex justify-center items-center min-w-[250px]">
             <Image
               className="rounded-lg shadow-card"
-              width={350}
+              width={300}
               height={0}
               src={woman.src}
               alt="cr7"
             />
           </div>
         </div>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae
+          itaque soluta tempora. Harum expedita laudantium consequatur cumque
+          placeat porro explicabo, commodi reiciendis deleniti ipsum eligendi
+          corporis numquam vel quas totam.
+        </p>
       </section>
 
       <section className="flex flex-col gap-6">

@@ -95,7 +95,7 @@ export default function Input({
     >
       {icon && (
         <span
-          className={`flex justify-center bg-font-color items-center w-8 h-8 text-primary ${
+          className={`flex justify-center items-center w-8 h-8 text-primary ${
             error && "text-red-500"
           }`}
         >
@@ -109,7 +109,7 @@ export default function Input({
           setIsManuallyClosed(false);
         }}
         value={value}
-        className={`bg-white text-primary-color placeholder:text-sm placeholder:text-primary-color/60 ${
+        className={`bg-white placeholder:text-sm ${
           icon ? "p-2" : "py-2 px-4"
         } outline-none border rounded-md ${
           error && "placeholder:text-red-500"
@@ -152,7 +152,7 @@ export default function Input({
           onClick={() =>
             setInputType(inputType === "password" ? "text" : "password")
           }
-          className={`absolute right-0 bg-white flex justify-center bg-font-color items-center w-8 h-8 text-primary ${
+          className={`hover:cursor-pointer hover:text-primary/80 absolute right-0 bg-white flex justify-center items-center w-8 h-8 text-primary ${
             error && "text-red-500"
           }`}
         >
