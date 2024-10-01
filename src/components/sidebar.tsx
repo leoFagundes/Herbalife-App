@@ -38,7 +38,7 @@ export default function Sidebar() {
               <span
                 onClick={() => router.push(`/admin/${item.path}`)}
                 key={index}
-                className={`flex items-center py-2 px-4 text-primary font-medium hover:cursor-pointer hover:underline hover:font-semibold gap-2 ${
+                className={`flex items-center py-2 px-4 text-primary font-medium hover:cursor-pointer hover:underline gap-2 ${
                   item.path === currentPage && "underline font-semibold"
                 }`}
               >
@@ -48,7 +48,7 @@ export default function Sidebar() {
           </div>
           <span
             onClick={() => router.push("/")}
-            className="flex items-center py-2 px-4 text-primary font-medium hover:cursor-pointer hover:underline hover:font-semibold gap-2"
+            className="flex items-center py-2 px-4 text-primary font-medium hover:cursor-pointer hover:underline gap-2"
           >
             <FiLogOut size={20} /> Sair da conta
           </span>

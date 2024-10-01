@@ -12,6 +12,7 @@ export interface ProductProps {
     | "Produtos de beleza"
     | "Nutrição Esportiva";
   isFavorite: boolean;
+  isVisible: boolean;
   image: string;
   weight: number;
 }
