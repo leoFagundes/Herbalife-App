@@ -1,7 +1,8 @@
 "use client";
 
 import React, { ComponentProps, ReactNode, useEffect, useState } from "react";
-import { FiEye, FiEyeOff, FiX } from "react-icons/fi";
+import { FiEye, FiEyeOff, FiTrash, FiX } from "react-icons/fi";
+import { PiImageBrokenLight } from "react-icons/pi";
 
 interface InputProps extends ComponentProps<"input"> {
   icon?: ReactNode;
@@ -9,6 +10,9 @@ interface InputProps extends ComponentProps<"input"> {
   data?: string[];
   value: string;
   setValue: (value: string) => void;
+  label?: string;
+  multlines?: boolean;
+  placeholder: string;
 }
 
 export default function Input({
@@ -18,6 +22,9 @@ export default function Input({
   value,
   setValue,
   type = "text",
+  label,
+  multlines = false,
+  placeholder,
   ...props
 }: InputProps) {
   const [isBoxOpen, setIsBoxOpen] = useState(true);
@@ -83,9 +90,13 @@ export default function Input({
     }
   }, [value, filteredEqualData, isManuallyClosed]);
 
+  useEffect(() => {
+    setInputType(type);
+  }, []);
+
   return (
     <div
-      className={`w-full relative flex items-center shadow-lg group bg-white ${
+      className={`w-full max-w-[250px] relative flex items-center shadow-lg group bg-white ${
         filteredData && filteredData.length > 0 && value && isBoxOpen
           ? "rounded-tl-md rounded-tr-md"
           : "rounded-md"
@@ -95,31 +106,65 @@ export default function Input({
     >
       {icon && (
         <span
-          className={`flex justify-center items-center w-8 h-8 text-primary ${
-            error && "text-red-500"
-          }`}
+          className={`flex ${
+            inputType === "file" && "flex-col"
+          } justify-center ${
+            multlines && "hidden"
+          } items-center ml-1 w-8 h-8 text-primary ${error && "text-red-500"}`}
         >
           {icon}
         </span>
       )}
-      <input
-        type={inputType}
-        onChange={(e) => {
-          setValue(e.target.value);
-          setIsManuallyClosed(false);
-        }}
-        value={value}
-        className={`bg-white placeholder:text-sm ${
-          icon ? "p-2" : "py-2 px-4"
-        } outline-none border rounded-md ${
-          error && "placeholder:text-red-500"
-        }`}
-        {...props}
-      />
-      {error && (
-        <span className="text-red-500 font-medium text-xs absolute -bottom-5 left-2">
-          {error}
-        </span>
+      {multlines ? (
+        <textarea
+          className={`bg-white w-full placeholder:text-sm py-3 px-4 outline-none border rounded-md ${
+            error && "placeholder:text-red-500"
+          }`}
+          placeholder={placeholder}
+          rows={5}
+        />
+      ) : inputType === "file" ? (
+        <div className="relative flex flex-col justify-center items-center h-full w-full p-2">
+          <div className="group flex flex-col justify-center items-center pointer-events-none">
+            <PiImageBrokenLight className="text-primary " size={40} />
+            <span className="text-center block text-primary font-medium group-hover:underline">
+              {value ? value : "Escolha seu arquivo"}
+            </span>
+          </div>
+          <input
+            type={inputType}
+            onChange={(e) => {
+              setValue(e.target.value);
+              setIsManuallyClosed(false);
+            }}
+            value={value}
+            placeholder={placeholder}
+            className={`opacity-0 h-full w-full hover:cursor-pointer absolute`}
+            {...props}
+          />
+        </div>
+      ) : (
+        <input
+          type={inputType}
+          onChange={(e) => {
+            setValue(e.target.value);
+            setIsManuallyClosed(false);
+          }}
+          value={value}
+          placeholder={placeholder}
+          className={`bg-white w-full placeholder:text-sm ${
+            icon ? "p-2" : "py-2 px-4"
+          } outline-none border rounded-md ${
+            error && "placeholder:text-red-500"
+          }`}
+          {...props}
+        />
+      )}
+      {inputType === "file" && value && (
+        <FiTrash
+          onClick={() => setValue("")}
+          className="hover:cursor-pointer hover:text-red-500 duration-300 absolute -right-8 w-5 h-5"
+        />
       )}
       {filteredData && filteredData.length > 0 && value && isBoxOpen && (
         <div className="flex rounded-bl-md rounded-br-md absolute w-full min-h-14 bg-white z-10 top-full translate-y-[2px] left-0 p-2 border border-x-primary border-b-primary shadow-card max-h-[200px]">
@@ -147,12 +192,28 @@ export default function Input({
           />
         </div>
       )}
+      {label && (
+        <span
+          className={`text-primary pointer-events-none ${
+            error && "text-red-500 "
+          } font-medium text-xs absolute bottom-full translate-y-2 bg-white px-2 left-2`}
+        >
+          {label}
+        </span>
+      )}
+      {error && (
+        <span className="text-red-500 font-medium text-xs absolute -bottom-5 left-2">
+          {error}
+        </span>
+      )}
       {type === "password" && (
         <span
           onClick={() =>
             setInputType(inputType === "password" ? "text" : "password")
           }
-          className={`hover:cursor-pointer hover:text-primary/80 absolute right-0 bg-white flex justify-center items-center w-8 h-8 text-primary ${
+          className={`hover:cursor-pointer ${
+            multlines && "hidden"
+          } mr-1 hover:text-primary/80 absolute right-0 bg-white flex justify-center items-center w-8 h-8 text-primary ${
             error && "text-red-500"
           }`}
         >

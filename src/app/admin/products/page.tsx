@@ -108,7 +108,10 @@ export default function Products() {
   ]);
 
   return (
-    <div className="flex flex-col w-full p-12">
+    <div className="flex flex-col items-center w-full p-12 gap-8">
+      <h1 className="text-primary font-semibold text-3xl">
+        Produtos Herbalife
+      </h1>
       <ul className="flex flex-wrap w-full justify-center gap-4">
         {products.map((product, index) => (
           <ProductCard key={index} product={product} />

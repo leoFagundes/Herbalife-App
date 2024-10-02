@@ -16,3 +16,5 @@ export interface ProductProps {
   image: string;
   weight: number;
 }
+
+export interface UserProps {}
