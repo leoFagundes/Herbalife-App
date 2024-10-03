@@ -28,4 +28,5 @@ export interface UserProps {
   instagram: string;
   email: string;
   image: string;
+  products: ProductProps[];
 }

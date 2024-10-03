@@ -7,20 +7,9 @@ import Button from "@/components/button";
 import { useRouter } from "next/navigation";
 import { useState, FormEvent, useEffect } from "react";
 import { FiLock, FiUser, FiUsers } from "react-icons/fi";
-import { db } from "@/services/firebase";
-import {
-  collection,
-  addDoc,
-  getDocs,
-  deleteDoc,
-  serverTimestamp,
-  query,
-  orderBy,
-  doc,
-  updateDoc,
-} from "firebase/firestore";
-import { UserProps } from "@/types/types";
 import UserRepositorie from "@/services/repositories/UserRepositorie";
+import productsJSON from "@/utils/products-data.json";
+import { ProductProps } from "@/types/types";
 
 export default function Login() {
   const [username, setUsername] = useState("");
@@ -51,6 +40,8 @@ export default function Login() {
   ]);
   const router = useRouter();
 
+  const products: ProductProps[] = productsJSON as ProductProps[];
+
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -75,6 +66,7 @@ export default function Login() {
         instagram: "a",
         email: "a",
         image: "a",
+        products: products,
       })
     ) {
       console.log("uhuuuul");

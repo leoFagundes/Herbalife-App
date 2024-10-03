@@ -27,12 +27,13 @@ export default function ProductCard({ product, params }: ProductCardProps) {
         className="flex-1 w-full max-w-[250px] max-h-[220px]"
         width={200}
         height={200}
-        src={product.image}
+        src={`/assets/image/products/${product.image}`}
         alt={`product-${product.name}`}
       />
+
       <p className="text-center w-full text-lg">{product.name}</p>
       {product.isFavorite && (
-        <span className="flex items-center gap-1 absolute top-1 left-1 text-primary bg-white/10 py-1 px-2 rounded-sm backdrop-blur-sm">
+        <span className="flex items-center gap-1 absolute top-1 left-1 text-primary bg-white/10 py-1 px-2 rounded-sm backdrop-blur-sm font-semibold">
           <FiStar /> Campeão de vendas
         </span>
       )}

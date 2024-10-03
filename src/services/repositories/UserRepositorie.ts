@@ -8,6 +8,7 @@ import {
   orderBy,
   doc,
   updateDoc,
+  getDoc,
 } from "firebase/firestore";
 import { UserProps } from "@/types/types";
 
@@ -29,6 +30,35 @@ class UserRepositorie {
     }
   }
 
+  static async getById(id: string) {
+    try {
+      const userDoc = await doc(db, "users", id);
+      const docSnapshot = await getDoc(userDoc);
+      if (docSnapshot.exists()) {
+        const userData = docSnapshot.data() as Omit<UserProps, "id">;
+        return { id: docSnapshot.id, ...userData };
+      } else {
+        console.log("Usuário não encontrado.");
+        return null;
+      }
+    } catch (error) {
+      console.error("Erro ao carregar o usuário: ", error);
+      return null;
+    }
+  }
+
+  static async update(id: string, updatedData: Partial<UserProps>) {
+    try {
+      const userDoc = doc(db, "users", id);
+      await updateDoc(userDoc, updatedData);
+      console.log("Usuário atualizado com sucesso.");
+      return true;
+    } catch (error) {
+      console.error("Erro ao atualizar o usuário: ", error);
+      return false;
+    }
+  }
+
   static async create(user: Partial<UserProps>) {
     try {
       const docRef = await addDoc(collection(db, "users"), {
@@ -41,6 +71,7 @@ class UserRepositorie {
         instagram: user.instagram,
         email: user.email,
         image: user.image,
+        products: user.products,
       });
       console.log("Usuário criado com id: ", docRef.id);
       return true;
