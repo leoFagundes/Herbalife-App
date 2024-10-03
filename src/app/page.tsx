@@ -7,30 +7,14 @@ import { FormEvent, useEffect, useState } from "react";
 import { FiLogIn, FiSearch } from "react-icons/fi";
 import { useRouter } from "next/navigation";
 import Button from "@/components/button";
+import UserRepositorie from "@/services/repositories/UserRepositorie";
+import { LoaderWithFullScreen } from "@/components/loader";
 
 export default function Home() {
   const [search, setSearch] = useState("");
   const [searchError, setSearchError] = useState("");
-  const [users, setUsers] = useState([
-    "Leonardo",
-    "Rodrigo",
-    "Valéria",
-    "Juliana",
-    "Marcelo",
-    "Patrícia",
-    "Carlos",
-    "Fernanda",
-    "Rafael",
-    "Mariana",
-    "Gustavo",
-    "Renata",
-    "Paulo",
-    "Thiago",
-    "Isabela",
-    "Eduardo",
-    "Camila",
-    "Bruno",
-  ]);
+  const [users, setUsers] = useState<string[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -46,11 +30,30 @@ export default function Home() {
   };
 
   useEffect(() => {
+    async function fetchUsers() {
+      setIsLoading(true);
+      try {
+        const usersFetched = await UserRepositorie.getAll();
+        if (usersFetched) {
+          setUsers(usersFetched?.map((user) => user.username));
+        }
+      } catch (error) {
+        console.log("Erro ao carregar usuários: ", error);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+
+    fetchUsers();
+  }, []);
+
+  useEffect(() => {
     setSearchError("");
   }, [search]);
 
   return (
     <section className="h-screen w-full flex justify-center items-center">
+      {isLoading && <LoaderWithFullScreen />}
       <div className="flex flex-col items-center border-[2px] border-primary p-8 rounded-md shadow-card gap-4">
         <Image
           className="min-w-[180px]"

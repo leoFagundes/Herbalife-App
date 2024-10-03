@@ -7,6 +7,20 @@ import Button from "@/components/button";
 import { useRouter } from "next/navigation";
 import { useState, FormEvent, useEffect } from "react";
 import { FiLock, FiUser, FiUsers } from "react-icons/fi";
+import { db } from "@/services/firebase";
+import {
+  collection,
+  addDoc,
+  getDocs,
+  deleteDoc,
+  serverTimestamp,
+  query,
+  orderBy,
+  doc,
+  updateDoc,
+} from "firebase/firestore";
+import { UserProps } from "@/types/types";
+import UserRepositorie from "@/services/repositories/UserRepositorie";
 
 export default function Login() {
   const [username, setUsername] = useState("");
@@ -37,9 +51,8 @@ export default function Login() {
   ]);
   const router = useRouter();
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("teste");
 
     if (!users.includes(username)) {
       setUsernameError("Esse distribuidor não existe!");
@@ -49,6 +62,22 @@ export default function Login() {
     if (password !== "1235") {
       setPasswordError("Senha inválida, tente novamente.");
       return;
+    }
+
+    if (
+      await UserRepositorie.create({
+        username: username,
+        password: "1235",
+        personalDescription: "a",
+        apresentationVideoLink: "a",
+        apresentationVideoDescription: "a",
+        whatsapp: "a",
+        instagram: "a",
+        email: "a",
+        image: "a",
+      })
+    ) {
+      console.log("uhuuuul");
     }
 
     router.push(`/admin/products`);
@@ -93,7 +122,7 @@ export default function Login() {
             placeholder="Senha"
             icon={<FiLock size={18} />}
           />
-          <Button>Entrar</Button>
+          <Button type="submit">Entrar</Button>
           <span
             onClick={() => router.push("/")}
             className="flex items-center gap-2 text-xs text-primary hover:cursor-pointer hover:underline"

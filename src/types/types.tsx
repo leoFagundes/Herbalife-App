@@ -17,4 +17,15 @@ export interface ProductProps {
   weight: number;
 }
 
-export interface UserProps {}
+export interface UserProps {
+  id: string;
+  username: string;
+  password: string;
+  personalDescription: string;
+  apresentationVideoLink: string;
+  apresentationVideoDescription: string;
+  whatsapp: string;
+  instagram: string;
+  email: string;
+  image: string;
+}
