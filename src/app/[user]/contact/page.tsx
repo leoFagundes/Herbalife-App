@@ -1,7 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { IoMailOutline } from "react-icons/io5";
 import provisoryImage from "@/assets/image/leoFagundes-ef.jpg";
+import UseUser from "@/hooks/useUser";
 
 interface ContactProps {
   params: {
@@ -10,6 +13,8 @@ interface ContactProps {
 }
 
 export default function Contact({ params }: ContactProps) {
+  const { currentUser } = UseUser(params.user);
+
   return (
     <div className="flex justify-center gap-x-16 gap-y-8 flex-wrap-reverse">
       <Image
@@ -24,7 +29,7 @@ export default function Contact({ params }: ContactProps) {
           Entre em Contato
         </h2>
         <ul className="flex flex-col gap-2">
-          <li className="font-medium">{params.user}</li>
+          <li className="font-medium">{currentUser?.username}</li>
           <li className="flex items-center gap-2 hover:cursor-pointer hover:underline text-sm">
             <FaWhatsapp className="text-primary w-5 h-5" /> (61) 99825-3228
           </li>

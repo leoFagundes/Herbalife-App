@@ -180,7 +180,7 @@ export default function Input({
                   setIsBoxOpen(false);
                   setIsManuallyClosed(true);
                 }}
-                className="hover:cursor-pointer hover:shadow-focus hover:bg-white-secondary p-2 rounded-md duration-300 transition-all w-[90%]"
+                className="hover:cursor-pointer hover:shadow-focus hover:bg-white-secondary p-2 rounded-md duration-300 transition-all w-[99%]"
                 key={index}
               >
                 {highlightText(name, value)}

@@ -1,9 +1,9 @@
 "use client";
 
 import Loader from "@/components/loader";
-import UserRepositorie from "@/services/repositories/UserRepositorie";
+import UseUser from "@/hooks/useUser";
 import { useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 interface UserProps {
   params: {
@@ -12,30 +12,16 @@ interface UserProps {
 }
 
 export default function User({ params }: UserProps) {
-  const [users, setUsers] = useState<string[]>([]);
   const router = useRouter();
 
-  useEffect(() => {
-    async function fetchUsers() {
-      try {
-        const usersFetched = await UserRepositorie.getAll();
-        if (usersFetched) {
-          setUsers(usersFetched?.map((user) => user.username));
-        }
-      } catch (error) {
-        console.log("Erro ao carregar usuários: ", error);
-      }
-    }
-
-    fetchUsers();
-  }, []);
+  const { usernames } = UseUser();
 
   useEffect(() => {
     const specialRoutes = ["login", "register"];
 
-    if (users.length > 0) {
+    if (usernames.length > 0) {
       if (
-        !users.includes(params.user) &&
+        !usernames.includes(params.user) &&
         !specialRoutes.includes(params.user)
       ) {
         router.push("/");
@@ -47,7 +33,7 @@ export default function User({ params }: UserProps) {
         }
       }
     }
-  }, [router, params, users]);
+  }, [router, params, usernames]);
 
   return (
     <div className="flex h-screen fixed top-0 left-0 w-full justify-center items-center">

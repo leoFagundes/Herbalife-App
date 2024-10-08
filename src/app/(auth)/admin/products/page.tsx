@@ -31,6 +31,56 @@ export default function Products() {
     return () => unsubscribe();
   }, []);
 
+  async function updateFavoriteProduct(productId: string) {
+    try {
+      if (userData) {
+        const newProductList = userData.products.map((product) => {
+          if (product.id === productId) {
+            return { ...product, isFavorite: !product.isFavorite };
+          }
+          return product;
+        });
+
+        await UserRepositorie.update(userData.id, {
+          ...userData,
+          products: newProductList,
+        });
+
+        setUserData((prevUserData) => ({
+          ...prevUserData!,
+          products: newProductList,
+        }));
+      }
+    } catch (error) {
+      console.error("Erro ao atualizar produto: ", error);
+    }
+  }
+
+  async function updateVisibleProduct(productId: string) {
+    try {
+      if (userData) {
+        const newProductList = userData.products.map((product) => {
+          if (product.id === productId) {
+            return { ...product, isVisible: !product.isVisible };
+          }
+          return product;
+        });
+
+        await UserRepositorie.update(userData.id, {
+          ...userData,
+          products: newProductList,
+        });
+
+        setUserData((prevUserData) => ({
+          ...prevUserData!,
+          products: newProductList,
+        }));
+      }
+    } catch (error) {
+      console.error("Erro ao atualizar produto: ", error);
+    }
+  }
+
   if (loading) return <LoaderWithFullScreen />;
 
   return (
@@ -40,7 +90,12 @@ export default function Products() {
       </h1>
       <ul className="flex flex-wrap w-full justify-center gap-4">
         {userData?.products.map((product, index) => (
-          <ProductCard key={index} product={product} />
+          <ProductCard
+            key={index}
+            product={product}
+            updateFavoriteProduct={updateFavoriteProduct}
+            updateVisibleProduct={updateVisibleProduct}
+          />
         ))}
       </ul>
     </div>

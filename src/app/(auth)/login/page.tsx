@@ -11,6 +11,7 @@ import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { auth } from "@/services/firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import { LoaderWithFullScreen } from "@/components/loader";
+import UseUser from "@/hooks/useUser";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -23,6 +24,8 @@ export default function Login() {
     useSignInWithEmailAndPassword(auth);
 
   const router = useRouter();
+
+  const { emails } = UseUser();
 
   // Efeito para verificar o estado de autenticação
   useEffect(() => {
@@ -40,7 +43,12 @@ export default function Login() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    signInWithEmailAndPassword(email, password);
+    try {
+      signInWithEmailAndPassword(email, password);
+    } catch (error) {
+      setEmailError("Dados incorretos, tente novamente.");
+      setPasswordError("Dados incorretos, tente novamente.");
+    }
   };
 
   if (user) {
@@ -54,13 +62,6 @@ export default function Login() {
   useEffect(() => {
     setPasswordError("");
   }, [password]);
-
-  useEffect(() => {
-    if (error) {
-      setEmailError("Dados incorretos, tente novamente.");
-      setPasswordError("Dados incorretos, tente novamente.");
-    }
-  }, [error]);
 
   if (loading) return <LoaderWithFullScreen />;
 
@@ -80,6 +81,7 @@ export default function Login() {
         >
           <h2 className="font-medium text-lg">Área de administração</h2>
           <Input
+            data={emails}
             value={email}
             error={emailError}
             setValue={setEmail}

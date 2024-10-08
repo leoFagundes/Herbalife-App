@@ -7,6 +7,7 @@ import { FiAlertCircle } from "react-icons/fi";
 import { useRouter } from "next/navigation";
 import UserRepositorie from "@/services/repositories/UserRepositorie";
 import { LoaderWithFullScreen } from "@/components/loader";
+import UseUser from "@/hooks/useUser";
 
 interface ProductsProps {
   params: {
@@ -16,7 +17,6 @@ interface ProductsProps {
 
 export default function Products({ params }: ProductsProps) {
   const [currentType, setCurrentType] = useState("Shakes");
-  const [isLoading, setIsLoading] = useState(true);
   const ulRef = useRef<HTMLUListElement>(null);
   const router = useRouter();
 
@@ -32,63 +32,13 @@ export default function Products({ params }: ProductsProps) {
   ];
 
   const [products, setProducts] = useState<ProductProps[]>([]);
-
-  // [
-  //   {
-  //     id: "1",
-  //     name: "Shake de Morango Cremoso 550g",
-  //     description: "Delicioso shake de morango",
-  //     type: "Shakes",
-  //     isFavorite: true,
-  //     isVisible: true,
-  //     image:
-  //       "https://cdn.clienteherbalife.com.br/upload/produtos/1i-4996-shake-mo.webp",
-  //     weight: 300,
-  //   },
-  //   {
-  //     id: "2",
-  //     name: "Shake de Cockies Cremoso 550g",
-  //     description: "Delicioso shake de cockies",
-  //     type: "Shakes",
-  //     isFavorite: false,
-  //     isVisible: true,
-  //     image:
-  //       "https://cdn.clienteherbalife.com.br/upload/produtos/1i-4996-shake-mo.webp",
-  //     weight: 300,
-  //   },
-  //   {
-  //     id: "3",
-  //     name: "Proteína Whey",
-  //     description: "Suplemento de proteína Whey",
-  //     type: "Proteínas",
-  //     isFavorite: false,
-  //     isVisible: true,
-  //     image:
-  //       "https://cdn.clienteherbalife.com.br/upload/produtos/1r-1309-whey-pro.webp",
-  //     weight: 500,
-  //   },
-  // ]
+  const { isLoading, currentUser } = UseUser(params.user);
 
   useEffect(() => {
-    async function fetchProducts() {
-      setIsLoading(true);
-      try {
-        const users: UserProps[] | undefined = await UserRepositorie.getAll();
-        const currentUser = users?.filter(
-          (user) => user.username === params.user
-        )[0];
-        const currentUserProducts = currentUser?.products;
-
-        if (currentUserProducts) setProducts(currentUserProducts);
-      } catch (error) {
-        console.error("Erro ao carregar produtos: ", error);
-      } finally {
-        setIsLoading(false);
-      }
+    if (currentUser) {
+      setProducts(currentUser?.products);
     }
-
-    fetchProducts();
-  }, []);
+  }, [currentUser]);
 
   const filterProducts = products.filter(
     (product) => product.type === currentType

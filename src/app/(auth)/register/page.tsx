@@ -78,17 +78,28 @@ export default function Register() {
       return;
     }
 
-    const userCredential = await createUserWithEmailAndPassword(
-      email,
-      password
-    );
+    try {
+      const userCredential = await createUserWithEmailAndPassword(
+        email,
+        password
+      );
 
-    if (userCredential) {
-      const user = userCredential.user;
+      if (userCredential) {
+        const user = userCredential.user;
 
-      await UserRepositorie.createUserDocument(user, username, email, products);
+        await UserRepositorie.createUserDocument(
+          user,
+          username,
+          email,
+          products
+        );
 
-      router.push(`/login`);
+        router.push(`/login`);
+      }
+    } catch (error) {
+      setUsernameError("Erro ao criar conta. Verifique os dados.");
+      setEmailError("Erro ao criar conta. Verifique os dados.");
+      setPasswordError("Erro ao criar conta. Verifique os dados.");
     }
   };
 
@@ -103,14 +114,6 @@ export default function Register() {
   useEffect(() => {
     setEmailError("");
   }, [email]);
-
-  useEffect(() => {
-    if (error) {
-      setUsername("Erro ao criar conta. Verifique os dados.");
-      setEmailError("Erro ao criar conta. Verifique os dados.");
-      setPassword("Erro ao criar conta. Verifique os dados.");
-    }
-  }, [error]);
 
   if (loading || isLoading) return <LoaderWithFullScreen />;
 

@@ -7,45 +7,28 @@ import { FormEvent, useEffect, useState } from "react";
 import { FiLogIn, FiSearch } from "react-icons/fi";
 import { useRouter } from "next/navigation";
 import Button from "@/components/button";
-import UserRepositorie from "@/services/repositories/UserRepositorie";
 import { LoaderWithFullScreen } from "@/components/loader";
+import UseUser from "@/hooks/useUser";
 
 export default function Home() {
   const [search, setSearch] = useState("");
   const [searchError, setSearchError] = useState("");
-  const [users, setUsers] = useState<string[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+
   const router = useRouter();
+
+  const { isLoading, usernames } = UseUser();
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("teste");
 
-    if (!users.includes(search)) {
+    if (!usernames.includes(search)) {
       setSearchError("Esse distribuidor não existe!");
       return;
     }
 
     router.push(`/${search}`);
   };
-
-  useEffect(() => {
-    async function fetchUsers() {
-      setIsLoading(true);
-      try {
-        const usersFetched = await UserRepositorie.getAll();
-        if (usersFetched) {
-          setUsers(usersFetched?.map((user) => user.username));
-        }
-      } catch (error) {
-        console.log("Erro ao carregar usuários: ", error);
-      } finally {
-        setIsLoading(false);
-      }
-    }
-
-    fetchUsers();
-  }, []);
 
   useEffect(() => {
     setSearchError("");
@@ -68,7 +51,7 @@ export default function Home() {
         >
           <h2 className="font-medium text-lg">Encontre o seu distribuidor</h2>
           <Input
-            data={users}
+            data={usernames}
             value={search}
             error={searchError}
             setValue={setSearch}
