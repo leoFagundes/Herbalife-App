@@ -1,7 +1,7 @@
 import { ProductProps } from "@/types/types";
 import Image from "next/image";
 import React from "react";
-import { FiEye, FiEyeOff, FiStar } from "react-icons/fi";
+import { FiEye, FiEyeOff } from "react-icons/fi";
 import { IoIosStar, IoIosStarOutline } from "react-icons/io";
 
 interface ProductCardProps {
@@ -15,7 +15,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         className="flex-1 w-full max-w-[250px] max-h-[220px]"
         width={200}
         height={200}
-        src={product.image}
+        src={`/assets/image/products/${product.image}`}
         alt={`product-${product.name}`}
       />
       <p className="text-center w-full text-lg">{product.name}</p>

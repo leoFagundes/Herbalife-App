@@ -6,82 +6,63 @@ import Input from "@/components/input";
 import Button from "@/components/button";
 import { useRouter } from "next/navigation";
 import { useState, FormEvent, useEffect } from "react";
-import { FiLock, FiUser, FiUsers } from "react-icons/fi";
-import UserRepositorie from "@/services/repositories/UserRepositorie";
-import productsJSON from "@/utils/products-data.json";
-import { ProductProps } from "@/types/types";
+import { FiAtSign, FiLock, FiUsers } from "react-icons/fi";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { auth } from "@/services/firebase";
+import { onAuthStateChanged } from "firebase/auth";
+import { LoaderWithFullScreen } from "@/components/loader";
 
 export default function Login() {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const [usernameError, setUsernameError] = useState("");
+  const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
 
-  const [users, setUsers] = useState([
-    "Leonardo",
-    "Rodrigo",
-    "Valéria",
-    "Juliana",
-    "Marcelo",
-    "Patrícia",
-    "Carlos",
-    "Fernanda",
-    "Rafael",
-    "Mariana",
-    "Gustavo",
-    "Renata",
-    "Paulo",
-    "Thiago",
-    "Isabela",
-    "Eduardo",
-    "Camila",
-    "Bruno",
-  ]);
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
+
   const router = useRouter();
 
-  const products: ProductProps[] = productsJSON as ProductProps[];
+  // Efeito para verificar o estado de autenticação
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // Usuário está logado, redireciona para a área de administração
+        router.push("/admin/products");
+      }
+    });
+
+    // Limpeza do efeito para evitar vazamento de memória
+    return () => unsubscribe();
+  }, [router]);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!users.includes(username)) {
-      setUsernameError("Esse distribuidor não existe!");
-      return;
-    }
-
-    if (password !== "1235") {
-      setPasswordError("Senha inválida, tente novamente.");
-      return;
-    }
-
-    if (
-      await UserRepositorie.create({
-        username: username,
-        password: "1235",
-        personalDescription: "a",
-        apresentationVideoLink: "a",
-        apresentationVideoDescription: "a",
-        whatsapp: "a",
-        instagram: "a",
-        email: "a",
-        image: "a",
-        products: products,
-      })
-    ) {
-      console.log("uhuuuul");
-    }
-
-    router.push(`/admin/products`);
+    signInWithEmailAndPassword(email, password);
   };
 
+  if (user) {
+    console.log(user);
+  }
+
   useEffect(() => {
-    setUsernameError("");
-  }, [username]);
+    setEmailError("");
+  }, [email]);
 
   useEffect(() => {
     setPasswordError("");
   }, [password]);
+
+  useEffect(() => {
+    if (error) {
+      setEmailError("Dados incorretos, tente novamente.");
+      setPasswordError("Dados incorretos, tente novamente.");
+    }
+  }, [error]);
+
+  if (loading) return <LoaderWithFullScreen />;
 
   return (
     <section className="h-screen w-full flex justify-center items-center">
@@ -99,12 +80,11 @@ export default function Login() {
         >
           <h2 className="font-medium text-lg">Área de administração</h2>
           <Input
-            data={users}
-            value={username}
-            error={usernameError}
-            setValue={setUsername}
-            placeholder="Username"
-            icon={<FiUser size={18} />}
+            value={email}
+            error={emailError}
+            setValue={setEmail}
+            placeholder="E-mail"
+            icon={<FiAtSign size={18} />}
           />
           <Input
             type="password"

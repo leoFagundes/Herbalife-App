@@ -1,7 +1,7 @@
 export interface ProductProps {
   id: string;
   name: string;
-  description: string;
+  description: string[];
   type:
     | "Shakes"
     | "Chás"

@@ -2,11 +2,27 @@
   {
     "id": "1",
     "name": "Shake Baunilha Cremoso 550g",
-    "description": "",
+    "description": [
+      "Agora você pode desfrutar de novos benefícios do Shake em uma NOVA FÓRMULA: Vegetariana, Sem Glúten e Zero Lactose.",
+      "E, tudo isso, preservando o mesmo sabor, cremosidade e composição nutricional que fazem do nosso shake o nº 1!"
+    ],
     "type": "Shakes",
     "isFavorite": false,
     "isVisible": true,
     "image": "shake-baunilha.png",
+    "weight": 550
+  },
+  {
+    "id": "1",
+    "name": "Shake Morango Cremoso 550g",
+    "description": [
+      "Agora você pode desfrutar de novos benefícios do Shake em uma NOVA FÓRMULA: Vegetariana, Sem Glúten e Zero Lactose.",
+      "E, tudo isso, preservando o mesmo sabor, cremosidade e composição nutricional que fazem do nosso shake o nº 1!"
+    ],
+    "type": "Shakes",
+    "isFavorite": true,
+    "isVisible": true,
+    "image": "shake-morango.png",
     "weight": 550
   }
 ]

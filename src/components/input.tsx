@@ -117,6 +117,10 @@ export default function Input({
       )}
       {multlines ? (
         <textarea
+          onChange={(e) => {
+            setValue(e.target.value);
+          }}
+          value={value}
           className={`bg-white w-full placeholder:text-sm py-3 px-4 outline-none border rounded-md ${
             error && "placeholder:text-red-500"
           }`}

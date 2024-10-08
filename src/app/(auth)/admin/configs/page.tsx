@@ -2,49 +2,46 @@
 
 import Button from "@/components/button";
 import Input from "@/components/input";
-import { useState } from "react";
+import { LoaderWithFullScreen } from "@/components/loader";
+import { auth } from "@/services/firebase";
+import UserRepositorie from "@/services/repositories/UserRepositorie";
+import { UserProps } from "@/types/types";
+import { onAuthStateChanged } from "firebase/auth";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import {
   FaImage,
   FaInstagram,
   FaRegEnvelope,
   FaWhatsapp,
 } from "react-icons/fa6";
-import { FiLock, FiUser, FiVideo } from "react-icons/fi";
+import { FiUser, FiVideo } from "react-icons/fi";
 
 export default function Configs() {
-  const [personalInfo, setPersonalInfo] = useState({
-    id: "1",
-    username: "",
-    password: "",
-    personalDescription: "",
-    apresentationVideoLink: "",
-    apresentationVideoDescription: "",
-    whatsapp: "",
-    instagram: "",
-    email: "",
-    image: "",
-  });
+  const [userData, setUserData] = useState<UserProps | null>(null);
+  const [loading, setLoading] = useState(true);
+  const router = useRouter();
 
-  const [users, setUsers] = useState([
-    "Leonardo",
-    "Rodrigo",
-    "Valéria",
-    "Juliana",
-    "Marcelo",
-    "Patrícia",
-    "Carlos",
-    "Fernanda",
-    "Rafael",
-    "Mariana",
-    "Gustavo",
-    "Renata",
-    "Paulo",
-    "Thiago",
-    "Isabela",
-    "Eduardo",
-    "Camila",
-    "Bruno",
-  ]);
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        console.log("Usuário autenticado:", user.uid);
+
+        const userInfo = await UserRepositorie.getById(user.uid);
+        setUserData(userInfo);
+      } else {
+        console.log("Usuário não autenticado.");
+        router.push("/login");
+      }
+      setLoading(false);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  if (loading) return <LoaderWithFullScreen />;
+
+  if (!userData) return <></>;
 
   return (
     <div className="flex flex-col  items-center w-full p-12 gap-8">
@@ -56,23 +53,12 @@ export default function Configs() {
               <h2 className="text-center font-semibold text-xl">Credenciais</h2>
               <Input
                 icon={<FiUser />}
-                data={users}
-                value={personalInfo.username}
+                value={userData.username}
                 setValue={(value) =>
-                  setPersonalInfo({ ...personalInfo, username: value })
+                  setUserData({ ...userData, username: value })
                 }
                 label="Username"
                 placeholder="Username"
-              />
-              <Input
-                icon={<FiLock />}
-                value={personalInfo.password}
-                setValue={(value) =>
-                  setPersonalInfo({ ...personalInfo, password: value })
-                }
-                type="password"
-                label="Senha"
-                placeholder="Senha"
               />
             </div>
 
@@ -82,10 +68,10 @@ export default function Configs() {
               </h2>
 
               <Input
-                value={personalInfo.personalDescription}
+                value={userData.personalDescription}
                 setValue={(value) =>
-                  setPersonalInfo({
-                    ...personalInfo,
+                  setUserData({
+                    ...userData,
                     personalDescription: value,
                   })
                 }
@@ -95,10 +81,10 @@ export default function Configs() {
               />
               <Input
                 icon={<FaWhatsapp />}
-                value={personalInfo.whatsapp}
+                value={userData.whatsapp}
                 setValue={(value) =>
-                  setPersonalInfo({
-                    ...personalInfo,
+                  setUserData({
+                    ...userData,
                     whatsapp: value,
                   })
                 }
@@ -107,10 +93,10 @@ export default function Configs() {
               />
               <Input
                 icon={<FaInstagram />}
-                value={personalInfo.instagram}
+                value={userData.instagram}
                 setValue={(value) =>
-                  setPersonalInfo({
-                    ...personalInfo,
+                  setUserData({
+                    ...userData,
                     instagram: value,
                   })
                 }
@@ -119,10 +105,10 @@ export default function Configs() {
               />
               <Input
                 icon={<FaRegEnvelope />}
-                value={personalInfo.email}
+                value={userData.email}
                 setValue={(value) =>
-                  setPersonalInfo({
-                    ...personalInfo,
+                  setUserData({
+                    ...userData,
                     email: value,
                   })
                 }
@@ -131,10 +117,10 @@ export default function Configs() {
               />
               <Input
                 icon={<FaImage />}
-                value={personalInfo.image}
+                value={userData.image}
                 setValue={(value) =>
-                  setPersonalInfo({
-                    ...personalInfo,
+                  setUserData({
+                    ...userData,
                     image: value,
                   })
                 }
@@ -151,10 +137,10 @@ export default function Configs() {
 
               <Input
                 icon={<FiVideo />}
-                value={personalInfo.apresentationVideoLink}
+                value={userData.apresentationVideoLink}
                 setValue={(value) =>
-                  setPersonalInfo({
-                    ...personalInfo,
+                  setUserData({
+                    ...userData,
                     apresentationVideoLink: value,
                   })
                 }
@@ -163,10 +149,10 @@ export default function Configs() {
               />
 
               <Input
-                value={personalInfo.apresentationVideoDescription}
+                value={userData.apresentationVideoDescription}
                 setValue={(value) =>
-                  setPersonalInfo({
-                    ...personalInfo,
+                  setUserData({
+                    ...userData,
                     apresentationVideoDescription: value,
                   })
                 }

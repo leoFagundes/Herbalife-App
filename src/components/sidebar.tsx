@@ -5,6 +5,8 @@ import logo from "@/assets/svg/logo-v3.svg";
 import Image from "next/image";
 import { FiLayers, FiLogOut, FiSettings } from "react-icons/fi";
 import { usePathname, useRouter } from "next/navigation";
+import { signOut } from "firebase/auth";
+import { auth } from "@/services/firebase";
 
 export default function Sidebar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,6 +18,11 @@ export default function Sidebar() {
   const router = useRouter();
 
   const currentPage = pathname.split("/").slice(-1)[0];
+
+  const handleLogout = async () => {
+    await signOut(auth);
+    router.push("/login");
+  };
 
   return (
     <>
@@ -47,7 +54,7 @@ export default function Sidebar() {
             ))}
           </div>
           <span
-            onClick={() => router.push("/")}
+            onClick={handleLogout}
             className="flex items-center py-2 px-4 text-primary font-medium hover:cursor-pointer hover:underline gap-2"
           >
             <FiLogOut size={20} /> Sair da conta

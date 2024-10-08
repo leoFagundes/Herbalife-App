@@ -9,8 +9,9 @@ import {
   doc,
   updateDoc,
   getDoc,
+  setDoc,
 } from "firebase/firestore";
-import { UserProps } from "@/types/types";
+import { ProductProps, UserProps } from "@/types/types";
 
 class UserRepositorie {
   static async getAll() {
@@ -27,6 +28,7 @@ class UserRepositorie {
       return users;
     } catch (error) {
       console.log("Erro ao carregar usuários: ", error);
+      return [];
     }
   }
 
@@ -77,6 +79,34 @@ class UserRepositorie {
       return true;
     } catch (error) {
       console.error("Não foi possível carregar os usuários: ", error);
+      return false;
+    }
+  }
+
+  static async createUserDocument(
+    user: { uid: string },
+    username: string,
+    email: string,
+    products: ProductProps[]
+  ) {
+    try {
+      await setDoc(doc(db, "users", user.uid), {
+        username: username,
+        email: email,
+        personalDescription: "",
+        apresentationVideoLink:
+          "https://www.youtube.com/embed/g0JeI9dSnYE?si=W3Q1NYx-MKv-UINg",
+        apresentationVideoDescription:
+          "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+        whatsapp: "",
+        instagram: "",
+        image: "",
+        products: products,
+      });
+      console.log("Documento do usuário criado com sucesso.");
+      return true;
+    } catch (error) {
+      console.error("Erro ao criar documento do usuário: ", error);
       return false;
     }
   }
