@@ -109,10 +109,7 @@ export default function Header() {
                   ))}
 
                   <div className="h-[1px] w-full bg-black/50" />
-                  <span
-                    onClick={() => setISMenuMaximize(!isMenuMaximize)}
-                    className="flex flex-col items-center text-xs hover:cursor-pointer"
-                  >
+                  <span className="flex flex-col items-center text-xs hover:cursor-pointer">
                     <CiLogin onClick={() => router.push("/login")} size={22} />{" "}
                     Login
                   </span>

@@ -13,23 +13,24 @@ interface UserProps {
 
 export default function User({ params }: UserProps) {
   const router = useRouter();
-
   const { usernames } = UseUser();
 
   useEffect(() => {
     const specialRoutes = ["login", "register"];
+    // Decodifica o nome de usuário da URL
+    const decodedUsername = decodeURIComponent(params.user);
 
     if (usernames.length > 0) {
       if (
-        !usernames.includes(params.user) &&
-        !specialRoutes.includes(params.user)
+        !usernames.includes(decodedUsername) &&
+        !specialRoutes.includes(decodedUsername)
       ) {
         router.push("/");
       } else {
-        if (specialRoutes.includes(params.user)) {
-          router.push(`/${params.user}`);
+        if (specialRoutes.includes(decodedUsername)) {
+          router.push(`/${decodedUsername}`);
         } else {
-          router.push(`/${params.user}/about`);
+          router.push(`/${decodedUsername}/about`);
         }
       }
     }

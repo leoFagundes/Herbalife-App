@@ -94,8 +94,7 @@ class UserRepositorie {
         username: username,
         email: email,
         personalDescription: "",
-        apresentationVideoLink:
-          "https://www.youtube.com/embed/g0JeI9dSnYE?si=W3Q1NYx-MKv-UINg",
+        apresentationVideoLink: "https://www.youtube.com/watch?v=g0JeI9dSnYE",
         apresentationVideoDescription:
           "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
         whatsapp: "",

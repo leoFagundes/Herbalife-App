@@ -5,6 +5,7 @@ import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { IoMailOutline } from "react-icons/io5";
 import provisoryImage from "@/assets/image/leoFagundes-ef.jpg";
 import UseUser from "@/hooks/useUser";
+import { LoaderWithFullScreen } from "@/components/loader";
 
 interface ContactProps {
   params: {
@@ -13,7 +14,9 @@ interface ContactProps {
 }
 
 export default function Contact({ params }: ContactProps) {
-  const { currentUser } = UseUser(params.user);
+  const { currentUser, isLoading } = UseUser(decodeURIComponent(params.user));
+
+  if (isLoading) return <LoaderWithFullScreen />;
 
   return (
     <div className="flex justify-center gap-x-16 gap-y-8 flex-wrap-reverse">
@@ -30,25 +33,27 @@ export default function Contact({ params }: ContactProps) {
         </h2>
         <ul className="flex flex-col gap-2">
           <li className="font-medium">{currentUser?.username}</li>
+          {currentUser?.whatsapp && (
+            <li className="flex items-center gap-2 hover:cursor-pointer hover:underline text-sm">
+              <FaWhatsapp className="text-primary w-5 h-5" />{" "}
+              {currentUser?.whatsapp}
+            </li>
+          )}
+
+          {currentUser?.instagram && (
+            <li className="flex items-center gap-2 hover:cursor-pointer hover:underline text-sm">
+              <FaInstagram className="text-primary w-5 h-5" />{" "}
+              {currentUser?.instagram}
+            </li>
+          )}
           <li className="flex items-center gap-2 hover:cursor-pointer hover:underline text-sm">
-            <FaWhatsapp className="text-primary w-5 h-5" /> (61) 99825-3228
-          </li>
-          <li className="flex items-center gap-2 hover:cursor-pointer hover:underline text-sm">
-            <FaInstagram className="text-primary w-5 h-5" /> seuinsta
-          </li>
-          <li className="flex items-center gap-2 hover:cursor-pointer hover:underline text-sm">
-            <IoMailOutline className="text-primary w-5 h-5" /> seuemail
+            <IoMailOutline className="text-primary w-5 h-5" />{" "}
+            {currentUser?.email}
           </li>
         </ul>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quis
-          maiores illum dolore asperiores illo officia quas cupiditate hic! At
-          deserunt esse exercitationem amet tenetur laboriosam a reprehenderit
-          eius perspiciatis. Lorem ipsum dolor, sit amet consectetur adipisicing
-          elit. Provident, earum cupiditate officiis aut sunt architecto
-          laboriosam ipsam necessitatibus aspernatur temporibus fugiat, dolore,
-          blanditiis veniam! Illum inventore ullam quas ex amet?
-        </p>
+        {currentUser?.personalDescription && (
+          <p>{currentUser.personalDescription}</p>
+        )}
       </article>
     </div>
   );

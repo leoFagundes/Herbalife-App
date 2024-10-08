@@ -32,7 +32,7 @@ export default function Products({ params }: ProductsProps) {
   ];
 
   const [products, setProducts] = useState<ProductProps[]>([]);
-  const { isLoading, currentUser } = UseUser(params.user);
+  const { isLoading, currentUser } = UseUser(decodeURIComponent(params.user));
 
   useEffect(() => {
     if (currentUser) {

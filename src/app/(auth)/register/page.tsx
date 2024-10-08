@@ -156,6 +156,7 @@ export default function Register() {
             icon={<FiLock size={18} />}
           />
           <Input
+            type="password"
             value={token}
             error={tokenError}
             setValue={setToken}

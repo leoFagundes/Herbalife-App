@@ -5,6 +5,8 @@ import financialIndependence1 from "@/assets/image/Indepedência Financeira_01.p
 import financialIndependence3 from "@/assets/image/Indepedência Financeira_03.png";
 import lifesGood from "@/assets/image/Viva sua melhor vida.png";
 import React from "react";
+import UseUser from "@/hooks/useUser";
+import { LoaderWithFullScreen } from "@/components/loader";
 
 interface EmployProps {
   params: {
@@ -13,6 +15,18 @@ interface EmployProps {
 }
 
 export default function Employ({ params }: EmployProps) {
+  const { currentUser, isLoading } = UseUser(decodeURIComponent(params.user));
+
+  function convertToEmbedLink(youtubeLink: string | undefined): string {
+    if (youtubeLink) {
+      const videoId = youtubeLink.split("v=")[1].split("&")[0];
+      return `https://www.youtube.com/embed/${videoId}`;
+    }
+    return "";
+  }
+
+  if (isLoading) return <LoaderWithFullScreen />;
+
   return (
     <>
       <section className="flex flex-col gap-6">
@@ -117,20 +131,16 @@ export default function Employ({ params }: EmployProps) {
         </h2>
         <div className="flex flex-col items-center gap-4 lg:gap-20">
           <article className="flex flex-col gap-3 w-full self-start">
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae
-              itaque soluta tempora. Harum expedita laudantium consequatur
-              cumque placeat porro explicabo, commodi reiciendis deleniti ipsum
-              eligendi corporis numquam vel quas totam.
-            </p>
-            {params.user}
+            {currentUser?.apresentationVideoDescription && (
+              <p>{currentUser.apresentationVideoDescription}</p>
+            )}
           </article>
         </div>
         <div className="flex w-full justify-center">
           <iframe
             width="560"
             height="315"
-            src="https://www.youtube.com/embed/g0JeI9dSnYE?si=W3Q1NYx-MKv-UINg"
+            src={convertToEmbedLink(currentUser?.apresentationVideoLink)}
             title="Faça parte do time Herbalife"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerPolicy="strict-origin-when-cross-origin"

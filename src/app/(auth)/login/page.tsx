@@ -45,15 +45,12 @@ export default function Login() {
 
     try {
       signInWithEmailAndPassword(email, password);
+      router.push("/admin/products");
     } catch (error) {
       setEmailError("Dados incorretos, tente novamente.");
       setPasswordError("Dados incorretos, tente novamente.");
     }
   };
-
-  if (user) {
-    console.log(user);
-  }
 
   useEffect(() => {
     setEmailError("");
