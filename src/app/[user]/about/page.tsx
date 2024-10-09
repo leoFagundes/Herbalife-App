@@ -1,7 +1,7 @@
 import Image from "next/image";
 import cr7 from "@/assets/image/cr7.png";
 import woman from "@/assets/image/healthy-woman.png";
-import products from "@/assets/svg/products.svg";
+import products from "@/assets/image/products.png";
 import React from "react";
 
 interface AboutProps {
@@ -284,11 +284,13 @@ export default function About({ params }: AboutProps) {
           </article>
           <div className="flex justify-center items-center min-w-[300px]">
             <Image
-              className="scale-100 lg:scale-150"
+              className="scale-100 lg:scale-150 max-w-[350px]"
               width={350}
               height={0}
               src={products.src}
               alt="cr7"
+              quality={100}
+              layout="responsive"
             />
           </div>
         </div>

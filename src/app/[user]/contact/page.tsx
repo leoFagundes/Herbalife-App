@@ -34,7 +34,12 @@ export default function Contact({ params }: ContactProps) {
           Entre em Contato
         </h2>
         <ul className="flex flex-col gap-2">
-          <li className="font-medium">{currentUser?.username}</li>
+          <li className="font-medium">
+            {currentUser?.username}{" "}
+            <span className="text-primary text-sm italic">
+              (Distribuidor Independente Herbalife)
+            </span>
+          </li>
           {currentUser?.whatsapp && (
             <li className="flex items-center gap-2 hover:cursor-pointer hover:underline text-sm">
               <FaWhatsapp className="text-primary w-5 h-5" />{" "}

@@ -4,7 +4,7 @@ import Image from "next/image";
 import logo from "@/assets/svg/logo-v3.svg";
 import { CiLogin } from "react-icons/ci";
 import { usePathname, useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   FiBriefcase,
   FiGrid,
@@ -14,16 +14,36 @@ import {
   FiMaximize2,
 } from "react-icons/fi";
 import React from "react";
+import UseUser from "@/hooks/useUser";
+import { LoaderWithFullScreen } from "@/components/loader";
 
-export default function Header() {
+interface HeaderProps {
+  params: {
+    user: string;
+  };
+}
+
+export default function Header({ params }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMenuMaximize, setISMenuMaximize] = useState(false);
+
+  const { usernames, isLoading } = UseUser();
 
   const pathname = usePathname();
   const router = useRouter();
 
   const currentPage = pathname.split("/").slice(-1)[0];
   const currentUser = pathname.split("/").slice(1)[0];
+
+  useEffect(() => {
+    const decodedUsername = decodeURIComponent(params.user);
+
+    if (usernames.length > 0) {
+      if (!usernames.includes(decodedUsername)) {
+        router.push("/");
+      }
+    }
+  }, [router, params, usernames]);
 
   console.log(currentUser);
 
@@ -37,6 +57,8 @@ export default function Header() {
       icon: <FiBriefcase size={24} />,
     },
   ];
+
+  if (isLoading) return <LoaderWithFullScreen />;
 
   return (
     <>

@@ -94,9 +94,9 @@ class UserRepositorie {
         username: username,
         email: email,
         personalDescription: "",
-        apresentationVideoLink: "https://www.youtube.com/watch?v=g0JeI9dSnYE",
+        apresentationVideoLink: "https://www.youtube.com/watch?v=J-jxSsuQpCU",
         apresentationVideoDescription:
-          "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+          "Imagine a liberdade de ser seu próprio chefe, decidir seus horários e alcançar o sucesso enquanto promove um estilo de vida saudável. Trabalhar com a Herbalife é uma oportunidade incrível de transformar sua vida, tanto financeiramente quanto em termos de bem-estar pessoal. \n\nAo se juntar à Herbalife, você estará entrando em uma comunidade global que valoriza saúde, equilíbrio e sucesso. \n\nCom produtos de alta qualidade, suporte contínuo e um modelo de negócios flexível, você terá a chance de construir sua própria carreira, trabalhando no seu próprio ritmo e conforme suas metas pessoais.",
         whatsapp: "",
         instagram: "",
         image: "",

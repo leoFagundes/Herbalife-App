@@ -4,10 +4,16 @@ import Button from "@/components/button";
 import Input from "@/components/input";
 import { LoaderWithFullScreen } from "@/components/loader";
 import UseUser from "@/hooks/useUser";
-import { auth } from "@/services/firebase";
+import { auth, storage } from "@/services/firebase";
 import UserRepositorie from "@/services/repositories/UserRepositorie";
 import { UserProps } from "@/types/types";
 import { onAuthStateChanged } from "firebase/auth";
+import {
+  ref,
+  uploadBytesResumable,
+  getDownloadURL,
+  deleteObject,
+} from "firebase/storage";
 import { useRouter } from "next/navigation";
 import { FormEvent, useEffect, useState } from "react";
 import {
@@ -23,7 +29,10 @@ export default function Configs() {
   const [usernameError, setUsernameError] = useState("");
   const [loading, setLoading] = useState(true);
   const [username, setUsername] = useState("");
+  const [progress, setProgress] = useState(0);
   const router = useRouter();
+
+  const [image, setImage] = useState<null | File>(null);
 
   const { usernames } = UseUser();
 
@@ -51,8 +60,7 @@ export default function Configs() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    console.log(usernames.filter((name) => name !== userData?.username));
+    let imageUrl = "";
 
     if (
       userData &&
@@ -64,13 +72,71 @@ export default function Configs() {
 
     setLoading(true);
     try {
+      if (userData?.image) {
+        const oldImageRef = ref(storage, userData.image);
+        await deleteObject(oldImageRef);
+        console.log("Imagem antiga deletada com sucesso!");
+      }
+
+      if (image) {
+        const storageRef = ref(storage, `images/${image.name}`);
+        const uploadTask = uploadBytesResumable(storageRef, image);
+
+        // Use uma Promise para esperar o upload terminar e obter o URL da imagem
+        imageUrl = await new Promise((resolve, reject) => {
+          uploadTask.on(
+            "state_changed",
+            (snapshot) => {
+              const progress =
+                (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+              setProgress(progress);
+            },
+            (error) => {
+              alert(error);
+              reject(error);
+            },
+            async () => {
+              const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
+              resolve(downloadURL);
+            }
+          );
+        });
+      }
+
+      console.log("URL", imageUrl);
+
       if (userData) {
-        await UserRepositorie.update(userData?.id, { ...userData });
+        const updatedData = imageUrl
+          ? { ...userData, image: imageUrl }
+          : { ...userData };
+
+        await UserRepositorie.update(userData.id, updatedData);
       }
     } catch (error) {
       console.error("Erro ao salvar informações: ", error);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const deleteImageFunction = async () => {
+    if (!userData?.image) return; // Verifica se existe uma imagem para deletar
+
+    try {
+      // Referência da imagem no Firebase Storage
+      const imageRef = ref(storage, userData.image);
+
+      // Deletar a imagem do Storage
+      await deleteObject(imageRef);
+      console.log("Imagem deletada com sucesso!");
+
+      // Atualizar o campo 'image' no banco de dados para uma string vazia
+      await UserRepositorie.update(userData.id, { ...userData, image: "" });
+
+      // Atualizar o estado local para refletir a remoção
+      setUserData({ ...userData, image: "" });
+    } catch (error) {
+      console.error("Erro ao deletar a imagem: ", error);
     }
   };
 
@@ -156,16 +222,26 @@ export default function Configs() {
               />
               <Input
                 icon={<FaImage />}
-                value={userData.image}
+                value={
+                  image
+                    ? image.name
+                    : userData.image
+                    ? decodeURIComponent(
+                        userData.image.split("images")[1].split("?")[0]
+                      ).replace("/", "")
+                    : ""
+                }
                 setValue={(value) =>
                   setUserData({
                     ...userData,
                     image: value,
                   })
                 }
+                setImage={setImage}
                 type="file"
                 label="Foto de apresentação"
                 placeholder="example@gmail.com"
+                deleteImageFunction={deleteImageFunction}
               />
             </div>
 

@@ -132,7 +132,16 @@ export default function Employ({ params }: EmployProps) {
         <div className="flex flex-col items-center gap-4 lg:gap-20">
           <article className="flex flex-col gap-3 w-full self-start">
             {currentUser?.apresentationVideoDescription && (
-              <p>{currentUser.apresentationVideoDescription}</p>
+              <p>
+                {currentUser.apresentationVideoDescription
+                  .split("\n")
+                  .map((line, index) => (
+                    <span key={index}>
+                      {line}
+                      <br />
+                    </span>
+                  ))}
+              </p>
             )}
           </article>
         </div>

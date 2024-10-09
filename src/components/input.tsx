@@ -1,6 +1,13 @@
 "use client";
 
-import React, { ComponentProps, ReactNode, useEffect, useState } from "react";
+import React, {
+  ComponentProps,
+  Dispatch,
+  ReactNode,
+  SetStateAction,
+  useEffect,
+  useState,
+} from "react";
 import { FiEye, FiEyeOff, FiTrash, FiX } from "react-icons/fi";
 import { PiImageBrokenLight } from "react-icons/pi";
 
@@ -13,6 +20,8 @@ interface InputProps extends ComponentProps<"input"> {
   label?: string;
   multlines?: boolean;
   placeholder: string;
+  setImage?: Dispatch<SetStateAction<File | null>>;
+  deleteImageFunction?: VoidFunction;
 }
 
 export default function Input({
@@ -25,6 +34,8 @@ export default function Input({
   label,
   multlines = false,
   placeholder,
+  setImage,
+  deleteImageFunction,
   ...props
 }: InputProps) {
   const [isBoxOpen, setIsBoxOpen] = useState(true);
@@ -138,10 +149,19 @@ export default function Input({
           <input
             type={inputType}
             onChange={(e) => {
-              setValue(e.target.value);
-              setIsManuallyClosed(false);
+              const file = e.target.files ? e.target.files[0] : null;
+              if (file && setImage) {
+                setImage(file); // Armazena o arquivo no estado
+              }
+              // setValue(e.target.value);
+              // setIsManuallyClosed(false);
+              // setImage && setImage(e?.target?.files?.[0] as File);
+
+              // const file = e.target.files ? e.target.files[0] : null;
+              // setValue(e.target.value);
+              // setIsManuallyClosed(false);
+              // setImage && setImage(file);
             }}
-            value={value}
             placeholder={placeholder}
             className={`opacity-0 h-full w-full hover:cursor-pointer absolute`}
             {...props}
@@ -164,9 +184,9 @@ export default function Input({
           {...props}
         />
       )}
-      {inputType === "file" && value && (
+      {inputType === "file" && value && deleteImageFunction && (
         <FiTrash
-          onClick={() => setValue("")}
+          onClick={deleteImageFunction}
           className="hover:cursor-pointer hover:text-red-500 duration-300 absolute -right-8 w-5 h-5"
         />
       )}
