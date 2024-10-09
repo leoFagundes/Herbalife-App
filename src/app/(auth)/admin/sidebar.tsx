@@ -1,15 +1,19 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "@/assets/svg/logo-v3.svg";
 import Image from "next/image";
 import { FiLayers, FiLogOut, FiSettings } from "react-icons/fi";
 import { usePathname, useRouter } from "next/navigation";
-import { signOut } from "firebase/auth";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "@/services/firebase";
+import UserRepositorie from "@/services/repositories/UserRepositorie";
+import { LoaderWithFullScreen } from "@/components/loader";
 
 export default function Sidebar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [username, setUsername] = useState("");
   const menuItems = [
     { icon: FiLayers, label: "Produtos", path: "products" },
     { icon: FiSettings, label: "Configurações", path: "configs" },
@@ -19,14 +23,41 @@ export default function Sidebar() {
 
   const currentPage = pathname.split("/").slice(-1)[0];
 
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        console.log("Usuário autenticado:", user.uid);
+
+        const userInfo = await UserRepositorie.getById(user.uid);
+        setUsername(userInfo ? userInfo?.username : "");
+      } else {
+        console.log("Usuário não autenticado.");
+        router.push("/login");
+      }
+      setLoading(false);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
   const handleLogout = async () => {
     await signOut(auth);
     router.push("/login");
   };
 
+  if (loading) return <LoaderWithFullScreen />;
+
   return (
     <>
       <div className="w-[50px] sm:hidden"></div>
+      <span
+        onClick={() => router.push(`/${username}`)}
+        className={`${
+          isMenuOpen ? "flex" : "hidden sm:flex"
+        } fixed z-40 left-16 sm:left-10 bottom-14 animate-fadein text-center flex items-center text-primary font-medium hover:cursor-pointer`}
+      >
+        {username}
+      </span>
       <aside
         className={`w-[280px] min-h-screen border-r border-primary flex flex-col items-center p-8 pb-14 gap-8 sm:relative duration-300 bg-white fixed sm:translate-x-0 z-20 ${
           !isMenuOpen && "-translate-x-[230px]"

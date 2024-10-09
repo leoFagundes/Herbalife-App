@@ -20,7 +20,7 @@
       "E, tudo isso, preservando o mesmo sabor, cremosidade e composição nutricional que fazem do nosso shake o nº 1!"
     ],
     "type": "Shakes",
-    "isFavorite": true,
+    "isFavorite": false,
     "isVisible": true,
     "image": "shake-morango.png",
     "weight": 550
