@@ -138,6 +138,7 @@ export default function Employ({ params }: EmployProps) {
         </div>
         <div className="flex w-full justify-center">
           <iframe
+            className="shadow-card"
             width="560"
             height="315"
             src={convertToEmbedLink(currentUser?.apresentationVideoLink)}

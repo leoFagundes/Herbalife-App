@@ -76,7 +76,8 @@ export default function Products({ params }: ProductsProps) {
         >
           contato
         </span>{" "}
-        diretamente com <span className="text-primary">{params.user}</span>.
+        diretamente com{" "}
+        <span className="text-primary">{decodeURIComponent(params.user)}</span>.
       </p>
 
       <nav className="w-full justify-center flex py-1 mt-6 mb-4">
