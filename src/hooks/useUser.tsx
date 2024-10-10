@@ -2,7 +2,7 @@
 
 import UserRepositorie from "@/services/repositories/UserRepositorie";
 import { UserProps } from "@/types/types";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function UseUser(username = "") {
   const [isLoading, setIsLoading] = useState(true);

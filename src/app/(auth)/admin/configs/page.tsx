@@ -58,6 +58,10 @@ export default function Configs() {
     return () => unsubscribe();
   }, []);
 
+  useEffect(() => {
+    console.log(progress);
+  }, [progress]);
+
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     let imageUrl = "";

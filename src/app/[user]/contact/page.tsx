@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { IoMailOutline } from "react-icons/io5";
-import provisoryImage from "@/assets/image/leoFagundes-ef.jpg";
 import UseUser from "@/hooks/useUser";
 import { LoaderWithFullScreen } from "@/components/loader";
 

@@ -7,7 +7,6 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { FiArrowLeft, FiStar } from "react-icons/fi";
-import logo from "@/assets/svg/logo-herbalife-stroke.svg";
 
 interface ProductDetailsProps {
   params: {

@@ -20,7 +20,7 @@ export default function Login() {
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
 
-  const [signInWithEmailAndPassword, user, loading, error] =
+  const [signInWithEmailAndPassword, loading] =
     useSignInWithEmailAndPassword(auth);
 
   const router = useRouter();
