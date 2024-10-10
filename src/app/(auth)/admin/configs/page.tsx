@@ -126,6 +126,7 @@ export default function Configs() {
   const deleteImageFunction = async () => {
     if (!userData?.image) return; // Verifica se existe uma imagem para deletar
 
+    setLoading(true);
     try {
       // Referência da imagem no Firebase Storage
       const imageRef = ref(storage, userData.image);
@@ -136,11 +137,12 @@ export default function Configs() {
 
       // Atualizar o campo 'image' no banco de dados para uma string vazia
       await UserRepositorie.update(userData.id, { ...userData, image: "" });
-
-      // Atualizar o estado local para refletir a remoção
-      setUserData({ ...userData, image: "" });
     } catch (error) {
       console.error("Erro ao deletar a imagem: ", error);
+    } finally {
+      // Atualizar o estado local para refletir a remoção
+      setUserData({ ...userData, image: "" });
+      setLoading(false);
     }
   };
 
