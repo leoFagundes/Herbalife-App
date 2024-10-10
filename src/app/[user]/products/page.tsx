@@ -2,10 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 import ProductCard from "./productCard";
-import { ProductProps, UserProps } from "@/types/types";
+import { ProductProps } from "@/types/types";
 import { FiAlertCircle } from "react-icons/fi";
-import { useRouter } from "next/navigation";
-import UserRepositorie from "@/services/repositories/UserRepositorie";
+import { useRouter, useSearchParams } from "next/navigation";
 import { LoaderWithFullScreen } from "@/components/loader";
 import UseUser from "@/hooks/useUser";
 
@@ -19,7 +18,9 @@ export default function Products({ params }: ProductsProps) {
   const [currentType, setCurrentType] = useState("Shakes");
   const ulRef = useRef<HTMLUListElement>(null);
   const router = useRouter();
+  const searchParams = useSearchParams();
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const types = [
     "Shakes",
     "Chás",
@@ -40,12 +41,23 @@ export default function Products({ params }: ProductsProps) {
     }
   }, [currentUser]);
 
+  // Checa o parâmetro `type` na URL e atualiza o tipo atual
+  useEffect(() => {
+    const typeFromURL = searchParams.get("type");
+    if (typeFromURL && types.includes(typeFromURL)) {
+      setCurrentType(typeFromURL);
+    }
+  }, [searchParams, types]);
+
   const filterProducts = products.filter(
     (product) => product.type === currentType
   );
 
   const handleClick = (type: string, index: number) => {
     setCurrentType(type);
+
+    // Atualiza a URL com o parâmetro `type`
+    router.push(`/${params.user}/products?type=${type}`);
 
     if (ulRef.current) {
       const item = ulRef.current.children[index] as HTMLElement;
@@ -101,7 +113,7 @@ export default function Products({ params }: ProductsProps) {
 
       <div className="h-[1px] w-full bg-primary" />
 
-      <div className="flex justify-center mt-6 gap-8">
+      <div className="flex justify-center mt-6 gap-8 flex-wrap">
         {filterProducts.length > 0 ? (
           filterProducts.map((product) => (
             <ProductCard key={product.id} params={params} product={product} />

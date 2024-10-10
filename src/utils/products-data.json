@@ -3,8 +3,9 @@
     "id": "1",
     "name": "Shake Baunilha Cremoso 550g",
     "description": [
-      "Agora você pode desfrutar de novos benefícios do Shake em uma NOVA FÓRMULA: Vegetariana, Sem Glúten e Zero Lactose.",
-      "E, tudo isso, preservando o mesmo sabor, cremosidade e composição nutricional que fazem do nosso shake o nº 1!"
+      "Nossa estratégia para o gerenciamento de peso é baseada no controle de calorias. ",
+      "Para reduzir e manter o peso é preciso substituir até 2 refeições principais (café da manhã, almoço ou jantar) que têm em média 600 calorias, por 1 porção de Shake Herbalife, nutricionalmente balanceado e de calorias controladas, resultando em um consumo calórico reduzido",
+      "O shake F1 fornece por porção quando preparado com leite semi desnatado ou NutreV possui aproximadamente*: 210 calorias, 9 g de proteína de Alta Qualidade, 23 Vitaminas e minerais, 3 g de Fibra, 4.7 g de gorduras (somente 1,6 g do pó)."
     ],
     "type": "Shakes",
     "isFavorite": false,
@@ -16,13 +17,518 @@
     "id": "2",
     "name": "Shake Morango Cremoso 550g",
     "description": [
-      "Agora você pode desfrutar de novos benefícios do Shake em uma NOVA FÓRMULA: Vegetariana, Sem Glúten e Zero Lactose.",
-      "E, tudo isso, preservando o mesmo sabor, cremosidade e composição nutricional que fazem do nosso shake o nº 1!"
+      "Nossa estratégia para o gerenciamento de peso é baseada no controle de calorias. ",
+      "Para reduzir e manter o peso é preciso substituir até 2 refeições principais (café da manhã, almoço ou jantar) que têm em média 600 calorias, por 1 porção de Shake Herbalife, nutricionalmente balanceado e de calorias controladas, resultando em um consumo calórico reduzido",
+      "O shake F1 fornece por porção quando preparado com leite semi desnatado ou NutreV possui aproximadamente*: 210 calorias, 9 g de proteína de Alta Qualidade, 23 Vitaminas e minerais, 3 g de Fibra, 4.7 g de gorduras (somente 1,6 g do pó)."
     ],
     "type": "Shakes",
     "isFavorite": false,
     "isVisible": true,
     "image": "shake-morango.png",
     "weight": 550
+  },
+  {
+    "id": "3",
+    "name": "Shake Banana Caramelizada 550g",
+    "description": [
+      "Nossa estratégia para o gerenciamento de peso é baseada no controle de calorias. ",
+      "Para reduzir e manter o peso é preciso substituir até 2 refeições principais (café da manhã, almoço ou jantar) que têm em média 600 calorias, por 1 porção de Shake Herbalife, nutricionalmente balanceado e de calorias controladas, resultando em um consumo calórico reduzido",
+      "O shake F1 fornece por porção quando preparado com leite semi desnatado ou NutreV possui aproximadamente*: 210 calorias, 9 g de proteína de Alta Qualidade, 23 Vitaminas e minerais, 3 g de Fibra, 4.7 g de gorduras (somente 1,6 g do pó)."
+    ],
+    "type": "Shakes",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "shake-banana.png",
+    "weight": 550
+  },
+  {
+    "id": "4",
+    "name": "Shake Cafe Cremoso 550g",
+    "description": [
+      "Nossa estratégia para o gerenciamento de peso é baseada no controle de calorias. ",
+      "Para reduzir e manter o peso é preciso substituir até 2 refeições principais (café da manhã, almoço ou jantar) que têm em média 600 calorias, por 1 porção de Shake Herbalife, nutricionalmente balanceado e de calorias controladas, resultando em um consumo calórico reduzido",
+      "O shake F1 fornece por porção quando preparado com leite semi desnatado ou NutreV possui aproximadamente*: 210 calorias, 9 g de proteína de Alta Qualidade, 23 Vitaminas e minerais, 3 g de Fibra, 4.7 g de gorduras (somente 1,6 g do pó)."
+    ],
+    "type": "Shakes",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "shake-cafe.png",
+    "weight": 550
+  },
+  {
+    "id": "5",
+    "name": "Shake Chocolate Sensation 550g",
+    "description": [
+      "Nossa estratégia para o gerenciamento de peso é baseada no controle de calorias. ",
+      "Para reduzir e manter o peso é preciso substituir até 2 refeições principais (café da manhã, almoço ou jantar) que têm em média 600 calorias, por 1 porção de Shake Herbalife, nutricionalmente balanceado e de calorias controladas, resultando em um consumo calórico reduzido",
+      "O shake F1 fornece por porção quando preparado com leite semi desnatado ou NutreV possui aproximadamente*: 210 calorias, 9 g de proteína de Alta Qualidade, 23 Vitaminas e minerais, 3 g de Fibra, 4.7 g de gorduras (somente 1,6 g do pó)."
+    ],
+    "type": "Shakes",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "shake-chocolate.png",
+    "weight": 550
+  },
+  {
+    "id": "6",
+    "name": "Shake Coco 550g",
+    "description": [
+      "Nossa estratégia para o gerenciamento de peso é baseada no controle de calorias. ",
+      "Para reduzir e manter o peso é preciso substituir até 2 refeições principais (café da manhã, almoço ou jantar) que têm em média 600 calorias, por 1 porção de Shake Herbalife, nutricionalmente balanceado e de calorias controladas, resultando em um consumo calórico reduzido",
+      "O shake F1 fornece por porção quando preparado com leite semi desnatado ou NutreV possui aproximadamente*: 210 calorias, 9 g de proteína de Alta Qualidade, 23 Vitaminas e minerais, 3 g de Fibra, 4.7 g de gorduras (somente 1,6 g do pó)."
+    ],
+    "type": "Shakes",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "shake-coco.png",
+    "weight": 550
+  },
+  {
+    "id": "7",
+    "name": "Shake Cockies and Cream 550g",
+    "description": [
+      "Nossa estratégia para o gerenciamento de peso é baseada no controle de calorias. ",
+      "Para reduzir e manter o peso é preciso substituir até 2 refeições principais (café da manhã, almoço ou jantar) que têm em média 600 calorias, por 1 porção de Shake Herbalife, nutricionalmente balanceado e de calorias controladas, resultando em um consumo calórico reduzido",
+      "O shake F1 fornece por porção quando preparado com leite semi desnatado ou NutreV possui aproximadamente*: 210 calorias, 9 g de proteína de Alta Qualidade, 23 Vitaminas e minerais, 3 g de Fibra, 4.7 g de gorduras (somente 1,6 g do pó)."
+    ],
+    "type": "Shakes",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "shake-cockies.png",
+    "weight": 550
+  },
+  {
+    "id": "8",
+    "name": "Shake Doce de Leite 550g",
+    "description": [
+      "Nossa estratégia para o gerenciamento de peso é baseada no controle de calorias. ",
+      "Para reduzir e manter o peso é preciso substituir até 2 refeições principais (café da manhã, almoço ou jantar) que têm em média 600 calorias, por 1 porção de Shake Herbalife, nutricionalmente balanceado e de calorias controladas, resultando em um consumo calórico reduzido",
+      "O shake F1 fornece por porção quando preparado com leite semi desnatado ou NutreV possui aproximadamente*: 210 calorias, 9 g de proteína de Alta Qualidade, 23 Vitaminas e minerais, 3 g de Fibra, 4.7 g de gorduras (somente 1,6 g do pó)."
+    ],
+    "type": "Shakes",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "shake-docedeleite.png",
+    "weight": 550
+  },
+  {
+    "id": "9",
+    "name": "Shake Frapê de Abacaxi 550g",
+    "description": [
+      "Nossa estratégia para o gerenciamento de peso é baseada no controle de calorias. ",
+      "Para reduzir e manter o peso é preciso substituir até 2 refeições principais (café da manhã, almoço ou jantar) que têm em média 600 calorias, por 1 porção de Shake Herbalife, nutricionalmente balanceado e de calorias controladas, resultando em um consumo calórico reduzido",
+      "O shake F1 fornece por porção quando preparado com leite semi desnatado ou NutreV possui aproximadamente*: 210 calorias, 9 g de proteína de Alta Qualidade, 23 Vitaminas e minerais, 3 g de Fibra, 4.7 g de gorduras (somente 1,6 g do pó)."
+    ],
+    "type": "Shakes",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "shake-abacaxi.png",
+    "weight": 550
+  },
+  {
+    "id": "10",
+    "name": "Shake Mousse de Maracuja 550g",
+    "description": [
+      "Nossa estratégia para o gerenciamento de peso é baseada no controle de calorias. ",
+      "Para reduzir e manter o peso é preciso substituir até 2 refeições principais (café da manhã, almoço ou jantar) que têm em média 600 calorias, por 1 porção de Shake Herbalife, nutricionalmente balanceado e de calorias controladas, resultando em um consumo calórico reduzido",
+      "O shake F1 fornece por porção quando preparado com leite semi desnatado ou NutreV possui aproximadamente*: 210 calorias, 9 g de proteína de Alta Qualidade, 23 Vitaminas e minerais, 3 g de Fibra, 4.7 g de gorduras (somente 1,6 g do pó)."
+    ],
+    "type": "Shakes",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "shake-maracuja.png",
+    "weight": 550
+  },
+  {
+    "id": "11",
+    "name": "Shake Paçoca 550g",
+    "description": [
+      "Nossa estratégia para o gerenciamento de peso é baseada no controle de calorias. ",
+      "Para reduzir e manter o peso é preciso substituir até 2 refeições principais (café da manhã, almoço ou jantar) que têm em média 600 calorias, por 1 porção de Shake Herbalife, nutricionalmente balanceado e de calorias controladas, resultando em um consumo calórico reduzido",
+      "O shake F1 fornece por porção quando preparado com leite semi desnatado ou NutreV possui aproximadamente*: 210 calorias, 9 g de proteína de Alta Qualidade, 23 Vitaminas e minerais, 3 g de Fibra, 4.7 g de gorduras (somente 1,6 g do pó)."
+    ],
+    "type": "Shakes",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "shake-pacoca.png",
+    "weight": 550
+  },
+  {
+    "id": "12",
+    "name": "Shake Sachê Baunilha Cremoso 182g",
+    "description": [
+      "Nossa estratégia para o gerenciamento de peso é baseada no controle de calorias. ",
+      "Para reduzir e manter o peso é preciso substituir até 2 refeições principais (café da manhã, almoço ou jantar) que têm em média 600 calorias, por 1 porção de Shake Herbalife, nutricionalmente balanceado e de calorias controladas, resultando em um consumo calórico reduzido",
+      "O shake F1 fornece por porção quando preparado com leite semi desnatado ou NutreV possui aproximadamente*: 210 calorias, 9 g de proteína de Alta Qualidade, 23 Vitaminas e minerais, 3 g de Fibra, 4.7 g de gorduras (somente 1,6 g do pó)."
+    ],
+    "type": "Shakes",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "shake-sache-baunilha.png",
+    "weight": 182
+  },
+  {
+    "id": "13",
+    "name": "Herbal Concentrate Canela 102g",
+    "description": [
+      "As Bebidas Herbal Concentrate* contribuem com a hidratação diária. Sua combinação de cafeína, chá verde e chá preto têm baixas calorias e pode ser consumida durante o gerenciamento de peso.",
+      "Ajuda você a se sentir energizado e eleva seu senso de vitalidade em duas xícaras, aumenta temporariamente o metabolismo à medida que a cafeína natural que contém também é conhecida por seu efeito termogênico.",
+      "Aumenta o estado de alerta, tem benefícios antioxidantes e ajuda a mantê-lo hidratado(a).",
+      "Deliciosa alternativa a refrigerantes ou sucos açucarados. Sem conservantes artificiais, adoçado com Stevia, um adoçante natural."
+    ],
+    "type": "Chás",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "herbal-concentrate-canela.png",
+    "weight": 102
+  },
+  {
+    "id": "14",
+    "name": "Herbal Concentrate Laranja e Especiarias 102g",
+    "description": [
+      "As Bebidas Herbal Concentrate* contribuem com a hidratação diária. Sua combinação de cafeína, chá verde e chá preto têm baixas calorias e pode ser consumida durante o gerenciamento de peso.",
+      "Ajuda você a se sentir energizado e eleva seu senso de vitalidade em duas xícaras, aumenta temporariamente o metabolismo à medida que a cafeína natural que contém também é conhecida por seu efeito termogênico.",
+      "Aumenta o estado de alerta, tem benefícios antioxidantes e ajuda a mantê-lo hidratado(a).",
+      "Deliciosa alternativa a refrigerantes ou sucos açucarados. Sem conservantes artificiais, adoçado com Stevia, um adoçante natural."
+    ],
+    "type": "Chás",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "herbal-concentrate-laranja.png",
+    "weight": 102
+  },
+  {
+    "id": "15",
+    "name": "Herbal Concentrate Original 102g",
+    "description": [
+      "As Bebidas Herbal Concentrate* contribuem com a hidratação diária. Sua combinação de cafeína, chá verde e chá preto têm baixas calorias e pode ser consumida durante o gerenciamento de peso.",
+      "Ajuda você a se sentir energizado e eleva seu senso de vitalidade em duas xícaras, aumenta temporariamente o metabolismo à medida que a cafeína natural que contém também é conhecida por seu efeito termogênico.",
+      "Aumenta o estado de alerta, tem benefícios antioxidantes e ajuda a mantê-lo hidratado(a).",
+      "Deliciosa alternativa a refrigerantes ou sucos açucarados. Sem conservantes artificiais, adoçado com Stevia, um adoçante natural."
+    ],
+    "type": "Chás",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "herbal-concentrate-original-102.png",
+    "weight": 102
+  },
+  {
+    "id": "16",
+    "name": "Herbal Concentrate Limão 51g",
+    "description": [
+      "As Bebidas Herbal Concentrate* contribuem com a hidratação diária. Sua combinação de cafeína, chá verde e chá preto têm baixas calorias e pode ser consumida durante o gerenciamento de peso.",
+      "Ajuda você a se sentir energizado e eleva seu senso de vitalidade em duas xícaras, aumenta temporariamente o metabolismo à medida que a cafeína natural que contém também é conhecida por seu efeito termogênico.",
+      "Aumenta o estado de alerta, tem benefícios antioxidantes e ajuda a mantê-lo hidratado(a).",
+      "Deliciosa alternativa a refrigerantes ou sucos açucarados. Sem conservantes artificiais, adoçado com Stevia, um adoçante natural."
+    ],
+    "type": "Chás",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "herbal-concentrate-limao.png",
+    "weight": 51
+  },
+  {
+    "id": "17",
+    "name": "Herbal Concentrate Original 51g",
+    "description": [
+      "As Bebidas Herbal Concentrate* contribuem com a hidratação diária. Sua combinação de cafeína, chá verde e chá preto têm baixas calorias e pode ser consumida durante o gerenciamento de peso.",
+      "Ajuda você a se sentir energizado e eleva seu senso de vitalidade em duas xícaras, aumenta temporariamente o metabolismo à medida que a cafeína natural que contém também é conhecida por seu efeito termogênico.",
+      "Aumenta o estado de alerta, tem benefícios antioxidantes e ajuda a mantê-lo hidratado(a).",
+      "Deliciosa alternativa a refrigerantes ou sucos açucarados. Sem conservantes artificiais, adoçado com Stevia, um adoçante natural."
+    ],
+    "type": "Chás",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "herbal-concentrate-original-51.png",
+    "weight": 51
+  },
+  {
+    "id": "18",
+    "name": "NRG Guaraná Tropical 100g",
+    "description": [
+      "O N-R-G* é destinado a pessoas que buscam disposição e hidratação, como as que têm um estilo de vida ativo e praticam exercício físico.",
+      "- Ajuda no estado de concentração e alerta;",
+      "- Versão prática de consumo do guaraná;",
+      "- Contém 32 mg de cafeína por porção;",
+      "- Aumenta a sensação de energia;",
+      "- Auxilia a Hidratação;",
+      "- Para ser saboreado quente ou frio;",
+      "- Deliciosa alternativa a refrigerantes ou sucos açucarados."
+    ],
+    "type": "Chás",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "nrg-guarana-tropical.png",
+    "weight": 100
+  },
+  {
+    "id": "19",
+    "name": "NRG Original 100g",
+    "description": [
+      "O N-R-G* é destinado a pessoas que buscam disposição e hidratação, como as que têm um estilo de vida ativo e praticam exercício físico.",
+      "- Ajuda no estado de concentração e alerta;",
+      "- Contém 32 mg de cafeína por porção;",
+      "- Aumenta a sensação de energia;",
+      "- Auxilia a Hidratação;",
+      "- Para ser saboreado quente ou frio;",
+      "- Deliciosa alternativa a refrigerantes ou sucos açucarados."
+    ],
+    "type": "Chás",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "nrg-original-100.png",
+    "weight": 100
+  },
+  {
+    "id": "20",
+    "name": "NRG Original 60g",
+    "description": [
+      "O N-R-G* é destinado a pessoas que buscam disposição e hidratação, como as que têm um estilo de vida ativo e praticam exercício físico.",
+      "- Ajuda no estado de concentração e alerta;",
+      "- Contém 32 mg de cafeína por porção;",
+      "- Aumenta a sensação de energia;",
+      "- Auxilia a Hidratação;",
+      "- Para ser saboreado quente ou frio;",
+      "- Deliciosa alternativa a refrigerantes ou sucos açucarados."
+    ],
+    "type": "Chás",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "nrg-original-60.png",
+    "weight": 60
+  },
+  {
+    "id": "21",
+    "name": "Fiber Concentrate Immune Sabor Limão e Mel 450ml",
+    "description": [
+      "O Fiber Concentrate Immune é um suplemento líquido concentrado no sabor limão e mel, ideal para o preparo de uma bebida que irá contribuir para a sua imunidade.",
+      "Contém fibras prebióticas* que suportam o crescimento de bactérias boas, o que contribui para manter o equilíbrio da microbiota. A microbiota equilibrada pode apoiar o funcionamento do sistema imunológico e na sensação de bem-estar.",
+      "Quentinho, frio ou gelado, ele cabe em qualquer ocasião, do café da manhã até a última refeição do dia.",
+      "Rico em vitamina C, Zinco, Selênio, antioxidantes que ajudam a proteger contra os danos causados pelos radicais livres.",
+      "Além disso, é saboroso, prático, inteligente e,  pode ser preparado apenas com água ou misturado com outros produtos, como chás, sucos e shots.",
+      "Perfeito para quem deseja melhorar a imunidade, além de te auxiliar a manter um estilo de vida saudável e ativo. Não deixe que o mau funcionamento do seu intestino estrague o seu dia."
+    ],
+    "type": "Fibras",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "fiber-concentrate-limao.png",
+    "weight": 450
+  },
+  {
+    "id": "22",
+    "name": "Fiber Concentrate Sabor Manga 450ml",
+    "description": [
+      "O Fiber Concentrate Immune é um suplemento líquido concentrado no sabor manga, ideal para o preparo de uma bebida que irá contribuir para a sua imunidade.",
+      "Contém fibras prebióticas* que suportam o crescimento de bactérias boas, o que contribui para manter o equilíbrio da microbiota. A microbiota equilibrada pode apoiar o funcionamento do sistema imunológico e na sensação de bem-estar.",
+      "Quentinho, frio ou gelado, ele cabe em qualquer ocasião, do café da manhã até a última refeição do dia.",
+      "Rico em vitamina C, Zinco, Selênio, antioxidantes que ajudam a proteger contra os danos causados pelos radicais livres.",
+      "Além disso, é saboroso, prático, inteligente e,  pode ser preparado apenas com água ou misturado com outros produtos, como chás, sucos e shots.",
+      "Perfeito para quem deseja melhorar a imunidade, além de te auxiliar a manter um estilo de vida saudável e ativo. Não deixe que o mau funcionamento do seu intestino estrague o seu dia."
+    ],
+    "type": "Fibras",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "fiber-concentrate-manga.png",
+    "weight": 450
+  },
+  {
+    "id": "23",
+    "name": "Fiber Concentrate Sabor Uva 450ml",
+    "description": [
+      "O Fiber Concentrate Immune é um suplemento líquido concentrado no sabor uva, ideal para o preparo de uma bebida que irá contribuir para a sua imunidade.",
+      "Contém fibras prebióticas* que suportam o crescimento de bactérias boas, o que contribui para manter o equilíbrio da microbiota. A microbiota equilibrada pode apoiar o funcionamento do sistema imunológico e na sensação de bem-estar.",
+      "Quentinho, frio ou gelado, ele cabe em qualquer ocasião, do café da manhã até a última refeição do dia.",
+      "Rico em vitamina C, Zinco, Selênio, antioxidantes que ajudam a proteger contra os danos causados pelos radicais livres.",
+      "Além disso, é saboroso, prático, inteligente e,  pode ser preparado apenas com água ou misturado com outros produtos, como chás, sucos e shots.",
+      "Perfeito para quem deseja melhorar a imunidade, além de te auxiliar a manter um estilo de vida saudável e ativo. Não deixe que o mau funcionamento do seu intestino estrague o seu dia."
+    ],
+    "type": "Fibras",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "fiber-concentrate-uva.png",
+    "weight": 450
+  },
+  {
+    "id": "24",
+    "name": "Fiber Powder 275g",
+    "description": [
+      "Fiber Powder* é uma fibra em pó de sabor neutro, prática e fácil de preparar, que fornece fibras para o seu dia a dia sem alterar os sabores e as texturas dos alimentos em que é adicionado.",
+      "- um produto de origem natural, em pó, fonte de fibra solúvel.",
+      "- Contribui para o consumo diário de fibras alimentares.",
+      "- Seu ingrediente principal é elaborado de fibra de milho solúvel.",
+      "- Cada porção fornece 4g de fibra solúvel.",
+      "- As fibras auxiliam o bom funcionamento do intestino.",
+      "- Ajuda a manter a saúde gastrintestinal.",
+      "- Apenas 5 kcal/porção."
+    ],
+    "type": "Fibras",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "fiber-powder.png",
+    "weight": 275
+  },
+  {
+    "id": "25",
+    "name": "Fiberbond 180 Tabletes",
+    "description": [
+      "O Fiberbond* é um complemento de fibras solúveis e insolúveis, composto por fibras da aveia e da beterraba. Por isso, é uma opção prática para complementar a ingestão diária de fibras.",
+      "- Contém fibras solúveis e insolúveis importantes para o bom funcionamento do intestino;",
+      "- Forma prática de complementar as necessidades de fibras do organismo;",
+      "- Praticamente não adiciona calorias à dieta (1,67 kcal/tablete);",
+      "- Possui alto teor de fibras."
+    ],
+    "type": "Fibras",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "fiberbond.png",
+    "weight": 180
+  },
+  {
+    "id": "26",
+    "name": "Barra de Proteina Sabor Chocolate Peanut 245g",
+    "description": [
+      "As Barras de Proteína Herbalife Nutrition* foram desenvolvidas para serem consumidas nos intervalos das refeições.",
+      "São compostas por aminoácidos essenciais em quantidades e proporções adequadas para atender às necessidades do organismo. Os aminoácidos essenciais podem auxiliar no ganho de massa muscular quando aliado à prática de atividade física.",
+      "Para consumo nos picos de fome ou quando desejar comer doces na hora do lanche, consumir como lanche saudável, até duas barras por dia com intervalos.",
+      "- Ajudam a reduzir os picos de fome entre as refeições;",
+      "- Contém cerca de 10g de proteínas de alto valor biológico;",
+      "- Cada barra possui aproximadamente 140 calorias;",
+      "- Alimento fácil de transportar que pode ser consumido em qualquer lugar;",
+      "- As Barras de Proteína Herbalife Nutrition fornecem 13%* das recomendações diárias de proteína em poucas calorias e reduzem os picos de fome e desejo de doce ao longo do dia;",
+      "- Caixa com 7 barras de 35g cada."
+    ],
+    "type": "Proteínas",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "barra-proteina-chocolate.png",
+    "weight": 245
+  },
+  {
+    "id": "27",
+    "name": "Barra de Proteina Sabor Citrus Lemon 245g",
+    "description": [
+      "As Barras de Proteína Herbalife Nutrition* foram desenvolvidas para serem consumidas nos intervalos das refeições.",
+      "São compostas por aminoácidos essenciais em quantidades e proporções adequadas para atender às necessidades do organismo. Os aminoácidos essenciais podem auxiliar no ganho de massa muscular quando aliado à prática de atividade física.",
+      "Para consumo nos picos de fome ou quando desejar comer doces na hora do lanche, consumir como lanche saudável, até duas barras por dia com intervalos.",
+      "- Ajudam a reduzir os picos de fome entre as refeições;",
+      "- Contém cerca de 10g de proteínas de alto valor biológico;",
+      "- Cada barra possui aproximadamente 140 calorias;",
+      "- Alimento fácil de transportar que pode ser consumido em qualquer lugar;",
+      "- As Barras de Proteína Herbalife Nutrition fornecem 13%* das recomendações diárias de proteína em poucas calorias e reduzem os picos de fome e desejo de doce ao longo do dia;",
+      "- Caixa com 7 barras de 35g cada."
+    ],
+    "type": "Proteínas",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "barra-proteina-citrus.png",
+    "weight": 245
+  },
+  {
+    "id": "28",
+    "name": "Barra de Proteina Sabor Vanilla Almond 245g",
+    "description": [
+      "As Barras de Proteína Herbalife Nutrition* foram desenvolvidas para serem consumidas nos intervalos das refeições.",
+      "São compostas por aminoácidos essenciais em quantidades e proporções adequadas para atender às necessidades do organismo. Os aminoácidos essenciais podem auxiliar no ganho de massa muscular quando aliado à prática de atividade física.",
+      "Para consumo nos picos de fome ou quando desejar comer doces na hora do lanche, consumir como lanche saudável, até duas barras por dia com intervalos.",
+      "- Ajudam a reduzir os picos de fome entre as refeições;",
+      "- Contém cerca de 10g de proteínas de alto valor biológico;",
+      "- Cada barra possui aproximadamente 140 calorias;",
+      "- Alimento fácil de transportar que pode ser consumido em qualquer lugar;",
+      "- As Barras de Proteína Herbalife Nutrition fornecem 13%* das recomendações diárias de proteína em poucas calorias e reduzem os picos de fome e desejo de doce ao longo do dia;",
+      "- Caixa com 7 barras de 35g cada."
+    ],
+    "type": "Proteínas",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "barra-proteina-vanilla.png",
+    "weight": 245
+  },
+  {
+    "id": "29",
+    "name": "Nutrev 672g",
+    "description": [
+      "NutreV* é uma bebida de origem vegetal, fortificada com Vitaminas e Minerais, ideal para quem busca saúde e bem-estar ao longo do dia.",
+      "Excelente e saudável alternativa ao leite e também uma ótima opção para aqueles que são intolerantes a lactose, com baixo teor de gordura e fornecendo 30% do cálcio que você precisa diariamente!",
+      "- Café da manhã: Para uma refeição mais nutritiva, você pode combinar o NutreV com café, achocolatados, cereais, frutas e com seu Shake Herbalife Nutrition.",
+      "- Café da tarde: Utilize o NutreV também para fazer diversas receitas, como pães, bolos salgados e doces.",
+      "- Ceia: Faça uma refeição leve. Combine o NutreV com achocolatados ou consuma quentinho antes de dormir. É uma delícia!"
+    ],
+    "type": "Proteínas",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "nutrev.png",
+    "weight": 672
+  },
+  {
+    "id": "30",
+    "name": "OnActive Drink",
+    "description": [
+      "OnActive Drink, uma nova bebida funcional e saborosa com o exclusivo SMART COMPLEX, que oferece 10 benefícios em um único produto. Uma combinação de dois ativos especiais, a Luteína FloraGLO® e a Zeaxantina natural OPTISHARP®, nutrientes que apoiam a saúde e a qualidade da sua visão, pois contribuem para aumentar a densidade ocular do pigmento macular, exercendo uma função de filtro da luz azul, protegendo os olhos.",
+      "Auxiliam na melhora da atenção, memória visual e apoia a flexibilidade cognitiva, que é a capacidade de adaptar os pensamentos diante de mudanças e novas informações. Além de um blend único com proteínas de alta qualidade, 23 vitaminas e minerais e antioxidantes, oferecendo energia, imunidade, vitalidade e disposição. Feitos especialmente para agregar nutrição inteligente e preservar a saúde do seu corpo.",
+      "Versátil e prático, é uma ótima opção de lanche e pode ser preparado com água, leite, NutreV ou combinado com outros alimentos. Inclua OnActive Drink na sua rotina em lanches pela manhã, tarde ou durante a ceia. Conte com mais um produto desenvolvido pela Herbalife para te ajudar a ter uma longevidade ativa e saudável! Sua atitude do hoje para um novo amanhã!"
+    ],
+    "type": "Proteínas",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "onactive-drink.png",
+    "weight": 264
+  },
+  {
+    "id": "31",
+    "name": "Protein Crunch Sabor Chocolate 150g",
+    "description": [
+      "Adicione o Protein Crunch onde quiser! No Shake Herbalife Nutrition, no iogurte, com NutreV, na salada de frutas... são muitas possibilidades para experimentar!",
+      "- Protein Crunch é um gostoso e crocante alimento sabor chocolate;",
+      "- Contém 7g de proteína vegetal a cada duas colheres de sopa (10g);",
+      "- Não contém açúcares e é baixo em gorduras totais;",
+      "- Perfeito para deixar todos os momentos mais deliciosos!"
+    ],
+    "type": "Proteínas",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "protein-chunch.png",
+    "weight": 150
+  },
+  {
+    "id": "32",
+    "name": "Protein Powder 240g",
+    "description": [
+      "O Protein Powder* é um pó de proteína prático e eficiente para ser consumido com bebidas e alimentos.",
+      "Desenvolvido para complementar o consumo diário de proteínas na alimentação, contém proteína isolada de soja (de absorção lenta -ideal para manter um nível proteico elevado ao longo do dia) e proteína concentrada do soro do leite (de rápida absorção).",
+      "Tem sabor neutro e é fácil de misturar ao Shake, bebidas, sopas, molhos e outros alimentos, sem adicionar as calorias das gorduras e dos carboidratos.",
+      "Não contém adoçantes ou açúcar adicionado | Apenas 22 calorias por porção | Livre de carboidratos e gorduras.",
+      "- Combinação de proteína isolada de soja e concentrada do soro do leite, fornecendo 5g de proteína de alto valor biológico, por porção;",
+      "- Quando adicionado ao alimento, reforça o teor de proteínas sem fornecer grandes quantidades de calorias e sem aporte de carboidratos e gorduras;",
+      "- Ajuda a desenvolver e manter massa muscular, quando associado à prática de atividade física;",
+      "- Produto versátil: adequado para receitas que vão para o forno, freezer ou micro-ondas;",
+      "- Excelente alternativa para pessoas lacto-vegetarianas;",
+      "- Sua combinação proteica ajuda a manter a saciedade."
+    ],
+    "type": "Proteínas",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "protein-powder-240.png",
+    "weight": 240
+  },
+  {
+    "id": "33",
+    "name": "Protein Powder 480g",
+    "description": [
+      "O Protein Powder* é um pó de proteína prático e eficiente para ser consumido com bebidas e alimentos.",
+      "Desenvolvido para complementar o consumo diário de proteínas na alimentação, contém proteína isolada de soja (de absorção lenta -ideal para manter um nível proteico elevado ao longo do dia) e proteína concentrada do soro do leite (de rápida absorção).",
+      "Tem sabor neutro e é fácil de misturar ao Shake, bebidas, sopas, molhos e outros alimentos, sem adicionar as calorias das gorduras e dos carboidratos.",
+      "Não contém adoçantes ou açúcar adicionado | Apenas 22 calorias por porção | Livre de carboidratos e gorduras.",
+      "- Combinação de proteína isolada de soja e concentrada do soro do leite, fornecendo 5g de proteína de alto valor biológico, por porção;",
+      "- Quando adicionado ao alimento, reforça o teor de proteínas sem fornecer grandes quantidades de calorias e sem aporte de carboidratos e gorduras;",
+      "- Ajuda a desenvolver e manter massa muscular, quando associado à prática de atividade física;",
+      "- Produto versátil: adequado para receitas que vão para o forno, freezer ou micro-ondas;",
+      "- Excelente alternativa para pessoas lacto-vegetarianas;",
+      "- Sua combinação proteica ajuda a manter a saciedade."
+    ],
+    "type": "Proteínas",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "protein-powder-480.png",
+    "weight": 480
   }
 ]

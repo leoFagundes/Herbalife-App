@@ -25,7 +25,7 @@ export default function Register() {
   const [token, setToken] = useState("");
   const [isLoading, setIsLoading] = useState(true);
 
-  const [createUserWithEmailAndPassword, loading, error] =
+  const [createUserWithEmailAndPassword, loading] =
     useCreateUserWithEmailAndPassword(auth);
 
   const [usernameError, setUsernameError] = useState("");
@@ -100,6 +100,7 @@ export default function Register() {
       setUsernameError("Erro ao criar conta. Verifique os dados.");
       setEmailError("Erro ao criar conta. Verifique os dados.");
       setPasswordError("Erro ao criar conta. Verifique os dados.");
+      console.error("Error: ", error);
     }
   };
 

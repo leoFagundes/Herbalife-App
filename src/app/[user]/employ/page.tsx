@@ -28,7 +28,7 @@ export default function Employ({ params }: EmployProps) {
   if (isLoading) return <LoaderWithFullScreen />;
 
   return (
-    <>
+    <div className="flex flex-col gap-32">
       <section className="flex flex-col gap-6">
         <h2 className="font-semibold text-primary text-3xl">
           Faça parte do time Herbalife
@@ -165,6 +165,6 @@ export default function Employ({ params }: EmployProps) {
           detalhes como você pode começar a construir seu próprio negócio
         </div>
       </section>
-    </>
+    </div>
   );
 }

@@ -12,7 +12,7 @@ interface AboutProps {
 
 export default function About({ params }: AboutProps) {
   return (
-    <>
+    <div className="flex flex-col gap-32">
       <section className="flex flex-col gap-6 ">
         <h2 className="font-semibold text-primary text-3xl">
           O que é a Herbalife?
@@ -317,6 +317,6 @@ export default function About({ params }: AboutProps) {
           </article>
         </div>
       </section>
-    </>
+    </div>
   );
 }
