@@ -49,6 +49,7 @@ export default function Login() {
     } catch (error) {
       setEmailError("Dados incorretos, tente novamente.");
       setPasswordError("Dados incorretos, tente novamente.");
+      console.error("Erro ao fazer login: ", error);
     }
   };
 
