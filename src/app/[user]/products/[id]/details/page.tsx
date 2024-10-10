@@ -42,7 +42,7 @@ export default function ProductDetails({ params }: ProductDetailsProps) {
         <FiArrowLeft /> voltar
       </span>
       <section className="flex gap-8 lg:flex-nowrap flex-wrap justify-center">
-        <div className="relative border border-primary rounded-md shadow-card min-w-[350px] p-6">
+        <div className="relative border border-primary rounded-md shadow-card min-w-[350px] p-6 h-fit">
           <Image
             className="max-w-[350px]"
             height={0}
