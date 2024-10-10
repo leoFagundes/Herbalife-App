@@ -530,5 +530,414 @@
     "isVisible": true,
     "image": "protein-powder-480.png",
     "weight": 480
+  },
+  {
+    "id": "34",
+    "name": "Herbalifeline 90 Cápsulas",
+    "description": [
+      "O Herbalifeline* é um alimento funcional composto por uma combinação de óleos de peixe de origem marinha (fonte de ômega 3) e vitamina E.",
+      "O ômega-3 é um ácido graxoessencial não produzido pelo corpo e deve ser obtido pela alimentação. Seu consumo adequado, aliado a uma alimentação balanceada, pode trazer benefícios como auxiliar na manutenção de níveis saudáveis de triglicerídeos.",
+      "Herbalifeline também contém vitamina E, que ajuda a proteger as células contra o estresse oxidativo.",
+      "Contém aromas naturais de tomilho, hortelã e cravo que ajudam a mascarar o sabor de peixe;"
+    ],
+    "type": "Tabletes",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "herbalifeline.png",
+    "weight": 73
+  },
+  {
+    "id": "35",
+    "name": "Multivitaminas e Minerais 90 Tabletes",
+    "description": [
+      "O Multivitaminas e Minerais* é um suplemento de vitaminas e minerais desenvolvido para fornecer 22 variedades de micronutrientes, complementando as necessidades diárias do corpo.",
+      "Ajuda a reduzir o cansaço e a fadiga (magnésio, ferro, ácido fólico e ácido pantotênico). Suporta o sistema imunológico (selênio, zinco, cobre, ferro, vitamina A,B12, B6, C e D). Suporta metabolismo energético (vitaminas B, C, cobre, iodo, ferro, magnésio, manganês).",
+      "Suplemento dietético baseado em vitaminas e minerais em tabletes recomendados para pessoas que, através de sua dieta, não conseguem cobrir a ingestão diária recomendada de vitaminas e minerais."
+    ],
+    "type": "Tabletes",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "multivitaminas.png",
+    "weight": 73
+  },
+  {
+    "id": "36",
+    "name": "Shape Control",
+    "description": [
+      "Um suplemento alimentar que combina dois ativos, a laranja moro que favorece a quebra de gordura e a redução de medidas e o cromo, que auxilia no metabolismo de proteínas, carboidratos e gorduras e contribui para a manutenção dos níveis de glicose e insulina no sangue. Níveis normais de insulina colaboram para o controle do apetite.",
+      "Morosil é um extrato botânico natural fonte de antocianinas e flavononas, fitonutrientes antioxidantes com efeitos comprovados por estudo, que pode ajudar a reduzir o estresse oxidativo, favorecer a quebra de gordura e evitar a formação de novas células de gorduras. Clinicamente testado para auxiliar na redução da circunferência da cintura, quadril e da gordura abdominal.",
+      "Emagreça de forma natural! Conheça o Shape Control e faça seu esforço e suor valerem muito mais!"
+    ],
+    "type": "Tabletes",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "shape-control.png",
+    "weight": 18.9
+  },
+  {
+    "id": "37",
+    "name": "Xtra-Cal 60 Tabletes",
+    "description": [
+      "O Xtra-Cal* é um suplemento alimentar para complementar as necessidades diárias de cálcio. Contém vitamina D e magnésio, conhecidos por ajudarem na absorção e fixação do cálcio no organismo.",
+      "- Xtra-Cal suporta a manutenção da densidade óssea e dentes saudáveis, pelo seu teor de cálcio, vitamina D e magnésio;",
+      "- Esta fórmula única de vitaminas e minerais contém vitamina D emagnésio para melhor absorção do cálcio;",
+      "- Um tablete de Xtra-Cal fornece 398mg de cálcio, mais de um copo de leite ou iogurte, em forma de tabletes fáceis de digerir."
+    ],
+    "type": "Tabletes",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "xtra-cal.png",
+    "weight": 18.9
+  },
+  {
+    "id": "38",
+    "name": "Nutri Soup Caldinho de Feijão com Bacon 432g",
+    "description": [
+      "A Nutri Soup Herbalife Caldinho de Feijão com Bacon* traz o sabor delicioso do prato amado pelos brasileiros na versão sopa funcional para substituir suas refeições de forma prática e saudável. Especialmente formulada com feijão preto, quando preparada, fornece 200 calorias, 18 g de proteínas, 3,6 g de fibras e 23 vitaminas e minerais. Além de calorias controladas por porção, contribui para uma dieta nutritiva e é ideal para ser incluída em um programa de gerenciamento de peso.*Não contém o ingrediente bacon, somente aromatizante.",
+      "A Nutri Soup* é uma opção salgada para substituir a refeição. Oferece as quantidades adequadas de proteínas, vitaminas e minerais, além de calorias controladas para substituir até 2 refeições diárias.",
+      "Possuem a quantidade ideal de carboidratos, proteínas e gorduras, sem agregar calorias desnecessárias, contêm os nutrientes necessários para  o bom funcionamento do organismo.",
+      "Fornecem 23 vitaminas e minerais, fornecem 18 g de proteínas por porção, 100% das proteínas são de alto valor biológico, contêm todos os aminoácidos essenciais em proporções ideais para suprir as necessidades de proteínas do organismo, Contêm mais de 1/3 das necessidades diárias de cálcio."
+    ],
+    "type": "Sopas",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "nutri-soup-feijao.png",
+    "weight": 432
+  },
+  {
+    "id": "39",
+    "name": "Nutri Soup Creme Verde 416g",
+    "description": [
+      "A Nutri Soup* é uma opção salgada para substituir a refeição. Oferece as quantidades adequadas de proteínas, vitaminas e minerais, além de calorias controladas para substituir até 2 refeições diárias.",
+      "Possuem a quantidade ideal de carboidratos, proteínas e gorduras, sem agregar calorias desnecessárias, contêm os nutrientes necessários para  o bom funcionamento do organismo.",
+      "Fornecem 23 vitaminas e minerais, fornecem 18 g de proteínas por porção, 100% das proteínas são de alto valor biológico, contêm todos os aminoácidos essenciais em proporções ideais para suprir as necessidades de proteínas do organismo, Contêm mais de 1/3 das necessidades diárias de cálcio."
+    ],
+    "type": "Sopas",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "nutri-soup-cremeverde.png",
+    "weight": 416
+  },
+  {
+    "id": "40",
+    "name": "Nutri Soup Frango com Legumes 416g",
+    "description": [
+      "A Nutri Soup* é uma opção salgada para substituir a refeição. Oferece as quantidades adequadas de proteínas, vitaminas e minerais, além de calorias controladas para substituir até 2 refeições diárias.",
+      "Possuem a quantidade ideal de carboidratos, proteínas e gorduras, sem agregar calorias desnecessárias, contêm os nutrientes necessários para  o bom funcionamento do organismo.",
+      "Fornecem 23 vitaminas e minerais, fornecem 18 g de proteínas por porção, 100% das proteínas são de alto valor biológico, contêm todos os aminoácidos essenciais em proporções ideais para suprir as necessidades de proteínas do organismo, Contêm mais de 1/3 das necessidades diárias de cálcio."
+    ],
+    "type": "Sopas",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "nutri-soup-frango.png",
+    "weight": 416
+  },
+  {
+    "id": "41",
+    "name": "Sopa Instantânea Frango com Legumes 196g",
+    "description": [
+      "As Sopas Instantâneas Herbalife Nutrition* são uma opção prática e nutritiva para os lanches intermediários ou entradas de refeições principais. Além de cremosas, saborosas e preparadas com uma variedade de ingredientes, são fontes de fibras e ricas em vitaminas e minerais.",
+      "Alguns ingredientes das Sopas Instantâneas Herbalife Nutrition são produzidos por meio da técnica de Liofilização, um processo de desidratação dos alimentos que ajuda a preservar o valor nutricional e saboresoriginais.",
+      "Tem em média 5,1 g de proteína por porção de proteínas de alto valor biológico, fonte de fibras que ajudam no bom funcionamento do intestino. Sem gordura trans e com baixo teor de gorduras saturadas, ajudam a reduzir os picos de fome entre as refeições.",
+      "Alimento com apenas 90 calorias por sachê, rica em vitaminas e minerais, reduzido teor de sódio.",
+      "Além disso, é possível adicionar temperos naturais, ervas e pimenta a gosto, para deixá-las ainda mais saborosas!"
+    ],
+    "type": "Sopas",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "sopa-instantanea-frango.png",
+    "weight": 196
+  },
+  {
+    "id": "42",
+    "name": "Cleanser Facial Cítrico 150ml",
+    "description": [
+      "Cleanser facial com esferas de jojoba e refrescante infusão de frutas cítricas.",
+      "Formulado exclusivamente com: Vitamina B3, vitaminas antioxidantes C e E, Aloe Vera, óleo de laranja, óleo de toranja e agentes produtos de limpeza derivados da maçã e esferas de jojoba",
+      "- Lavar o rosto 2 vezes ao dia, pela manhã e à noite;",
+      "- Limpa suavemente as impurezas e mantém o equilíbrio natural da pele;",
+      "- Remove maquiagem;",
+      "- Excelente para a hora de barbear."
+    ],
+    "type": "Produtos de beleza",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "cleanser-facial.png",
+    "weight": 150
+  },
+  {
+    "id": "43",
+    "name": "Gel Firmador para os Olhos 15ml",
+    "description": [
+      "Gel firmador para os olhos aumenta a elasticidade da pele e ajuda a melhorar a aparência de firmeza ao redor dos olhos.",
+      "Formulado exclusivamente com: Vitamina B3, vitaminas antioxidantes C e E, Aloe Vera e extrato de pepino.",
+      "Aplique na área dos olhos 2 vezes ao dia, pela manhã e à noite. Ajuda a melhorar a aparência de firmeza da pele ao redor dos olhos em até 42 dias* e o extrato de pepino promove uma sensação revitalizante."
+    ],
+    "type": "Produtos de beleza",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "gel-firmador.png",
+    "weight": 15
+  },
+  {
+    "id": "44",
+    "name": "Máscara Purificante de Argila 120ml",
+    "description": [
+      "Máscara purificante de argila com textura cremosa e refrescante para estimular os seus sentidos!",
+      "Formulado exclusivamente com: Vitamina B3, vitaminas antioxidantes C e E, Aloe Vera, argila bentonita, óleo da folha de alecrim e óleo da folha de hortelã.",
+      "Aplicar no rosto de 1 a 3 vezes por semana, conforme julgar necessário, pela manhã ou à noite."
+    ],
+    "type": "Produtos de beleza",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "mascara-purificante.png",
+    "weight": 120
+  },
+  {
+    "id": "45",
+    "name": "Sérum Facial Redutor de linhas 30ml",
+    "description": [
+      "Sérum Facial Redutor de linhas contém ingredientes conhecidos por hidratar e contribuir para uma aparência suave e macia da pele.",
+      "Formulado exclusivamente com: Vitamina B3, vitaminas antioxidantes C e E, Aloe Vera e extrato de sementes de castanha.",
+      "- Aloe Vera e Vitamina C, ingredientes conhecidos por melhorar a hidratação da pele e contribuir para a diminuição dos sinais;",
+      "- Extrato de semente de castanha contribui para uma aparência macia e suave da pele.",
+      "2 vezes ao dia, pela manhã e à noite."
+    ],
+    "type": "Produtos de beleza",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "serum-facial.png",
+    "weight": 30
+  },
+  {
+    "id": "46",
+    "name": "Skin Beauty Booster Frutas Vermelhas 240g Colágeno Verisol",
+    "description": [
+      "O Beauty Booster é a opção perfeita para quem busca uma pele saudável, bonita, jovem e radiante e além disso, atende aqueles que buscam um estilo de vida saudável, pois é fonte de proteínas, vitaminas e minerais.",
+      "Herbalife Beauty Booster foi formulado com colágeno Verisol*, testado para dar elasticidade a pele e agir na redução das rugas (dentro de 4 a 8 semanas*), ajuda também no fortalecimento das unhas e na diminuição da celulite (dentro de 8 a 12 semanas).",
+      "A associação do Colágeno Verisol com o whey protein (ambos fonte de proteínas) também ajuda a controlar a saciedade entre as principais refeições, ótima opção de lanche com 43 kcal. Todos esses benefícios no delicioso sabor de Frutas Vermelhas.",
+      "Vitaminas A e B3, biotina e zinco: contribuem para a manutenção da pele | Vitamina E, cobre, selênio: auxiliam na proteção dos danos causados pelos radicais livres | COM 8,4 G DE PROTEÍNA POR PORÇÃO (COLÁGENO + WHEY)"
+    ],
+    "type": "Produtos de beleza",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "skin-beauty.png",
+    "weight": 240
+  },
+  {
+    "id": "47",
+    "name": "Desodorante Roll-on Soft Green 50ml",
+    "description": [
+      "Proteção clinicamente comprovada durante 24 horas contra os odores da transpiração, sua fórmula hidratante oferece suavidade e maciez às axilas.",
+      "Fragrância suave e refrescante, dermatologicamente testado e aprovado para reduzir o risco de incompatibilidade.",
+      "A embalagem é prática e permite o uso do produto até o final. Portátil, é ideal para levar na bolsa, mochila ou nécessaire.",
+      "Espere secar antes de se vestir | Todos os tipos de pele |Uso diário (ou sempre que necessário)."
+    ],
+    "type": "Produtos de beleza",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "desodorante.png",
+    "weight": 50
+  },
+  {
+    "id": "48",
+    "name": "Herbal Aloe Condicionador 250ml",
+    "description": [
+      "Condicionador para uso diário com micronutrientes que transformam o cabelo fortalecendo-o e deixando-o mais macio e sedoso após a primeira aplicação.",
+      "Aloe vera fornece umidade e condiciona o cabelo. Contém proteínas de trigo hidrolisadas que ajudam a proteger, reparar, fortalecer e nutrir os cabelos.",
+      "Esta fórmula ajuda a preservar a cor do cabelo, ajuda a desembaraçar e pentear cabelo quando molhado.",
+      "Proporciona hidratação e movimento aos cabelos, reforça o brilho natural, para todos os tipos de cabelo. Uso diário (durante o banho).",
+      "Com ingredientes botânicos | Deixa o cabelo 10 vezes mais forte após o uso único e reduz o cabelo quebradiço em 90%.* | Sem adição de sulfatos"
+    ],
+    "type": "Produtos de beleza",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "herbal-aloe-condicionador.png",
+    "weight": 250
+  },
+  {
+    "id": "49",
+    "name": "Herbal Aloe Shampoo 250ml",
+    "description": [
+      "Shampoo para uso diário, com proteínas de trigo hidrolisadas que penetram no cabelo e o fortificam e limpadores macios que geram espuma abundante.",
+      "Aloe vera adiciona umidade ao cabelo, deixa o cabelo 10 vezes mais forte após a primeira aplicação e reduz o cabelo quebradiço em 90%.*",
+      "Repara o cabelo deixando-o mais macio, mais solto e sedoso após a primeira aplicação.*Esta fórmula ajuda a preservar a cor do cabelo.",
+      "Com ingredientes botânicos | Sem adição de parabenos | Sem adição de sulfatos"
+    ],
+    "type": "Produtos de beleza",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "herbal-aloe-shampoo.png",
+    "weight": 250
+  },
+  {
+    "id": "50",
+    "name": "Hidratante Corporal Soft Green Chá verde 200g",
+    "description": [
+      "Fórmula sofisticada e hidratante elaborada com chá verde, que juntos formam uma película protetora e ajudam a manter a hidratação da pele.",
+      "Dermatologicamente testado e aprovado, possui pH fisiológico para reduzir o risco de incompatibilidades, pele levemente perfumada.",
+      "Hidrata formando uma barreira protetora na pele | Toque macio e aveludado | Perfuma suavemente a pele.",
+      "Todos os tipos de pele | Uso diário (ou sempre que necessário)."
+    ],
+    "type": "Produtos de beleza",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "hidarante-corporal.png",
+    "weight": 200
+  },
+  {
+    "id": "51",
+    "name": "Sabonete em Barra Soft Green Chá verde 90g",
+    "description": [
+      "Fórmula elaborada com chá verde, com textura leve e não oleosa, limpa suavemente sem ressecar a pele.",
+      "Produz uma espuma cremosa que proporciona frescor e suavidade a pele, produzido sem gordura animal.",
+      "Dermatologicamente testado, pele levemente perfumada, design prático e bonito.",
+      "Massageie o produto sobre o corpo após o banho ou sempre que necessário."
+    ],
+    "type": "Produtos de beleza",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "sabonete-soft-green-chaverde.png",
+    "weight": 90
+  },
+  {
+    "id": "52",
+    "name": "Sabonete em Barra Soft Green Frutas Amarelas 90g",
+    "description": [
+      "O Sabonete em Barra Soft Green Frutas Amarelas limpa a pele, a deixa macia e delicadamente perfumada.",
+      "Sua espuma cremosa proporciona hidratação e suavidade à pele, limpa suavemente sem ressecar.",
+      "Produzido sem gordura animal, dermatologicamente testado. ",
+      "Massageie o produto sobre o corpo após o banho ou sempre que necessário."
+    ],
+    "type": "Produtos de beleza",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "sabonete-soft-green-frutas.png",
+    "weight": 90
+  },
+  {
+    "id": "53",
+    "name": "Sabonete Líquido para as mãos Soft Green Chá verde 250ml",
+    "description": [
+      "Fórmula elaborada com chá verde que limpa suavemente a pele sem remover sua proteção natural.",
+      "Dermatologicamente testado e aprovado, possui pH fisiológico para reduzir o risco de incompatibilidades.",
+      "Limpa, perfuma e deixa a pele com toque macio.",
+      "Limpa e protege as mãos | Toque macio | Todos os tipos de pele | Uso diário (ou sempre que necessário)."
+    ],
+    "type": "Produtos de beleza",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "sabonete-liquido-green-chaverde.png",
+    "weight": 250
+  },
+  {
+    "id": "54",
+    "name": "BCAA 5:1:1 120 Tabletes",
+    "description": [
+      "Reduz o dano muscular após o exercício",
+      "Contém Vitamina B6 que auxilia no metabolismo energético, de proteínas e do glicogênio.",
+      "6g de BCAA na proporção 5:1:1, com: 5 partes de Leucina, 1 de Isoleucina e 1 de Valina."
+    ],
+    "type": "Nutrição Esportiva",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "bcaa-tabletes.png",
+    "weight": 204
+  },
+  {
+    "id": "55",
+    "name": "CR7 Drive 810g",
+    "description": [
+      "CR7 é o equilíbrio perfeito entre eletrólitos, carboidratos, vitaminas e minerais. Combinação ideal para hidratar, fornecer energia e contribuir para a performance da atividade física intensa.",
+      "Sabor leve e refrescante, inspirado em frutas silvestres | Eletrólitos (Sódio e Potássio). Vitaminas e minerais (B1, B12 e Magnésio), supre perdas de nutrientes que participam do metabolismo energético e do processo de contração muscular.",
+      "Hidrata e repõe sais, perdidos pela transpiração, que regulam processos no organismo durante a atividade física, como: pressão arterial, volume sanguíneo para um adequado transporte de oxigênio e moléculas diversas, temperatura corporal, reconstrução de tecidos e contração muscular."
+    ],
+    "type": "Nutrição Esportiva",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "CR7-drive.png",
+    "weight": 810
+  },
+  {
+    "id": "56",
+    "name": "Creatina Premium Sabor Neutro 150g",
+    "description": [
+      "Um dos produtos mais estudados pela ciência esportiva, a Creatina Premium da Herbalife auxilia no processo de ganho muscular e melhora a performance do seu treino. Fornece energia, favorecendo um melhor desempenho físico, gerando mais força, resistência ao músculo e melhor recuperação muscular.",
+      "A suplementação de creatina contribui para o desenvolvimento da massa muscular, o que apoia a qualidade de vida, pois a manutenção e desenvolvimento da massa muscular está associada a uma melhor qualidade de vida e autonomia, além disso, ela auxilia no aumento do desempenho físico durante os exercícios repetidos de curta duração e alta intensidade.",
+      "A creatina vem ganhando espaço também para alguns objetivos de qualidade de vida e até suplementação em idosos.",
+      "Creatina Premium Herbalife24",
+      "- 100% Pura",
+      "- Monohidratada",
+      "- Vegano",
+      "- 0 kcal",
+      "- Livre de substâncias proibidas no esporte",
+      "- Sem aditivos, sódio ou glúten."
+    ],
+    "type": "Nutrição Esportiva",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "creatina.png",
+    "weight": 150
+  },
+  {
+    "id": "57",
+    "name": "Glutamina 150g",
+    "description": [
+      "5g de pura L-glutamina por porção.",
+      "Reforço na reparação muscular após o exercício.",
+      "Apoia um sistema imunológico saudável após períodos de exercícios mais intensos."
+    ],
+    "type": "Nutrição Esportiva",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "glutamina.png",
+    "weight": 150
+  },
+  {
+    "id": "58",
+    "name": "Liftoff Amora Intenso 15 Sachês",
+    "description": [
+      "Conheça este suplemento alimentar com um blend exclusivo de cafeína + taurina que estimula o sistema nervoso central, te ajudando a se sentir com energia e promovendo foco e concentração.",
+      "Além de  ser baixo em calorias e sem açúcares, o Liftoff contém vitaminas do Complexo B e C que auxiliam no metabolismo energético + Biotina que contribui para a manutenção do cabelo e da pele.",
+      "A sua bebida ideal para os momentos onde você sentir que precisa elevar o seu estímulo, desde o pré-treino, até os estudos, trabalho, e também pra quando precisar de mais disposição para as noites!",
+      "Pensando na praticidade para o dia a dia, o Liftoff conta com 15 sachês individuais, perfeito para carregar com você e simples de fazer! Aposte também na combinação do sabor delicioso, refrescante e levemente efervescente com outros produtos da Herbalife Nutrition. Para você alcançar seu objetivos e potencializar sua sensação de energia a qualquer momento!",
+      "Ideal para ajudar você a se sentir com energia antes do treino ou para quando se precisa de uma concentração extra. Tenha sempre um com você!",
+      "Contém 84mg de cafeína por porção, que auxilia no aumento do estado de alerta e na melhora da concentração."
+    ],
+    "type": "Nutrição Esportiva",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "liftoff.png",
+    "weight": 75
+  },
+  {
+    "id": "59",
+    "name": "Tri-Core Protein Blend Chocolate 1010g",
+    "description": [
+      "O Tri-Core Protein Blend* é um suplemento proteico para atletas.",
+      "Ideal para ser usado após a prática esportiva intensa, principalmente quando forem atividades de força.",
+      "Reconstrução e crescimento muscular.",
+      "As proteínas auxiliam na recuperação e/ou força muscular após treinos com esforço muscular intenso. Fornece um blend de proteínas do soro do leite isolada e concentrada, que possuem diferentes velocidades de absorção, associadas com carboidratos simples que são absorvidos rapidamente, permitindo que o músculo  seja “abastecido” com esses nutrientes."
+    ],
+    "type": "Nutrição Esportiva",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "tri-core-protein.png",
+    "weight": 1010
+  },
+  {
+    "id": "60",
+    "name": "Whey Protein 3W Chocolate 510g",
+    "description": [
+      "Contém Whey: Isolado, Concentrado e Hidrolisado. 25g de proteínas por porção.",
+      "- Disponibilização gradual de proteínas;",
+      "- Auxilia na formação dos músculos e ossos;",
+      "- Contribui para a recuperação muscular pós-exercício."
+    ],
+    "type": "Nutrição Esportiva",
+    "isFavorite": false,
+    "isVisible": true,
+    "image": "whey-protein-chocolate.png",
+    "weight": 510
   }
 ]
