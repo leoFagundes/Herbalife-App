@@ -76,13 +76,12 @@ export default function Configs() {
 
     setLoading(true);
     try {
-      if (userData?.image) {
-        const oldImageRef = ref(storage, userData.image);
-        await deleteObject(oldImageRef);
-        console.log("Imagem antiga deletada com sucesso!");
-      }
-
       if (image) {
+        if (userData?.image) {
+          const oldImageRef = ref(storage, userData.image);
+          await deleteObject(oldImageRef);
+          console.log("Imagem antiga deletada com sucesso!");
+        }
         const storageRef = ref(storage, `images/${image.name}`);
         const uploadTask = uploadBytesResumable(storageRef, image);
 
@@ -200,7 +199,7 @@ export default function Configs() {
                   })
                 }
                 label="Whatsapp"
-                placeholder="Número de Whatsapp"
+                placeholder="ex: 5561998253228"
               />
               <Input
                 icon={<FaInstagram />}

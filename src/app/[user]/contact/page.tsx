@@ -17,6 +17,21 @@ export default function Contact({ params }: ContactProps) {
 
   if (isLoading) return <LoaderWithFullScreen />;
 
+  // Função para redirecionar para WhatsApp
+  const handleWhatsappClick = () => {
+    window.open(`https://wa.me/${currentUser?.whatsapp}`, "_blank");
+  };
+
+  // Função para redirecionar para Instagram
+  const handleInstagramClick = () => {
+    window.open(`https://instagram.com/${currentUser?.instagram}`, "_blank");
+  };
+
+  // Função para redirecionar para o email
+  const handleEmailClick = () => {
+    window.open(`mailto:${currentUser?.email}`, "_blank");
+  };
+
   return (
     <div className="flex justify-center gap-x-16 gap-y-8 flex-wrap-reverse">
       {currentUser?.image && (
@@ -40,19 +55,28 @@ export default function Contact({ params }: ContactProps) {
             </span>
           </li>
           {currentUser?.whatsapp && (
-            <li className="flex items-center gap-2 hover:cursor-pointer hover:underline text-sm">
+            <li
+              className="flex items-center gap-2 hover:cursor-pointer hover:underline text-sm"
+              onClick={handleWhatsappClick}
+            >
               <FaWhatsapp className="text-primary w-5 h-5" />{" "}
               {currentUser?.whatsapp}
             </li>
           )}
 
           {currentUser?.instagram && (
-            <li className="flex items-center gap-2 hover:cursor-pointer hover:underline text-sm">
+            <li
+              className="flex items-center gap-2 hover:cursor-pointer hover:underline text-sm"
+              onClick={handleInstagramClick}
+            >
               <FaInstagram className="text-primary w-5 h-5" />{" "}
               {currentUser?.instagram}
             </li>
           )}
-          <li className="flex items-center gap-2 hover:cursor-pointer hover:underline text-sm">
+          <li
+            className="flex items-center gap-2 hover:cursor-pointer hover:underline text-sm"
+            onClick={handleEmailClick}
+          >
             <IoMailOutline className="text-primary w-5 h-5" />{" "}
             {currentUser?.email}
           </li>
