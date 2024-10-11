@@ -17,17 +17,14 @@ export default function Contact({ params }: ContactProps) {
 
   if (isLoading) return <LoaderWithFullScreen />;
 
-  // Função para redirecionar para WhatsApp
   const handleWhatsappClick = () => {
     window.open(`https://wa.me/${currentUser?.whatsapp}`, "_blank");
   };
 
-  // Função para redirecionar para Instagram
   const handleInstagramClick = () => {
     window.open(`https://instagram.com/${currentUser?.instagram}`, "_blank");
   };
 
-  // Função para redirecionar para o email
   const handleEmailClick = () => {
     window.open(`mailto:${currentUser?.email}`, "_blank");
   };
@@ -36,14 +33,14 @@ export default function Contact({ params }: ContactProps) {
     <div className="flex justify-center gap-x-16 gap-y-8 flex-wrap-reverse">
       {currentUser?.image && (
         <Image
-          className="w-[350px] h-[450px] shadow-card rounded-lg"
+          className="w-[350px] min-w-[350px] h-[450px] shadow-card rounded-lg"
           width={350}
           height={450}
           src={currentUser?.image}
           alt="profile"
         />
       )}
-      <article className="flex flex-col gap-6 flex-1 min-w-[350px]">
+      <article className="flex flex-col gap-6 flex-1 min-w-[350px] px-4">
         <h2 className="font-semibold text-primary text-3xl">
           Entre em Contato
         </h2>

@@ -25,10 +25,14 @@ export default function Employ({ params }: EmployProps) {
     return "";
   }
 
+  const handleWhatsappClick = () => {
+    window.open(`https://wa.me/${currentUser?.whatsapp}`, "_blank");
+  };
+
   if (isLoading) return <LoaderWithFullScreen />;
 
   return (
-    <div className="flex flex-col gap-32">
+    <div className="flex flex-col gap-12 sm:gap-28">
       <section className="flex flex-col gap-6">
         <h2 className="font-semibold text-primary text-3xl">
           Faça parte do time Herbalife
@@ -158,7 +162,7 @@ export default function Employ({ params }: EmployProps) {
           ></iframe>
         </div>
         <div
-          onClick={() => ""}
+          onClick={handleWhatsappClick}
           className="flex justify-center py-2 px-4 bg-primary text-white rounded-md shadow-card md:shadow-none hover:shadow-card hover:cursor-pointer"
         >
           CLIQUE AQUI! Entre em contato para que eu possa te explicar em
