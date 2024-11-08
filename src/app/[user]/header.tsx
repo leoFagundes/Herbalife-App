@@ -9,7 +9,6 @@ import {
   FiBriefcase,
   FiGrid,
   FiTrendingUp,
-  FiUser,
   FiMinimize2,
   FiMaximize2,
   FiUsers,

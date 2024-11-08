@@ -15,7 +15,7 @@ interface AboutProps {
 }
 
 export default function About({ params }: AboutProps) {
-  const { currentUser, isLoading } = UseUser(decodeURIComponent(params.user));
+  const { currentUser } = UseUser(decodeURIComponent(params.user));
 
   const handleWhatsappClick = () => {
     const isMobile = window.innerWidth < 640;

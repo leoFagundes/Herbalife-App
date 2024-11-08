@@ -16,7 +16,7 @@ interface TestimonialsProps {
 }
 
 export default function Testimonials({ params }: TestimonialsProps) {
-  const { currentUser, isLoading } = UseUser(decodeURIComponent(params.user));
+  const { isLoading } = UseUser(decodeURIComponent(params.user));
 
   if (isLoading) return <LoaderWithFullScreen />;
 
