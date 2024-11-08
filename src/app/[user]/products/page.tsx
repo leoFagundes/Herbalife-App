@@ -78,7 +78,8 @@ export default function Products({ params }: ProductsProps) {
       <p>
         Os produtos exibidos abaixo são apenas uma{" "}
         <span className="text-primary">
-          referência visual do estoque disponível
+          referência visual do estoque disponível de um distribuidor
+          independente
         </span>{" "}
         e não estão disponíveis para compra online. Para realizar a aquisição de
         qualquer produto, entre em{" "}

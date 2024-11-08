@@ -53,6 +53,10 @@ const config: Config = {
             transform: "translateY(15px) scale(1)",
           },
         },
+        shadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
       },
       animation: {
         fadein: "fade-in .5s ease-in-out forwards",
@@ -62,6 +66,7 @@ const config: Config = {
         leaf4: "leaf-move-hard 4s ease-in-out 0s infinite forwards",
         leaf5: "leaf-move-hard 8s ease-in-out 0s infinite forwards",
         leaf6: "leaf-move-hard 5s ease-in-out 0s infinite forwards",
+        fadeIn: "shadeIn 0.3s ease-in-out forwards",
       },
     },
   },

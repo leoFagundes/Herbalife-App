@@ -22,7 +22,7 @@ import {
   FaRegEnvelope,
   FaWhatsapp,
 } from "react-icons/fa6";
-import { FiUser, FiVideo } from "react-icons/fi";
+import { FiCheck, FiCopy, FiUser, FiVideo } from "react-icons/fi";
 
 export default function Configs() {
   const [userData, setUserData] = useState<UserProps | null>(null);
@@ -30,6 +30,7 @@ export default function Configs() {
   const [loading, setLoading] = useState(true);
   const [username, setUsername] = useState("");
   const [progress, setProgress] = useState(0);
+  const [copied, setCopied] = useState(false);
   const router = useRouter();
 
   const [image, setImage] = useState<null | File>(null);
@@ -145,6 +146,16 @@ export default function Configs() {
     }
   };
 
+  const handleCopy = () => {
+    navigator.clipboard
+      .writeText(`https://hbl-nutrition.vercel.app/${username}`)
+      .then(() => {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 1000);
+      })
+      .catch((err) => console.error("Erro ao copiar: ", err));
+  };
+
   if (loading) return <LoaderWithFullScreen />;
 
   if (!userData) return <></>;
@@ -153,6 +164,19 @@ export default function Configs() {
     <div className="flex flex-col  items-center w-full p-12 gap-8">
       <h1 className="text-primary font-semibold text-3xl">Configurações</h1>
       <div className="border border-primary rounded-lg w-full p-8 max-w-[1000px]">
+        <div className="flex flex-col items-center justify-center mb-4">
+          <p className="text-primary font-medium text-center">
+            Seu link de divulgação:
+          </p>
+          <p
+            className="flex items-center gap-2 italic underline text-center cursor-pointer"
+            onClick={handleCopy}
+          >
+            <span>{`https://hbl-nutrition.vercel.app/${username}`}</span>{" "}
+            {copied ? <FiCheck /> : <FiCopy />}
+          </p>
+        </div>
+        <div className="h-[1px] bg-primary w-full mb-4" />
         <form
           className="flex flex-col items-center gap-5"
           onSubmit={handleSubmit}

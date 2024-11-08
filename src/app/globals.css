@@ -95,6 +95,22 @@ body {
     text-fill-sahdeOut 1.5s ease 3.6s forwards;
 }
 
+.rotate-360 {
+  animation: rotate 1s linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(-100deg);
+  }
+  100% {
+    transform: rotate(720deg);
+  }
+}
+
 @keyframes text-animation {
   0% {
     stroke-dasharray: 1 1000;

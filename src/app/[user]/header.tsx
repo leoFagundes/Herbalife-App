@@ -12,10 +12,12 @@ import {
   FiUser,
   FiMinimize2,
   FiMaximize2,
+  FiUsers,
 } from "react-icons/fi";
 import React from "react";
 import UseUser from "@/hooks/useUser";
 import { LoaderWithFullScreen } from "@/components/loader";
+import { MdOutlineContactMail } from "react-icons/md";
 
 interface HeaderProps {
   params: {
@@ -25,7 +27,7 @@ interface HeaderProps {
 
 export default function Header({ params }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isMenuMaximize, setISMenuMaximize] = useState(false);
+  const [isMenuMaximize, setISMenuMaximize] = useState(true);
 
   const { usernames, isLoading } = UseUser();
 
@@ -50,7 +52,12 @@ export default function Header({ params }: HeaderProps) {
   const menuItems = [
     { name: "Sobre", path: "about", icon: <FiTrendingUp size={24} /> },
     { name: "Produtos", path: "products", icon: <FiGrid size={24} /> },
-    { name: "Contato", path: "contact", icon: <FiUser size={24} /> },
+    { name: "Testemunhos", path: "testimonials", icon: <FiUsers size={24} /> },
+    {
+      name: "Contato",
+      path: "contact",
+      icon: <MdOutlineContactMail size={24} />,
+    },
     {
       name: "Quero ser Herbalife",
       path: "employ",
@@ -76,7 +83,10 @@ export default function Header({ params }: HeaderProps) {
             <ul className="hidden items-center gap-8 text-primary font-medium lg:flex">
               {menuItems.map((item) => (
                 <li
-                  onClick={() => router.push(`/${currentUser}/${item.path}`)}
+                  onClick={() => {
+                    router.push(`/${currentUser}/${item.path}`);
+                    setIsMenuOpen(false);
+                  }}
                   key={item.path}
                   className={`${
                     currentPage === item.path ? "active-item" : ""
@@ -109,9 +119,10 @@ export default function Header({ params }: HeaderProps) {
                 <div className="flex-col border border-white-secondary py-3 flex gap-4 shadow-card rounded-md">
                   {menuItems.map((item, index) => (
                     <div
-                      onClick={() =>
-                        router.push(`/${currentUser}/${item.path}`)
-                      }
+                      onClick={() => {
+                        router.push(`/${currentUser}/${item.path}`);
+                        setIsMenuOpen(false);
+                      }}
                       key={index}
                       className={`${
                         currentPage === item.path ? "active-item" : ""
@@ -156,7 +167,7 @@ export default function Header({ params }: HeaderProps) {
           </>
         </nav>
       </header>
-      <div className="h-20" />
+      <div className="h-12" />
     </>
   );
 }

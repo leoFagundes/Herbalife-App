@@ -21,6 +21,20 @@ export default function ProductDetails({ params }: ProductDetailsProps) {
   const { currentUser, isLoading } = UseUser(decodeURIComponent(params.user));
   const router = useRouter();
 
+  const handleWhatsappClick = () => {
+    const isMobile = window.innerWidth < 640;
+
+    if (isMobile) {
+      window.open(`https://wa.me/${currentUser?.whatsapp}`, "_blank");
+    } else {
+      // Se for um computador, abre o Instagram
+      window.open(
+        `https://www.instagram.com/${currentUser?.instagram}`,
+        "_blank"
+      );
+    }
+  };
+
   useEffect(() => {
     const currentProduct = currentUser?.products.filter(
       (product) => product.id === params.id
@@ -37,12 +51,12 @@ export default function ProductDetails({ params }: ProductDetailsProps) {
     <div className="flex flex-col gap-6">
       <span
         onClick={() => router.back()}
-        className="flex items-center gap-2 text-primary hover:cursor-pointer hover:underline font-medium"
+        className="flex items-center gap-2 text-primary hover:cursor-pointer hover:underline font-medium w-fit"
       >
         <FiArrowLeft /> Voltar
       </span>
       <section className="flex gap-8 lg:flex-nowrap flex-wrap justify-center">
-        <div className="relative border border-primary rounded-md shadow-card min-w-[350px] p-6 h-fit">
+        <div className="relative border border-primary rounded-md shadow-card min-w-[300px] sm:min-w-[350px] p-6 h-fit">
           <svg
             className="overflow-visible max-w-[350px] w-[100px] h-[100px] absolute top-[80%] left-[80%] scale-90 z-0"
             width="448"
@@ -79,7 +93,7 @@ export default function ProductDetails({ params }: ProductDetailsProps) {
             </g>
           </svg>
           <Image
-            className="max-w-[350px] relative z-10 opacity-95"
+            className="max-w-[350px] relative z-10 opacity-95 sm:w-[400px]"
             height={0}
             width={400}
             src={`/assets/image/products/${product?.image}`}
@@ -101,6 +115,15 @@ export default function ProductDetails({ params }: ProductDetailsProps) {
               <p key={index}>{text}</p>
             ))}
           </div>
+          <p
+            onClick={handleWhatsappClick}
+            className="text-primary font-semibold hover:underline cursor-pointer"
+          >
+            Eu quero!{" "}
+            <span className="text-sm italic font-medium">
+              (Conversar com {currentUser?.username})
+            </span>
+          </p>
         </article>
       </section>
     </div>

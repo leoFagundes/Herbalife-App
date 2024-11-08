@@ -54,7 +54,7 @@ export default function Sidebar() {
         onClick={() => router.push(`/${username}`)}
         className={`${
           isMenuOpen ? "flex" : "hidden sm:flex"
-        } fixed z-40 left-16 sm:left-10 bottom-14 animate-fadein text-center flex items-center text-primary font-medium hover:cursor-pointer`}
+        } fixed z-40 left-16 sm:left-10 bottom-14 animate-fadein text-center flex items-center text-primary font-medium hover:cursor-pointer py-2 px-4 bg-white shadow-card rounded-lg`}
       >
         {username}
       </span>

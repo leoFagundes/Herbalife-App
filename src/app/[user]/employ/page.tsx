@@ -7,6 +7,7 @@ import lifesGood from "@/assets/image/Viva sua melhor vida.png";
 import React from "react";
 import UseUser from "@/hooks/useUser";
 import { LoaderWithFullScreen } from "@/components/loader";
+import { FiArrowRight } from "react-icons/fi";
 
 interface EmployProps {
   params: {
@@ -25,33 +26,60 @@ export default function Employ({ params }: EmployProps) {
     return "";
   }
 
+  const handleWhatsappClick = () => {
+    const isMobile = window.innerWidth < 640;
+
+    if (isMobile) {
+      window.open(`https://wa.me/${currentUser?.whatsapp}`, "_blank");
+    } else {
+      // Se for um computador, abre o Instagram
+      window.open(
+        `https://www.instagram.com/${currentUser?.instagram}`,
+        "_blank"
+      );
+    }
+  };
+
   if (isLoading) return <LoaderWithFullScreen />;
 
   return (
-    <div className="flex flex-col gap-32">
+    <div className="flex flex-col gap-12">
       <section className="flex flex-col gap-6">
         <h2 className="font-semibold text-primary text-3xl">
           Faça parte do time Herbalife
         </h2>
-        <div className="flex items-center justify-center lg:justify-start gap-4 lg:gap-20 lg:flex-nowrap flex-wrap">
+        <div className="flex items-center justify-center lg:justify-start gap-4 lg:gap-8 lg:flex-nowrap flex-wrap">
           <article className="flex flex-col gap-3 w-full self-start max-w-[700px]">
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae
-              itaque soluta tempora. Harum expedita laudantium consequatur
-              cumque placeat porro explicabo, commodi reiciendis deleniti ipsum
-              eligendi corporis numquam vel quas totam.
+              Você está tendo um{" "}
+              <span className="text-primary">
+                oportunidade única em suas mãos
+              </span>{" "}
+              e recomendo fortemente que leia o conteúdo dessa página e ao final
+              <span className="text-primary">
+                tome uma decisão que pode mudar totalmente a sua vida e a vida
+                da sua família
+              </span>
+              !
             </p>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae
-              itaque soluta tempora. Harum expedita laudantium consequatur
-              cumque placeat porro explicabo, commodi reiciendis deleniti ipsum
-              eligendi corporis numquam vel quas totam.
+              Ao se tornar parte da Herbalife, você entra em uma rede global
+              dedicada ao{" "}
+              <span className="text-primary">bem-estar e à saúde</span>. Aqui,
+              não oferecemos apenas produtos de qualidade, mas também uma
+              oportunidade de{" "}
+              <span className="text-primary">
+                crescimento pessoal e financeiro
+              </span>
+              . Se você busca novas possibilidades, tanto para ajudar os outros
+              quanto para alcançar seus próprios objetivos, a Herbalife pode e
+              <span className="text-primary">deve</span> ser o próximo passo na
+              sua jornada.
             </p>
-            {params.user}
           </article>
           <div className="flex justify-center items-center min-w-[250px]">
             <Image
-              className="rounded-lg shadow-card"
+              className="rounded-lg shadow-card w-[300px] sm:w-[250px]"
               width={300}
               height={0}
               src={financialIndependence3.src}
@@ -65,10 +93,10 @@ export default function Employ({ params }: EmployProps) {
         <h2 className="font-semibold text-primary text-3xl">
           Alcance sua liberdade financeira
         </h2>
-        <div className="flex items-center justify-center lg:justify-start gap-4 lg:gap-20 lg:flex-nowrap flex-wrap">
+        <div className="flex items-center justify-center lg:justify-start gap-4 lg:gap-8 lg:flex-nowrap flex-wrap">
           <div className="flex justify-center items-center min-w-[250px]">
             <Image
-              className="rounded-lg shadow-card"
+              className="rounded-lg shadow-card w-[300px] sm:w-[250px]"
               width={300}
               height={0}
               src={financialIndependence1.src}
@@ -77,18 +105,36 @@ export default function Employ({ params }: EmployProps) {
           </div>
           <article className="flex flex-col gap-3 w-full self-start max-w-[700px]">
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae
-              itaque soluta tempora. Harum expedita laudantium consequatur
-              cumque placeat porro explicabo, commodi reiciendis deleniti ipsum
-              eligendi corporis numquam vel quas totam.
+              Imagine ter a liberdade de trabalhar de onde quiser, no seu
+              próprio tempo, e com a satisfação de ajudar os outros a alcançarem
+              suas metas de saúde e bem-estar. A Herbalife oferece a
+              oportunidade de criar uma{" "}
+              <span className="text-primary">carreira sólida</span>, onde o seu
+              esforço e dedicação{" "}
+              <span className="text-primary">são recompensados</span>. Se você
+              está em busca de uma{" "}
+              <span className="text-primary">
+                mudança real em sua vida financeira
+              </span>
+              , a Herbalife pode ser a chave para abrir portas e garantir um
+              futuro mais próspero não só para você, mas também{" "}
+              <span className="text-primary">para sua família</span>. Além
+              disso, o <span className="text-primary">Plano de Marketing</span>{" "}
+              da Herbalife é um dos mais sólidos e eficazes do{" "}
+              <span className="text-primary">mundo</span>, oferecendo
+              oportunidades reais de crescimento e sucesso.
             </p>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae
-              itaque soluta tempora. Harum expedita laudantium consequatur
-              cumque placeat porro explicabo, commodi reiciendis deleniti ipsum
-              eligendi corporis numquam vel quas totam.
+              Se você está pronto para transformar sua vida e ser parte de algo
+              maior, a Herbalife está aqui para te apoiar em cada etapa dessa
+              jornada.
             </p>
-            {params.user}
+            <p
+              onClick={handleWhatsappClick}
+              className="flex items-center gap-2 text-primary font-semibold underline cursor-pointer"
+            >
+              <FiArrowRight /> Eu quero minha liberdade financeira!
+            </p>
           </article>
         </div>
       </section>
@@ -100,22 +146,45 @@ export default function Employ({ params }: EmployProps) {
         <div className="flex items-center justify-center lg:justify-start gap-4 lg:gap-20 lg:flex-nowrap flex-wrap">
           <article className="flex flex-col gap-3 w-full self-start max-w-[700px]">
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae
-              itaque soluta tempora. Harum expedita laudantium consequatur
-              cumque placeat porro explicabo, commodi reiciendis deleniti ipsum
-              eligendi corporis numquam vel quas totam.
+              Os benefícios vão além de uma simples oportunidade de negócio. Ao
+              alcançar metas e se destacar, você tem a chance de vivenciar
+              experiências únicas,{" "}
+              <span className="text-primary">
+                incluindo viagens internacionais, cruzeiros, resorts e eventos
+                exclusivos
+              </span>
+              . Esses incentivos são uma forma de{" "}
+              <span className="text-primary">
+                reconhecer o seu esforço e sucesso
+              </span>
+              , além de oferecer a oportunidade de conhecer novas culturas,
+              ampliar sua rede de contatos e celebrar as conquistas junto a
+              outros parceiros ao redor do mundo.
             </p>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae
-              itaque soluta tempora. Harum expedita laudantium consequatur
-              cumque placeat porro explicabo, commodi reiciendis deleniti ipsum
-              eligendi corporis numquam vel quas totam.
+              Seja em destinos paradisíacos ou em eventos que reúnem os melhores
+              do time, as viagens de incentivo da Herbalife são uma forma de
+              recompensar seu{" "}
+              <span className="text-primary">empenho e dedicação</span>. Além de
+              crescer financeiramente, você terá momentos inesquecíveis, que vão
+              te motivar ainda mais a continuar essa jornada de sucesso. Essa
+              empresa valoriza{" "}
+              <span className="text-primary">
+                tanto o seu esforço que faz questão de pagar as melhores viagens
+                e brindes como reconhecimento pelo seu trabalho árduo
+              </span>
+              .
             </p>
-            {params.user}
+            <p
+              onClick={handleWhatsappClick}
+              className="flex items-center gap-2 text-primary font-semibold underline cursor-pointer"
+            >
+              <FiArrowRight /> Eu quero!
+            </p>
           </article>
           <div className="flex justify-center items-center min-w-[250px]">
             <Image
-              className="rounded-lg shadow-card"
+              className="rounded-lg shadow-card w-[300px] sm:w-[250px]"
               width={300}
               height={0}
               src={lifesGood.src}
@@ -158,7 +227,7 @@ export default function Employ({ params }: EmployProps) {
           ></iframe>
         </div>
         <div
-          onClick={() => ""}
+          onClick={handleWhatsappClick}
           className="flex justify-center py-2 px-4 bg-primary text-white rounded-md shadow-card md:shadow-none hover:shadow-card hover:cursor-pointer"
         >
           CLIQUE AQUI! Entre em contato para que eu possa te explicar em

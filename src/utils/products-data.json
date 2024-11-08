@@ -939,5 +939,21 @@
     "isVisible": true,
     "image": "whey-protein-chocolate.png",
     "weight": 510
+  },
+  {
+    "id": "61",
+    "name": "Liftoff Limão Siciliano 15 Sachês",
+    "description": [
+      "Conheça este suplemento alimentar com um blend exclusivo de cafeína + taurina que estimula o sistema nervoso central, te ajudando a se sentir com energia e promovendo foco e concentração.",
+      "Além de  ser baixo em calorias e sem açúcares, o Liftoff contém vitaminas do Complexo B e C que auxiliam no metabolismo energético + Biotina que contribui para a manutenção do cabelo e da pele.",
+      "Por ser em sachê individual, o Liftoff é extremamente prático e pode ser transportado e preparado em qualquer lugar apenas com a adição de água.",
+      "Pode ser consumido em qualquer momento do dia, principalmente em dias mais atarefados que exigem maior foco e concentração em atividades como reuniões, apresentações e provas.",
+      "Pode ser consumido todos os dias como pré-treino, para qualquer hora que o seu corpo precisar de energia!"
+    ],
+    "type": "Nutrição Esportiva",
+    "isFavorite": false,
+    "isVisible": false,
+    "image": "liftoff-limao.png",
+    "weight": 75
   }
 ]
