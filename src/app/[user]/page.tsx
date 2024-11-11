@@ -23,8 +23,6 @@ export default function User({ params }: UserProps) {
       const lastVisitDate = new Date(lastVisit);
       const timeDiff = (now.getTime() - lastVisitDate.getTime()) / (1000 * 60);
 
-      console.log("timediff: ", timeDiff);
-
       if (timeDiff > 30) {
         router.push(`/${params.user}/intro`);
       } else {
