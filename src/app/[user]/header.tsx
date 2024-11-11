@@ -47,7 +47,7 @@ export default function Header({ params }: HeaderProps) {
 
       console.log("timediff: ", timeDiff);
 
-      if (timeDiff > 60) {
+      if (timeDiff > 30) {
         router.push(`/${params.user}/intro`);
       }
     } else {
