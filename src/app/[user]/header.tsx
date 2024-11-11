@@ -70,7 +70,7 @@ export default function Header({ params }: HeaderProps) {
 
   const shareUrl = window.location.href;
   const title =
-    "Venha conhecer a Herbalife, dê uam chance para sua melhor versão!";
+    "Venha conhecer a Herbalife, dê uma chance para sua melhor versão!\n";
 
   const menuItems = [
     { name: "Sobre", path: "about", icon: <FiTrendingUp size={24} /> },
