@@ -15,6 +15,27 @@ export default function User({ params }: UserProps) {
   const router = useRouter();
   const { usernames } = UseUser();
 
+  const checkLastVisit = (decodedUsername: string) => {
+    const lastVisit = localStorage.getItem("lastVisit");
+    const now = new Date();
+
+    if (lastVisit) {
+      const lastVisitDate = new Date(lastVisit);
+      const timeDiff = (now.getTime() - lastVisitDate.getTime()) / (1000 * 60);
+
+      console.log("timediff: ", timeDiff);
+
+      if (timeDiff > 120) {
+        router.push(`/${params.user}/intro`);
+      } else {
+        router.push(`/${decodedUsername}/about`);
+      }
+    } else {
+      localStorage.setItem("lastVisit", now.toISOString());
+      router.push(`/${params.user}/intro`);
+    }
+  };
+
   useEffect(() => {
     const specialRoutes = ["login", "register"];
     // Decodifica o nome de usuário da URL
@@ -30,7 +51,7 @@ export default function User({ params }: UserProps) {
         if (specialRoutes.includes(decodedUsername)) {
           router.push(`/${decodedUsername}`);
         } else {
-          router.push(`/${decodedUsername}/about`);
+          checkLastVisit(decodedUsername);
         }
       }
     }

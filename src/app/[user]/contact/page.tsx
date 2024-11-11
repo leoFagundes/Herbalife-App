@@ -81,7 +81,7 @@ export default function Contact({ params }: ContactProps) {
         <h2 className="font-semibold text-primary text-3xl">
           Entre em Contato
         </h2>
-        <ul className="flex flex-col gap-2">
+        <ul className="flex flex-col gap-4">
           <li className="font-medium">
             {currentUser?.username}{" "}
             <span className="text-primary text-sm italic">
@@ -90,29 +90,38 @@ export default function Contact({ params }: ContactProps) {
           </li>
           {currentUser?.whatsapp && (
             <li
-              className="flex items-center gap-2 hover:cursor-pointer hover:underline text-sm w-fit"
+              className="flex items-center gap-2 hover:cursor-pointer text-sm w-fit"
               onClick={handleWhatsappClick}
             >
               <FaWhatsapp className="text-primary w-5 h-5" />{" "}
-              {currentUser?.whatsapp}
+              <span className="underline">{currentUser?.whatsapp}</span>{" "}
+              <span className="text-primary font-light text-xs italic">
+                (Clique aqui)
+              </span>
             </li>
           )}
 
           {currentUser?.instagram && (
             <li
-              className="flex items-center gap-2 hover:cursor-pointer hover:underline text-sm w-fit"
+              className="flex items-center gap-2 hover:cursor-pointer text-sm w-fit"
               onClick={handleInstagramClick}
             >
               <FaInstagram className="text-primary w-5 h-5" />{" "}
-              {currentUser?.instagram}
+              <span className="underline">{currentUser?.instagram}</span>{" "}
+              <span className="text-primary font-light text-xs italic">
+                (Clique aqui)
+              </span>
             </li>
           )}
           <li
-            className="flex items-center gap-2 hover:cursor-pointer hover:underline text-sm w-fit"
+            className="flex items-center gap-2 hover:cursor-pointer text-sm w-fit"
             onClick={handleEmailClick}
           >
             <IoMailOutline className="text-primary w-5 h-5" />{" "}
-            {currentUser?.email}
+            <span className="underline">{currentUser?.email}</span>{" "}
+            <span className="text-primary font-light text-xs italic">
+              (Clique aqui)
+            </span>
           </li>
         </ul>
         {currentUser?.personalDescription && (

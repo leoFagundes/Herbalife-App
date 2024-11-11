@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import logo from "@/assets/svg/logo-v3.svg";
-import { CiLogin } from "react-icons/ci";
+import { CiLogin, CiShare2 } from "react-icons/ci";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import {
@@ -17,6 +17,7 @@ import React from "react";
 import UseUser from "@/hooks/useUser";
 import { LoaderWithFullScreen } from "@/components/loader";
 import { MdOutlineContactMail } from "react-icons/md";
+import { WhatsappShareButton } from "react-share";
 
 interface HeaderProps {
   params: {
@@ -36,6 +37,25 @@ export default function Header({ params }: HeaderProps) {
   const currentPage = pathname.split("/").slice(-1)[0];
   const currentUser = pathname.split("/").slice(1)[0];
 
+  const checkLastVisit = () => {
+    const lastVisit = localStorage.getItem("lastVisit");
+    const now = new Date();
+
+    if (lastVisit) {
+      const lastVisitDate = new Date(lastVisit);
+      const timeDiff = (now.getTime() - lastVisitDate.getTime()) / (1000 * 60);
+
+      console.log("timediff: ", timeDiff);
+
+      if (timeDiff > 60) {
+        router.push(`/${params.user}/intro`);
+      }
+    } else {
+      localStorage.setItem("lastVisit", now.toISOString());
+      router.push(`/${params.user}/intro`);
+    }
+  };
+
   useEffect(() => {
     const decodedUsername = decodeURIComponent(params.user);
 
@@ -44,9 +64,13 @@ export default function Header({ params }: HeaderProps) {
         router.push("/");
       }
     }
+
+    checkLastVisit();
   }, [router, params, usernames]);
 
-  console.log(currentUser);
+  const shareUrl = window.location.href;
+  const title =
+    "Venha conhecer a Herbalife, dê uam chance para sua melhor versão!";
 
   const menuItems = [
     { name: "Sobre", path: "about", icon: <FiTrendingUp size={24} /> },
@@ -145,6 +169,15 @@ export default function Header({ params }: HeaderProps) {
                     <CiLogin onClick={() => router.push("/login")} size={22} />{" "}
                     Login
                   </span>
+
+                  <WhatsappShareButton url={shareUrl} title={title}>
+                    <span
+                      onClick={() => setISMenuMaximize(!isMenuMaximize)}
+                      className="flex flex-col items-center text-xs hover:cursor-pointer"
+                    >
+                      <CiShare2 onClick={() => ""} size={22} /> Compartilhar
+                    </span>
+                  </WhatsappShareButton>
 
                   <span
                     onClick={() => setISMenuMaximize(!isMenuMaximize)}
