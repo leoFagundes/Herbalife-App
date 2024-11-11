@@ -49,6 +49,7 @@ export default function Header({ params }: HeaderProps) {
 
       if (timeDiff > 30) {
         router.push(`/${params.user}/intro`);
+        localStorage.setItem("lastVisit", now.toISOString());
       }
     } else {
       localStorage.setItem("lastVisit", now.toISOString());

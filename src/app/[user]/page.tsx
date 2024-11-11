@@ -25,6 +25,7 @@ export default function User({ params }: UserProps) {
 
       if (timeDiff > 30) {
         router.push(`/${params.user}/intro`);
+        localStorage.setItem("lastVisit", now.toISOString());
       } else {
         router.push(`/${decodedUsername}/about`);
       }
