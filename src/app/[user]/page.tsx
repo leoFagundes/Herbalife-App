@@ -25,7 +25,7 @@ export default function User({ params }: UserProps) {
 
       console.log("timediff: ", timeDiff);
 
-      if (timeDiff > 120) {
+      if (timeDiff > 0) {
         router.push(`/${params.user}/intro`);
       } else {
         router.push(`/${decodedUsername}/about`);
