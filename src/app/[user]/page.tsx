@@ -30,8 +30,8 @@ export default function User({ params }: UserProps) {
         router.push(`/${decodedUsername}/about`);
       }
     } else {
-      localStorage.setItem("lastVisit", now.toISOString());
       router.push(`/${params.user}/intro`);
+      localStorage.setItem("lastVisit", now.toISOString());
     }
   };
 

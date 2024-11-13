@@ -45,8 +45,6 @@ export default function Header({ params }: HeaderProps) {
       const lastVisitDate = new Date(lastVisit);
       const timeDiff = (now.getTime() - lastVisitDate.getTime()) / (1000 * 60);
 
-      console.log("timediff: ", timeDiff);
-
       if (timeDiff > 30) {
         router.push(`/${params.user}/intro`);
         localStorage.setItem("lastVisit", now.toISOString());
