@@ -11,7 +11,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "shake-baunilha.png",
-    "weight": 550
+    "weight": 550,
+    "off": false
   },
   {
     "id": "2",
@@ -25,7 +26,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "shake-morango.png",
-    "weight": 550
+    "weight": 550,
+    "off": false
   },
   {
     "id": "3",
@@ -39,7 +41,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "shake-banana.png",
-    "weight": 550
+    "weight": 550,
+    "off": false
   },
   {
     "id": "4",
@@ -53,7 +56,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "shake-cafe.png",
-    "weight": 550
+    "weight": 550,
+    "off": false
   },
   {
     "id": "5",
@@ -67,7 +71,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "shake-chocolate.png",
-    "weight": 550
+    "weight": 550,
+    "off": false
   },
   {
     "id": "6",
@@ -81,7 +86,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "shake-coco.png",
-    "weight": 550
+    "weight": 550,
+    "off": false
   },
   {
     "id": "7",
@@ -95,7 +101,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "shake-cockies.png",
-    "weight": 550
+    "weight": 550,
+    "off": false
   },
   {
     "id": "8",
@@ -109,7 +116,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "shake-docedeleite.png",
-    "weight": 550
+    "weight": 550,
+    "off": false
   },
   {
     "id": "9",
@@ -123,7 +131,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "shake-abacaxi.png",
-    "weight": 550
+    "weight": 550,
+    "off": false
   },
   {
     "id": "10",
@@ -137,7 +146,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "shake-maracuja.png",
-    "weight": 550
+    "weight": 550,
+    "off": false
   },
   {
     "id": "11",
@@ -151,7 +161,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "shake-pacoca.png",
-    "weight": 550
+    "weight": 550,
+    "off": false
   },
   {
     "id": "12",
@@ -165,7 +176,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "shake-sache-baunilha.png",
-    "weight": 182
+    "weight": 182,
+    "off": false
   },
   {
     "id": "13",
@@ -180,7 +192,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "herbal-concentrate-canela.png",
-    "weight": 102
+    "weight": 102,
+    "off": false
   },
   {
     "id": "14",
@@ -195,7 +208,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "herbal-concentrate-laranja.png",
-    "weight": 102
+    "weight": 102,
+    "off": false
   },
   {
     "id": "15",
@@ -210,7 +224,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "herbal-concentrate-original-102.png",
-    "weight": 102
+    "weight": 102,
+    "off": false
   },
   {
     "id": "16",
@@ -225,7 +240,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "herbal-concentrate-limao.png",
-    "weight": 51
+    "weight": 51,
+    "off": false
   },
   {
     "id": "17",
@@ -240,7 +256,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "herbal-concentrate-original-51.png",
-    "weight": 51
+    "weight": 51,
+    "off": false
   },
   {
     "id": "18",
@@ -259,7 +276,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "nrg-guarana-tropical.png",
-    "weight": 100
+    "weight": 100,
+    "off": false
   },
   {
     "id": "19",
@@ -277,7 +295,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "nrg-original-100.png",
-    "weight": 100
+    "weight": 100,
+    "off": false
   },
   {
     "id": "20",
@@ -295,7 +314,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "nrg-original-60.png",
-    "weight": 60
+    "weight": 60,
+    "off": false
   },
   {
     "id": "21",
@@ -312,7 +332,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "fiber-concentrate-limao.png",
-    "weight": 450
+    "weight": 450,
+    "off": false
   },
   {
     "id": "22",
@@ -329,7 +350,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "fiber-concentrate-manga.png",
-    "weight": 450
+    "weight": 450,
+    "off": false
   },
   {
     "id": "23",
@@ -346,7 +368,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "fiber-concentrate-uva.png",
-    "weight": 450
+    "weight": 450,
+    "off": false
   },
   {
     "id": "24",
@@ -365,7 +388,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "fiber-powder.png",
-    "weight": 275
+    "weight": 275,
+    "off": false
   },
   {
     "id": "25",
@@ -381,7 +405,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "fiberbond.png",
-    "weight": 180
+    "weight": 180,
+    "off": false
   },
   {
     "id": "26",
@@ -401,7 +426,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "barra-proteina-chocolate.png",
-    "weight": 245
+    "weight": 245,
+    "off": false
   },
   {
     "id": "27",
@@ -421,7 +447,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "barra-proteina-citrus.png",
-    "weight": 245
+    "weight": 245,
+    "off": false
   },
   {
     "id": "28",
@@ -441,7 +468,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "barra-proteina-vanilla.png",
-    "weight": 245
+    "weight": 245,
+    "off": false
   },
   {
     "id": "29",
@@ -457,7 +485,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "nutrev.png",
-    "weight": 672
+    "weight": 672,
+    "off": false
   },
   {
     "id": "30",
@@ -471,7 +500,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "onactive-drink.png",
-    "weight": 264
+    "weight": 264,
+    "off": false
   },
   {
     "id": "31",
@@ -487,7 +517,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "protein-chunch.png",
-    "weight": 150
+    "weight": 150,
+    "off": false
   },
   {
     "id": "32",
@@ -508,7 +539,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "protein-powder-240.png",
-    "weight": 240
+    "weight": 240,
+    "off": false
   },
   {
     "id": "33",
@@ -529,7 +561,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "protein-powder-480.png",
-    "weight": 480
+    "weight": 480,
+    "off": false
   },
   {
     "id": "34",
@@ -544,7 +577,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "herbalifeline.png",
-    "weight": 73
+    "weight": 73,
+    "off": false
   },
   {
     "id": "35",
@@ -558,7 +592,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "multivitaminas.png",
-    "weight": 73
+    "weight": 73,
+    "off": false
   },
   {
     "id": "36",
@@ -572,7 +607,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "shape-control.png",
-    "weight": 18.9
+    "weight": 18.9,
+    "off": false
   },
   {
     "id": "37",
@@ -587,7 +623,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "xtra-cal.png",
-    "weight": 18.9
+    "weight": 18.9,
+    "off": false
   },
   {
     "id": "38",
@@ -602,7 +639,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "nutri-soup-feijao.png",
-    "weight": 432
+    "weight": 432,
+    "off": false
   },
   {
     "id": "39",
@@ -616,7 +654,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "nutri-soup-cremeverde.png",
-    "weight": 416
+    "weight": 416,
+    "off": false
   },
   {
     "id": "40",
@@ -630,7 +669,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "nutri-soup-frango.png",
-    "weight": 416
+    "weight": 416,
+    "off": false
   },
   {
     "id": "41",
@@ -646,7 +686,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "sopa-instantanea-frango.png",
-    "weight": 196
+    "weight": 196,
+    "off": false
   },
   {
     "id": "42",
@@ -663,7 +704,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "cleanser-facial.png",
-    "weight": 150
+    "weight": 150,
+    "off": false
   },
   {
     "id": "43",
@@ -677,7 +719,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "gel-firmador.png",
-    "weight": 15
+    "weight": 15,
+    "off": false
   },
   {
     "id": "44",
@@ -691,7 +734,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "mascara-purificante.png",
-    "weight": 120
+    "weight": 120,
+    "off": false
   },
   {
     "id": "45",
@@ -707,7 +751,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "serum-facial.png",
-    "weight": 30
+    "weight": 30,
+    "off": false
   },
   {
     "id": "46",
@@ -722,7 +767,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "skin-beauty.png",
-    "weight": 240
+    "weight": 240,
+    "off": false
   },
   {
     "id": "47",
@@ -737,7 +783,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "desodorante.png",
-    "weight": 50
+    "weight": 50,
+    "off": false
   },
   {
     "id": "48",
@@ -753,7 +800,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "herbal-aloe-condicionador.png",
-    "weight": 250
+    "weight": 250,
+    "off": false
   },
   {
     "id": "49",
@@ -768,7 +816,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "herbal-aloe-shampoo.png",
-    "weight": 250
+    "weight": 250,
+    "off": false
   },
   {
     "id": "50",
@@ -783,7 +832,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "hidarante-corporal.png",
-    "weight": 200
+    "weight": 200,
+    "off": false
   },
   {
     "id": "51",
@@ -798,7 +848,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "sabonete-soft-green-chaverde.png",
-    "weight": 90
+    "weight": 90,
+    "off": false
   },
   {
     "id": "52",
@@ -813,7 +864,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "sabonete-soft-green-frutas.png",
-    "weight": 90
+    "weight": 90,
+    "off": false
   },
   {
     "id": "53",
@@ -828,7 +880,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "sabonete-liquido-green-chaverde.png",
-    "weight": 250
+    "weight": 250,
+    "off": false
   },
   {
     "id": "54",
@@ -842,7 +895,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "bcaa-tabletes.png",
-    "weight": 204
+    "weight": 204,
+    "off": false
   },
   {
     "id": "55",
@@ -856,7 +910,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "CR7-drive.png",
-    "weight": 810
+    "weight": 810,
+    "off": false
   },
   {
     "id": "56",
@@ -877,7 +932,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "creatina.png",
-    "weight": 150
+    "weight": 150,
+    "off": false
   },
   {
     "id": "57",
@@ -891,7 +947,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "glutamina.png",
-    "weight": 150
+    "weight": 150,
+    "off": false
   },
   {
     "id": "58",
@@ -908,7 +965,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "liftoff.png",
-    "weight": 75
+    "weight": 75,
+    "off": false
   },
   {
     "id": "59",
@@ -923,7 +981,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "tri-core-protein.png",
-    "weight": 1010
+    "weight": 1010,
+    "off": false
   },
   {
     "id": "60",
@@ -938,7 +997,8 @@
     "isFavorite": false,
     "isVisible": true,
     "image": "whey-protein-chocolate.png",
-    "weight": 510
+    "weight": 510,
+    "off": false
   },
   {
     "id": "61",
@@ -954,6 +1014,7 @@
     "isFavorite": false,
     "isVisible": false,
     "image": "liftoff-limao.png",
-    "weight": 75
+    "weight": 75,
+    "off": false
   }
 ]

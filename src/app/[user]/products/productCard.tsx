@@ -21,7 +21,7 @@ export default function ProductCard({ product, params }: ProductCardProps) {
       onClick={() =>
         router.push(`/${params.user}/products/${product.id}/details`)
       }
-      className={`${
+      className={`${product.off && "hidden"} ${
         product.isVisible ? "flex" : "hidden"
       } flex-col gap-2 items-center shadow-md animate-fadein rounded-lg p-8 w-[265px] h-[350px] relative hover:cursor-pointer hover:shadow-card transition-all duration-300 bg-white-secondary`}
     >

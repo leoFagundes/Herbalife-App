@@ -15,6 +15,7 @@ export interface ProductProps {
   isVisible: boolean;
   image: string;
   weight: number;
+  off: boolean;
 }
 
 export interface UserProps {

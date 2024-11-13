@@ -19,7 +19,9 @@ export default function ProductCard({
 }: ProductCardProps) {
   return (
     <div
-      className={`flex flex-col gap-2 items-center shadow-md animate-fadein rounded-lg p-8 w-[265px] h-[350px] relative transition-all duration-300 bg-white-secondary`}
+      className={`${
+        product.off && "hidden"
+      } flex flex-col gap-2 items-center shadow-md animate-fadein rounded-lg p-8 w-[265px] h-[350px] relative transition-all duration-300 bg-white-secondary`}
     >
       <div
         className={`absolute top-0 left-0 w-full h-full z-10 pointer-events-none rounded-lg  ${

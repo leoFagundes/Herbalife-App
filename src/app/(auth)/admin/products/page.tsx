@@ -95,8 +95,34 @@ export default function Products() {
 
     setRotate(false);
 
+    const updatedProducts = userData.products
+      .filter((userProduct) =>
+        products.some((generalProduct) => generalProduct.id === userProduct.id)
+      )
+      .map((userProduct) => {
+        const generalProduct = products.find(
+          (product) => product.id === userProduct.id
+        );
+
+        if (generalProduct && userProduct.off !== generalProduct.off) {
+          return { ...userProduct, off: generalProduct.off };
+        }
+
+        return userProduct;
+      });
+
+    products.forEach((generalProduct) => {
+      if (
+        !userData.products.some(
+          (userProduct) => userProduct.id === generalProduct.id
+        )
+      ) {
+        updatedProducts.push(generalProduct);
+      }
+    });
+
     try {
-      await UserRepositorie.update(userData.id, { products });
+      await UserRepositorie.update(userData.id, { products: updatedProducts });
       console.log("Produtos atualizados com sucesso.");
     } catch (error) {
       console.error("Erro ao atualizar produtos: ", error);
@@ -112,7 +138,7 @@ export default function Products() {
       <h1 className="flex items-center gap-4 text-primary font-semibold text-3xl">
         Produtos Herbalife{" "}
         <IoRefresh
-          className={`cursor-pointer min-w-8 ${rotate ? "rotate-360" : ""}`}
+          className={`cursor-pointer min-w-6 w-6 ${rotate ? "rotate-360" : ""}`}
           onClick={handleRefreshClick}
         />
       </h1>
