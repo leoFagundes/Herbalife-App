@@ -40,7 +40,7 @@ export default function Home() {
   }, [isLoading]);
 
   return (
-    <section className="h-screen w-full flex justify-center items-center">
+    <section className="relative overflow-hidden h-screen w-full flex justify-center items-center">
       {isLoading && usernames.length === 0 && <LoaderWithFullScreen />}
       <div className="flex flex-col items-center border-[2px] border-primary p-8 rounded-md shadow-card gap-4">
         <Image
