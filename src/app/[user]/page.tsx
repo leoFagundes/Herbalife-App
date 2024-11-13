@@ -15,26 +15,6 @@ export default function User({ params }: UserProps) {
   const router = useRouter();
   const { usernames } = UseUser();
 
-  const checkLastVisit = (decodedUsername: string) => {
-    const lastVisit = localStorage.getItem("lastVisit");
-    const now = new Date();
-
-    if (lastVisit) {
-      const lastVisitDate = new Date(lastVisit);
-      const timeDiff = (now.getTime() - lastVisitDate.getTime()) / (1000 * 60);
-
-      if (timeDiff > 30) {
-        router.push(`/${params.user}/intro`);
-        localStorage.setItem("lastVisit", now.toISOString());
-      } else {
-        router.push(`/${decodedUsername}/about`);
-      }
-    } else {
-      router.push(`/${params.user}/intro`);
-      localStorage.setItem("lastVisit", now.toISOString());
-    }
-  };
-
   useEffect(() => {
     const specialRoutes = ["login", "register"];
     // Decodifica o nome de usuário da URL
@@ -50,7 +30,7 @@ export default function User({ params }: UserProps) {
         if (specialRoutes.includes(decodedUsername)) {
           router.push(`/${decodedUsername}`);
         } else {
-          checkLastVisit(decodedUsername);
+          router.push(`/${params.user}/intro`);
         }
       }
     }
