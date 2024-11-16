@@ -535,7 +535,7 @@ export default function About({ params }: AboutProps) {
 
       <section className="flex flex-col gap-6">
         <h2 className="font-semibold text-primary text-3xl">
-          Como faço para trabalhar na herbalife?
+          Como faço para trabalhar na Herbalife?
         </h2>
         <div className="flex items-center justify-center">
           <article className="flex flex-col gap-3 w-full self-start">
