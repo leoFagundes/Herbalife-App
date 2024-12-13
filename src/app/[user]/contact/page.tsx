@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { IoMailOutline } from "react-icons/io5";
 import UseUser from "@/hooks/useUser";

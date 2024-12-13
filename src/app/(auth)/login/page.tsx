@@ -85,6 +85,7 @@ export default function Login() {
         type: "success",
       });
     } catch (error) {
+      console.log("Erro ao enviar e-mail de recuperação: ", error);
       setAlert({
         ...alert,
         message: `Falha ao enviar e-mail de recuperação para ${email}`,
