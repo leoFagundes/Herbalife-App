@@ -32,7 +32,10 @@ export default function Contact({ params }: ContactProps) {
   return (
     <div className="flex justify-center items-end gap-x-16 gap-y-8 flex-wrap-reverse">
       {currentUser?.image && (
-        <div className="flex justify-center relative rounded-md bg-red shadow-card min-w-[30px] h-[450px] sm:min-w-[350px]">
+        <div
+          style={{ backgroundImage: `url(${currentUser?.image})` }}
+          className="bg-cover flex justify-center relative rounded-md bg-red shadow-card h-[450px] min-w-[350px]"
+        >
           <svg
             className="overflow-visible max-w-[350px] w-[100px] h-[100px] absolute top-[85%] left-[80%] scale-90 z-0"
             width="448"
@@ -68,13 +71,13 @@ export default function Contact({ params }: ContactProps) {
               />
             </g>
           </svg>
-          <Image
+          {/* <Image
             className="w-[300px] min-w-[300px] sm:w-[350px] sm:min-w-[350px] h-[450px] shadow-card rounded-lg"
             width={350}
             height={450}
             src={currentUser?.image}
             alt="profile"
-          ></Image>
+          ></Image> */}
         </div>
       )}
       <article className="flex flex-col gap-6 flex-1 min-w-[350px] px-4">

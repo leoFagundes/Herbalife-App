@@ -9,9 +9,10 @@ import { useState, FormEvent, useEffect } from "react";
 import { FiAtSign, FiLock, FiUsers } from "react-icons/fi";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { auth } from "@/services/firebase";
-import { onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged, sendPasswordResetEmail } from "firebase/auth";
 import { LoaderWithFullScreen } from "@/components/loader";
 import UseUser from "@/hooks/useUser";
+import Alert from "@/components/alert";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -19,6 +20,15 @@ export default function Login() {
 
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
+
+  const [loadingAuth, setLoadingAuth] = useState(false);
+
+  const [alert, setAlert] = useState({
+    isOpen: false,
+    type: "success" as "success" | "error" | "warning",
+    timeout: 3000,
+    message: "",
+  });
 
   const [signInWithEmailAndPassword, loading] =
     useSignInWithEmailAndPassword(auth);
@@ -40,16 +50,69 @@ export default function Login() {
     return () => unsubscribe();
   }, [router]);
 
+  const recoverPassword = () => {
+    if (!email.trim()) {
+      setAlert({
+        ...alert,
+        message: `Preencha o campo de e-mail e tente novamente!`,
+        isOpen: true,
+        timeout: 5000,
+        type: "warning",
+      });
+
+      return;
+    }
+
+    if (!emails.includes(email)) {
+      setAlert({
+        ...alert,
+        message: `Esse e-mail não existe, tente novamente!`,
+        isOpen: true,
+        timeout: 5000,
+        type: "warning",
+      });
+
+      return;
+    }
+
+    try {
+      sendPasswordResetEmail(auth, email);
+      setAlert({
+        ...alert,
+        message: `E-mail de recuperação enviado a ${email}`,
+        isOpen: true,
+        timeout: 5000,
+        type: "success",
+      });
+    } catch (error) {
+      setAlert({
+        ...alert,
+        message: `Falha ao enviar e-mail de recuperação para ${email}`,
+        isOpen: true,
+        timeout: 5000,
+        type: "error",
+      });
+    }
+  };
+
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    setLoadingAuth(true);
     try {
-      signInWithEmailAndPassword(email, password);
+      const responseAuth = await signInWithEmailAndPassword(email, password);
+
+      if (!responseAuth) {
+        throw new Error();
+      }
+
       router.push("/admin/products");
     } catch (error) {
       setEmailError("Dados incorretos, tente novamente.");
       setPasswordError("Dados incorretos, tente novamente.");
       console.error("Erro ao fazer login: ", error);
+    } finally {
+      setLoadingAuth(false);
     }
   };
 
@@ -94,12 +157,21 @@ export default function Login() {
             placeholder="Senha"
             icon={<FiLock size={18} />}
           />
-          <Button type="submit">Entrar</Button>
+          <Button loading={loadingAuth} type="submit">
+            Entrar
+          </Button>
+
           <span
             onClick={() => router.push("/")}
             className="flex items-center gap-2 text-xs text-primary hover:cursor-pointer hover:underline"
           >
             Encontre o seu distribuidor <FiUsers size={12} />
+          </span>
+          <span
+            onClick={recoverPassword}
+            className="flex items-center gap-2 text-xs text-primary hover:cursor-pointer hover:underline"
+          >
+            Esqueci minha senha <FiLock size={12} />
           </span>
         </form>
       </div>
@@ -167,6 +239,13 @@ export default function Login() {
           />
         </g>
       </svg>
+      <Alert
+        isOpen={alert.isOpen}
+        onClose={() => setAlert({ ...alert, isOpen: false })}
+        message={alert.message}
+        timeout={alert.timeout}
+        type={alert.type}
+      />
     </section>
   );
 }

@@ -51,11 +51,11 @@ export default function Employ({ params }: EmployProps) {
         <div className="flex items-center justify-center lg:justify-start gap-4 lg:gap-8 lg:flex-nowrap flex-wrap">
           <article className="flex flex-col gap-3 w-full self-start max-w-[700px]">
             <p>
-              Você está tendo um{" "}
+              Você está tendo uma{" "}
               <span className="text-primary">
                 oportunidade única em suas mãos
               </span>{" "}
-              e recomendo fortemente que leia o conteúdo dessa página e ao final
+              e recomendo fortemente que leia o conteúdo dessa página e ao final{" "}
               <span className="text-primary">
                 tome uma decisão que pode mudar totalmente a sua vida e a vida
                 da sua família

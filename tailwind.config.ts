@@ -13,6 +13,8 @@ const config: Config = {
         white: "#EBEBEB",
         "white-secondary": "#F0F0F0",
         black: "#1A1A1A",
+        error: "#B8463D",
+        warning: "#E6DE61",
       },
       boxShadow: {
         card: "2px 5px 10px rgba(0, 0, 0, 0.25)",

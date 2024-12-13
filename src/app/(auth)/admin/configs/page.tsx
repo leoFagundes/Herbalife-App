@@ -1,5 +1,6 @@
 "use client";
 
+import Alert from "@/components/alert";
 import Button from "@/components/button";
 import Input from "@/components/input";
 import { LoaderWithFullScreen } from "@/components/loader";
@@ -31,6 +32,12 @@ export default function Configs() {
   const [username, setUsername] = useState("");
   const [progress, setProgress] = useState(0);
   const [copied, setCopied] = useState(false);
+  const [alert, setAlert] = useState({
+    isOpen: false,
+    type: "success" as "success" | "error" | "warning",
+    timeout: 3000,
+    message: "",
+  });
   const router = useRouter();
 
   const [image, setImage] = useState<null | File>(null);
@@ -96,7 +103,7 @@ export default function Configs() {
               setProgress(progress);
             },
             (error) => {
-              alert(error);
+              // alert(error);
               reject(error);
             },
             async () => {
@@ -116,8 +123,22 @@ export default function Configs() {
 
         await UserRepositorie.update(userData.id, updatedData);
       }
+      setAlert({
+        ...alert,
+        message: `Dados pessoais salvos com sucesso!`,
+        isOpen: true,
+        timeout: 3000,
+        type: "success",
+      });
     } catch (error) {
       console.error("Erro ao salvar informações: ", error);
+      setAlert({
+        ...alert,
+        message: `Erro ao salvar dados pessoai, tente novamente.`,
+        isOpen: true,
+        timeout: 3000,
+        type: "error",
+      });
     } finally {
       setLoading(false);
     }
@@ -137,11 +158,27 @@ export default function Configs() {
 
       // Atualizar o campo 'image' no banco de dados para uma string vazia
       await UserRepositorie.update(userData.id, { ...userData, image: "" });
-    } catch (error) {
-      console.error("Erro ao deletar a imagem: ", error);
-    } finally {
+
       // Atualizar o estado local para refletir a remoção
       setUserData({ ...userData, image: "" });
+
+      setAlert({
+        ...alert,
+        message: `Imagem deletada com sucesso!`,
+        isOpen: true,
+        timeout: 3000,
+        type: "success",
+      });
+    } catch (error) {
+      console.error("Erro ao deletar a imagem: ", error);
+      setAlert({
+        ...alert,
+        message: `Erro ao deletar imagem, tente novamente.`,
+        isOpen: true,
+        timeout: 3000,
+        type: "error",
+      });
+    } finally {
       setLoading(false);
     }
   };
@@ -151,6 +188,13 @@ export default function Configs() {
       .writeText(`https://hbl-nutrition.vercel.app/${username}`)
       .then(() => {
         setCopied(true);
+        setAlert({
+          ...alert,
+          message: `Link de divulgação copiado para área de transferência.`,
+          isOpen: true,
+          timeout: 3000,
+          type: "success",
+        });
         setTimeout(() => setCopied(false), 1000);
       })
       .catch((err) => console.error("Erro ao copiar: ", err));
@@ -310,6 +354,13 @@ export default function Configs() {
           <Button type="submit">Salvar</Button>
         </form>
       </div>
+      <Alert
+        isOpen={alert.isOpen}
+        onClose={() => setAlert({ ...alert, isOpen: false })}
+        message={alert.message}
+        timeout={alert.timeout}
+        type={alert.type}
+      />
     </div>
   );
 }

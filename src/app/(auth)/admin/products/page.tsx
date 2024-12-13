@@ -10,11 +10,18 @@ import { useRouter } from "next/navigation";
 import { LoaderWithFullScreen } from "@/components/loader";
 import { IoRefresh } from "react-icons/io5";
 import productsJSON from "@/utils/products-data.json";
+import Alert from "@/components/alert";
 
 export default function Products() {
   const [userData, setUserData] = useState<UserProps | null>(null);
   const [loading, setLoading] = useState(true);
   const [rotate, setRotate] = useState(false);
+  const [alert, setAlert] = useState({
+    isOpen: false,
+    type: "success" as "success" | "error" | "warning",
+    timeout: 3000,
+    message: "",
+  });
   const router = useRouter();
 
   const products: ProductProps[] = productsJSON as ProductProps[];
@@ -38,9 +45,13 @@ export default function Products() {
 
   async function updateFavoriteProduct(productId: string) {
     try {
+      let productName;
+      let favoriteStatus;
       if (userData) {
         const newProductList = userData.products.map((product) => {
           if (product.id === productId) {
+            productName = product.name;
+            favoriteStatus = !product.isFavorite;
             return { ...product, isFavorite: !product.isFavorite };
           }
           return product;
@@ -56,16 +67,36 @@ export default function Products() {
           products: newProductList,
         }));
       }
+      setAlert({
+        ...alert,
+        message: `${productName} ${
+          favoriteStatus ? "está" : "não está"
+        } favoritado!`,
+        isOpen: true,
+        timeout: 3000,
+        type: "success",
+      });
     } catch (error) {
       console.error("Erro ao atualizar produto: ", error);
+      setAlert({
+        ...alert,
+        message: `Erro, recarregue a página e tente novamente.`,
+        isOpen: true,
+        timeout: 3000,
+        type: "error",
+      });
     }
   }
 
   async function updateVisibleProduct(productId: string) {
     try {
+      let productName;
+      let visibleStatus;
       if (userData) {
         const newProductList = userData.products.map((product) => {
           if (product.id === productId) {
+            productName = product.name;
+            visibleStatus = !product.isVisible;
             return { ...product, isVisible: !product.isVisible };
           }
           return product;
@@ -81,8 +112,24 @@ export default function Products() {
           products: newProductList,
         }));
       }
+      setAlert({
+        ...alert,
+        message: `${productName} está ${
+          visibleStatus ? "visível" : "invisível"
+        }!`,
+        isOpen: true,
+        timeout: 3000,
+        type: "success",
+      });
     } catch (error) {
       console.error("Erro ao atualizar produto: ", error);
+      setAlert({
+        ...alert,
+        message: `Erro ao mudar a visibilidade deste produto, recarregue a página e tente novamente.`,
+        isOpen: true,
+        timeout: 3000,
+        type: "error",
+      });
     }
   }
 
@@ -124,10 +171,25 @@ export default function Products() {
     try {
       await UserRepositorie.update(userData.id, { products: updatedProducts });
       console.log("Produtos atualizados com sucesso.");
+      setAlert({
+        ...alert,
+        message: `Produtos atualizados com sucesso!`,
+        isOpen: true,
+        timeout: 3000,
+        type: "success",
+      });
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
     } catch (error) {
       console.error("Erro ao atualizar produtos: ", error);
-    } finally {
-      window.location.reload();
+      setAlert({
+        ...alert,
+        message: `Erro ao atualizar produtos.`,
+        isOpen: true,
+        timeout: 3000,
+        type: "error",
+      });
     }
   };
 
@@ -152,6 +214,13 @@ export default function Products() {
           />
         ))}
       </ul>
+      <Alert
+        isOpen={alert.isOpen}
+        onClose={() => setAlert({ ...alert, isOpen: false })}
+        message={alert.message}
+        timeout={alert.timeout}
+        type={alert.type}
+      />
     </div>
   );
 }

@@ -1,8 +1,14 @@
 interface LoaderProps {
   withLogo?: boolean;
-  loaderSize?: "large" | "small";
+  loaderSize?: "large" | "small" | "extraSmall";
   logoSize?: string;
 }
+
+const loaderValues = {
+  large: "w-28 h-28 border-[6px]",
+  small: "w-10 h-10 border-[3px]",
+  extraSmall: "w-4 h-4 border-[2px]",
+};
 
 export default function Loader({
   withLogo = true,
@@ -12,11 +18,7 @@ export default function Loader({
   return (
     <div className="flex-col gap-4 w-full flex items-center justify-center relative">
       <div
-        className={` ${
-          loaderSize === "large"
-            ? "w-28 h-28 border-[6px]"
-            : "w-10 h-10 border-[3px]"
-        }  text-primary text-4xl animate-spin border-white-secondary flex items-center justify-center border-t-primary rounded-full`}
+        className={` ${loaderValues[loaderSize]}  text-primary text-4xl animate-spin border-white-secondary flex items-center justify-center border-t-primary rounded-full`}
       ></div>
 
       {withLogo && (
