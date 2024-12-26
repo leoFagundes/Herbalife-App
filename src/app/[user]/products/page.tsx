@@ -113,7 +113,7 @@ export default function Products({ params }: ProductsProps) {
           ref={ulRef}
           className="flex w-fit justify-start gap-8 overflow-x-auto px-2 py-1 scroll-bar"
         >
-          {types.map((type, index) => (
+          {types.map((type) => (
             <li
               key={type}
               onClick={() => handleClick(type)}
