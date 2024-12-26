@@ -39,7 +39,7 @@ export default function Testimonials({ params }: TestimonialsProps) {
               Valéria Fagundes
             </h3>
             <p className="italic">
-              "Meu nome é Valéria Fagundes, sou Coach de Bem-Estar e uso
+              {'"'}Meu nome é Valéria Fagundes, sou Coach de Bem-Estar e uso
               Herbalife há 29 anos! Tenho 57 anos e sou apaixonada pelos
               produtos Herbalife! Sinto-me ótima, com muita disposição e
               energia! Mas nem sempre foi assim…
@@ -57,7 +57,7 @@ export default function Testimonials({ params }: TestimonialsProps) {
               circunferência abdominal, perdi 6 kg, e minha gastrite
               desapareceu! Imagina a felicidade! Herbalife é vida! Uso todos os
               produtos da nossa linha, e, no momento, estou buscando novos
-              resultados para ganho muscular!"
+              resultados para ganho muscular!{'"'}
             </p>
           </article>
         </div>
@@ -76,15 +76,15 @@ export default function Testimonials({ params }: TestimonialsProps) {
               Rodrigo Fagundes
             </h3>
             <p className="italic">
-              "Meu nome é Rodrigo Fagundes, uso os produtos da Herbalife há 29
-              anos, antes vivia de dieta em dieta e não sabia me alumentar
+              {'"'}Meu nome é Rodrigo Fagundes, uso os produtos da Herbalife há
+              29 anos, antes vivia de dieta em dieta e não sabia me alumentar
               direito.
             </p>
             <p className="italic">
               Usando os produtos, reduzi 15 kg em 50 dias e de lá pra cá tenho
               mantido um alto nivel de saúde, energia e bem estar. Tenho 56 anos
               com uma vida super ativa, faço atividade física todos os dias com
-              muita qualidade de vida."
+              muita qualidade de vida.{'"'}
             </p>
           </article>
         </div>
