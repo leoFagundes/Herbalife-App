@@ -151,7 +151,7 @@ export default function Input({
             onClick={(e) => {
               if (value) {
                 e.preventDefault();
-                deleteImageFunction && deleteImageFunction();
+                deleteImageFunction?.();
               }
             }}
             onChange={(e) => {
