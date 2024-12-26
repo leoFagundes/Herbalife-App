@@ -199,6 +199,9 @@ export default function Header({ params }: HeaderProps) {
         </nav>
       </header>
       <div className="h-12" />
+      {isMenuOpen && (
+        <div className="fixed top-0 left-0 h-screen w-screen backdrop-blur-sm z-30 animate-fadein"></div>
+      )}
     </>
   );
 }

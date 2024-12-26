@@ -1,6 +1,7 @@
 "use client";
 
 import { LoaderWithFullScreen } from "@/components/loader";
+import UseRedirectToContact from "@/hooks/useRedirectToContact";
 import UseUser from "@/hooks/useUser";
 import { ProductProps } from "@/types/types";
 import Image from "next/image";
@@ -21,19 +22,7 @@ export default function ProductDetails({ params }: ProductDetailsProps) {
   const { currentUser, isLoading } = UseUser(decodeURIComponent(params.user));
   const router = useRouter();
 
-  const handleWhatsappClick = () => {
-    const isMobile = window.innerWidth < 640;
-
-    if (isMobile) {
-      window.open(`https://wa.me/${currentUser?.whatsapp}`, "_blank");
-    } else {
-      // Se for um computador, abre o Instagram
-      window.open(
-        `https://www.instagram.com/${currentUser?.instagram}`,
-        "_blank"
-      );
-    }
-  };
+  const handleWhatsappClick = UseRedirectToContact(currentUser);
 
   useEffect(() => {
     const currentProduct = currentUser?.products.filter(

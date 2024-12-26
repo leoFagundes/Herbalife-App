@@ -5,6 +5,8 @@ import logo from "@/assets/svg/logo-v3.svg";
 import Image from "next/image";
 import { FiArrowRight } from "react-icons/fi";
 import { useRouter } from "next/navigation";
+import UseRedirectToContact from "@/hooks/useRedirectToContact";
+import UseUser from "@/hooks/useUser";
 
 interface UserProps {
   params: {
@@ -14,6 +16,9 @@ interface UserProps {
 
 export default function Intro({ params }: UserProps) {
   const router = useRouter();
+  const { currentUser } = UseUser(decodeURIComponent(params.user));
+
+  const handleWhatsappClick = UseRedirectToContact(currentUser);
 
   return (
     <div className="flex justify-center items-center fixed w-full h-screen bg-white z-50 top-0 left-0 p-8">
@@ -31,9 +36,7 @@ export default function Intro({ params }: UserProps) {
         </p>
         <div className="flex flex-col gap-2">
           <span
-            onClick={() =>
-              router.push(`/${decodeURIComponent(params.user)}/contact`)
-            }
+            onClick={handleWhatsappClick}
             className="flex items-center gap-2 font-medium hover:underline cursor-pointer text-lg sm:text-xl"
           >
             <FiArrowRight className="text-primary min-w-5" size={20} /> Entre em

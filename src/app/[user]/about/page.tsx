@@ -7,6 +7,7 @@ import products from "@/assets/image/products.png";
 import React from "react";
 import UseUser from "@/hooks/useUser";
 import { FiArrowRight } from "react-icons/fi";
+import UseRedirectToContact from "@/hooks/useRedirectToContact";
 
 interface AboutProps {
   params: {
@@ -17,36 +18,28 @@ interface AboutProps {
 export default function About({ params }: AboutProps) {
   const { currentUser } = UseUser(decodeURIComponent(params.user));
 
-  const handleWhatsappClick = () => {
-    const isMobile = window.innerWidth < 640;
-
-    if (isMobile) {
-      window.open(`https://wa.me/${currentUser?.whatsapp}`, "_blank");
-    } else {
-      // Se for um computador, abre o Instagram
-      window.open(
-        `https://www.instagram.com/${currentUser?.instagram}`,
-        "_blank"
-      );
-    }
-  };
+  const handleWhatsappClick = UseRedirectToContact(currentUser);
 
   return (
     <div className="flex flex-col gap-12 sm:gap-20">
-      <section className="flex flex-col gap-6 ">
+      <section className="flex flex-col gap-6 sm:gap-2">
         <p>
-          Bem-vindo! Aqui você encontrará tudo o que precisa para começar sua
-          jornada em direção a uma{" "}
+          <span className="text-primary font-semibold text-xl">
+            Bem-vindo(a)!
+          </span>{" "}
+          Aqui você encontrará tudo o que precisa para começar sua jornada em
+          direção a uma{" "}
           <span className="text-primary">
             vida mais saudável e cheia de energia
           </span>
-          . Com os produtos Herbalife, você tem acesso a soluções nutricionais
+          .
+          {/*Com os produtos Herbalife, você tem acesso a soluções nutricionais
           de qualidade, que ajudam a alcançar seus objetivos de bem-estar, seja
           para{" "}
           <span className="text-primary">
             perder peso, ganhar disposição ou melhorar sua alimentação
           </span>
-          .
+          . */}
         </p>
         <div className="flex justify-center items-center w-full sm:w-1/2 lg:w-1/3 sm:hidden">
           <svg
@@ -397,7 +390,7 @@ export default function About({ params }: AboutProps) {
             />
           </div>
           <article className="flex flex-col gap-3 w-full self-start max-w-[700px]">
-            <p>
+            {/* <p>
               A Herbalife patrocina atletas em diversas modalidades ao redor do
               mundo. A empresa tem uma longa história de apoio a esportistas de
               alto nível, oferecendo produtos de nutrição para{" "}
@@ -408,18 +401,20 @@ export default function About({ params }: AboutProps) {
               Herbalife para otimizar a saúde e alcançar seu{" "}
               <span className="text-primary">máximo potencial</span>, além de
               promoverem a marca.
-            </p>
+            </p> */}
             <p>
               <span className="text-primary">Cristiano Ronaldo</span>, um dos
               maiores atletas de todos os tempos, é um exemplo claro de como a
               combinação de atividade física intensa e uma alimentação
               balanceada pode levar ao sucesso. Como{" "}
               <span className="text-primary">consumidor da Herbalife</span>,
-              Cristiano Ronaldo confia nos produtos da marca para otimizar sua
-              performance, melhorar a recuperação e manter-se no auge de sua
+              Cristiano Ronaldo usa e confia nos produtos da marca para otimizar
+              sua performance, melhorar a recuperação e manter-se no auge de sua
               forma física. Ele acredita que uma nutrição adequada é fundamental
               para atingir seus objetivos e manter-se competitivo ao longo de
               sua carreira.{" "}
+            </p>
+            <p>
               <span className="text-primary">
                 A Herbalife oferece a ele os nutrientes certos para sustentar
                 sua energia, força e resistência

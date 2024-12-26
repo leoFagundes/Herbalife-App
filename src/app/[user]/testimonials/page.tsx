@@ -34,17 +34,17 @@ export default function Testimonials({ params }: TestimonialsProps) {
             height={0}
             alt="Resultado Valéria"
           />
-          <article className="flex flex-col gap-2">
+          <article className="flex flex-col gap-2 sm:h-[333px] sm:overflow-auto">
             <h3 className="text-2xl font-semibold text-primary">
               Valéria Fagundes
             </h3>
-            <p>
-              Meu nome é Valéria Fagundes, sou Coach de Bem-Estar e uso
+            <p className="italic">
+              "Meu nome é Valéria Fagundes, sou Coach de Bem-Estar e uso
               Herbalife há 29 anos! Tenho 57 anos e sou apaixonada pelos
               produtos Herbalife! Sinto-me ótima, com muita disposição e
               energia! Mas nem sempre foi assim…
             </p>
-            <p>
+            <p className="italic">
               Eu costumava ser preguiçosa para treinar, tomava refrigerantes,
               sucos com açúcar, comia as comidas mais práticas, doces sempre que
               queria, sem nenhum controle, e pão todos os dias, porque é muito
@@ -52,12 +52,12 @@ export default function Testimonials({ params }: TestimonialsProps) {
               Também sofria de gastrite e, em certo ponto, cheguei a desenvolver
               princípio de úlcera!
             </p>
-            <p>
+            <p className="italic">
               Foi então que comecei a usar Herbalife. Reduzi 22 centímetros de
               circunferência abdominal, perdi 6 kg, e minha gastrite
               desapareceu! Imagina a felicidade! Herbalife é vida! Uso todos os
               produtos da nossa linha, e, no momento, estou buscando novos
-              resultados para ganho muscular!
+              resultados para ganho muscular!"
             </p>
           </article>
         </div>
@@ -71,20 +71,20 @@ export default function Testimonials({ params }: TestimonialsProps) {
             height={0}
             alt="Resultado Valéria"
           />
-          <article className="flex flex-col gap-2">
+          <article className="flex flex-col gap-2 sm:h-[333px] sm:overflow-auto">
             <h3 className="text-2xl font-semibold text-primary">
               Rodrigo Fagundes
             </h3>
-            <p>
-              Meu nome é Rodrigo Fagundes, uso os produtos da Herbalife há 29
+            <p className="italic">
+              "Meu nome é Rodrigo Fagundes, uso os produtos da Herbalife há 29
               anos, antes vivia de dieta em dieta e não sabia me alumentar
               direito.
             </p>
-            <p>
+            <p className="italic">
               Usando os produtos, reduzi 15 kg em 50 dias e de lá pra cá tenho
               mantido um alto nivel de saúde, energia e bem estar. Tenho 56 anos
               com uma vida super ativa, faço atividade física todos os dias com
-              muita qualidade de vida.
+              muita qualidade de vida."
             </p>
           </article>
         </div>

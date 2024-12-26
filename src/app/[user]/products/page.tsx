@@ -44,8 +44,23 @@ export default function Products({ params }: ProductsProps) {
   // Checa o parâmetro `type` na URL e atualiza o tipo atual
   useEffect(() => {
     const typeFromURL = searchParams.get("type");
+
     if (typeFromURL && types.includes(typeFromURL)) {
       setCurrentType(typeFromURL);
+
+      const index = types.indexOf(typeFromURL);
+
+      if (ulRef.current) {
+        const item = ulRef.current.children[index] as HTMLElement;
+        const offset =
+          item.offsetLeft -
+          (ulRef.current.clientWidth - item.clientWidth) / 1.5;
+
+        ulRef.current.scrollTo({
+          left: offset,
+          behavior: "smooth",
+        });
+      }
     }
   }, [searchParams, types]);
 
@@ -53,22 +68,22 @@ export default function Products({ params }: ProductsProps) {
     (product) => product.type === currentType
   );
 
-  const handleClick = (type: string, index: number) => {
+  const handleClick = (type: string) => {
     setCurrentType(type);
 
     // Atualiza a URL com o parâmetro `type`
     router.push(`/${params.user}/products?type=${type}`);
 
-    if (ulRef.current) {
-      const item = ulRef.current.children[index] as HTMLElement;
-      const offset =
-        item.offsetLeft - (ulRef.current.clientWidth - item.clientWidth) / 1.5;
+    // if (ulRef.current) {
+    //   const item = ulRef.current.children[index] as HTMLElement;
+    //   const offset =
+    //     item.offsetLeft - (ulRef.current.clientWidth - item.clientWidth) / 1.5;
 
-      ulRef.current.scrollTo({
-        left: offset,
-        behavior: "smooth",
-      });
-    }
+    //   ulRef.current.scrollTo({
+    //     left: offset,
+    //     behavior: "smooth",
+    //   });
+    // }
   };
 
   if (isLoading) return <LoaderWithFullScreen />;
@@ -101,7 +116,7 @@ export default function Products({ params }: ProductsProps) {
           {types.map((type, index) => (
             <li
               key={type}
-              onClick={() => handleClick(type, index)}
+              onClick={() => handleClick(type)}
               className={`whitespace-nowrap font-medium text-primary text-lg hover:font-semibold hover:cursor-pointer ${
                 type === currentType ? "font-semibold underline" : ""
               }`}

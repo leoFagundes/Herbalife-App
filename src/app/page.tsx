@@ -60,7 +60,7 @@ export default function Home() {
             value={search}
             error={searchError}
             setValue={setSearch}
-            placeholder="ex: Rodrigo Fagundes"
+            placeholder="ex: Leonardo Fagundes"
             icon={<FiSearch size={18} />}
           />
           <Button>Buscar</Button>

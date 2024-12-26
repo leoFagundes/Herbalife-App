@@ -8,6 +8,7 @@ import React from "react";
 import UseUser from "@/hooks/useUser";
 import { LoaderWithFullScreen } from "@/components/loader";
 import { FiArrowRight } from "react-icons/fi";
+import UseRedirectToContact from "@/hooks/useRedirectToContact";
 
 interface EmployProps {
   params: {
@@ -26,19 +27,7 @@ export default function Employ({ params }: EmployProps) {
     return "";
   }
 
-  const handleWhatsappClick = () => {
-    const isMobile = window.innerWidth < 640;
-
-    if (isMobile) {
-      window.open(`https://wa.me/${currentUser?.whatsapp}`, "_blank");
-    } else {
-      // Se for um computador, abre o Instagram
-      window.open(
-        `https://www.instagram.com/${currentUser?.instagram}`,
-        "_blank"
-      );
-    }
-  };
+  const handleWhatsappClick = UseRedirectToContact(currentUser);
 
   if (isLoading) return <LoaderWithFullScreen />;
 
