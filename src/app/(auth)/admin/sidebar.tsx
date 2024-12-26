@@ -49,15 +49,7 @@ export default function Sidebar() {
 
   return (
     <>
-      <div className="w-[50px] sm:hidden"></div>
-      <span
-        onClick={() => router.push(`/${username}`)}
-        className={`${
-          isMenuOpen ? "flex" : "hidden sm:flex"
-        } fixed z-40 left-16 sm:left-10 bottom-14 animate-fadein text-center flex items-center text-primary font-medium hover:cursor-pointer py-2 px-4 bg-white shadow-card rounded-lg`}
-      >
-        {username}
-      </span>
+      <div className="w-[50px] mr-4 sm:mr-0 sm:hidden"></div>
       <aside
         className={`w-[280px] min-h-screen border-r border-primary flex flex-col items-center p-8 pb-14 gap-8 sm:relative duration-300 bg-white fixed sm:translate-x-0 z-20 ${
           !isMenuOpen && "-translate-x-[230px]"
@@ -70,7 +62,7 @@ export default function Sidebar() {
           src={logo.src}
           alt="herbalife-logo"
         />
-        <section className="flex flex-col h-full gap-2">
+        <section className="flex-1 flex flex-col h-full gap-2">
           <div className="flex flex-col gap-2">
             {menuItems.map((item, index) => (
               <span
@@ -90,6 +82,16 @@ export default function Sidebar() {
           >
             <FiLogOut size={20} /> Sair da conta
           </span>
+          <div className="flex items-end py-2 flex-1">
+            <span
+              onClick={() => router.push(`/${username}`)}
+              className={`${
+                isMenuOpen ? "flex" : "hidden sm:flex"
+              }  animate-fadein text-center flex items-center text-primary font-medium hover:cursor-pointer py-2 px-4 bg-white shadow-card rounded-lg`}
+            >
+              {username}
+            </span>
+          </div>
         </section>
         <label className="sm:hidden flex lg:hidden flex-col gap-2 w-8 scale-75 absolute top-3 right-3 hover:cursor-pointer">
           <input

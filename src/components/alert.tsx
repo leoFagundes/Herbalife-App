@@ -36,7 +36,7 @@ export default function Alert({
 
   return (
     <div
-      className={`flex items-center gap-2 fixed bottom-2 right-2 z-50 p-4 min-w-[160px] rounded shadow-lg animate-fadein text-center ${
+      className={`flex items-center gap-2 fixed ml-2 bottom-2 right-2 z-50 p-4 min-w-[160px] rounded shadow-lg animate-fadein text-center ${
         type === "success"
           ? "bg-primary text-white"
           : type === "error"

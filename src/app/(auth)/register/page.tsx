@@ -130,7 +130,7 @@ export default function Register() {
         />
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col items-center gap-3"
+          className="flex flex-col items-center gap-5"
         >
           <h2 className="font-medium text-lg">Área de cadastro</h2>
           <Input
@@ -138,6 +138,7 @@ export default function Register() {
             error={usernameError}
             setValue={setUsername}
             placeholder="Username"
+            label={username ? "Username" : ""}
             icon={<FiUser size={18} />}
           />
           <Input
@@ -146,6 +147,7 @@ export default function Register() {
             error={emailError}
             setValue={setEmail}
             placeholder="E-mail"
+            label={email ? "E-mail" : ""}
             icon={<FiAtSign size={18} />}
           />
           <Input
@@ -154,6 +156,7 @@ export default function Register() {
             error={passwordError}
             setValue={setPassword}
             placeholder="Senha"
+            label={password ? "Senha" : ""}
             icon={<FiLock size={18} />}
           />
           <Input
@@ -162,6 +165,7 @@ export default function Register() {
             error={tokenError}
             setValue={setToken}
             placeholder="Token de Criação"
+            label={token ? "Token" : ""}
             icon={<FiLock size={18} />}
           />
           <Button type="submit">Criar conta</Button>

@@ -90,7 +90,7 @@ export default function Configs() {
           await deleteObject(oldImageRef);
           console.log("Imagem antiga deletada com sucesso!");
         }
-        const storageRef = ref(storage, `images/${image.name}`);
+        const storageRef = ref(storage, `images/perfil/${image.name}`);
         const uploadTask = uploadBytesResumable(storageRef, image);
 
         // Use uma Promise para esperar o upload terminar e obter o URL da imagem

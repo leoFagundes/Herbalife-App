@@ -139,7 +139,7 @@ export default function Login() {
         />
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col items-center gap-3"
+          className="flex flex-col items-center gap-5"
         >
           <h2 className="font-medium text-lg">Área de administração</h2>
           <Input
@@ -148,6 +148,7 @@ export default function Login() {
             error={emailError}
             setValue={setEmail}
             placeholder="E-mail"
+            label={email ? "E-mail" : ""}
             icon={<FiAtSign size={18} />}
           />
           <Input
@@ -156,6 +157,7 @@ export default function Login() {
             error={passwordError}
             setValue={setPassword}
             placeholder="Senha"
+            label={password ? "Senha" : ""}
             icon={<FiLock size={18} />}
           />
           <Button loading={loadingAuth} type="submit">

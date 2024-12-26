@@ -148,6 +148,12 @@ export default function Input({
           </div>
           <input
             type={inputType}
+            onClick={(e) => {
+              if (value) {
+                e.preventDefault();
+                deleteImageFunction && deleteImageFunction();
+              }
+            }}
             onChange={(e) => {
               const file = e.target.files ? e.target.files[0] : null;
               if (file && setImage) {
