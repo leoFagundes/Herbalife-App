@@ -1,5 +1,6 @@
 "use client";
 
+import Button from "@/components/button";
 import { LoaderWithFullScreen } from "@/components/loader";
 import UseRedirectToContact from "@/hooks/useRedirectToContact";
 import UseUser from "@/hooks/useUser";
@@ -104,15 +105,7 @@ export default function ProductDetails({ params }: ProductDetailsProps) {
               <p key={index}>{text}</p>
             ))}
           </div>
-          <p
-            onClick={handleWhatsappClick}
-            className="text-primary font-semibold hover:underline cursor-pointer"
-          >
-            Eu quero!{" "}
-            <span className="text-sm italic font-medium">
-              (Conversar com {currentUser?.username})
-            </span>
-          </p>
+          <Button onClick={handleWhatsappClick}>Eu quero</Button>
         </article>
       </section>
     </div>

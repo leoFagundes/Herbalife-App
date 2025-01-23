@@ -107,7 +107,7 @@ export default function Input({
 
   return (
     <div
-      className={`w-full min-w-[200px]  max-w-[240px] relative flex items-center shadow-lg group bg-white ${
+      className={`w-full min-w-[200px] max-w-[240px] relative flex items-center shadow-lg group bg-white ${
         filteredData && filteredData.length > 0 && value && isBoxOpen
           ? "rounded-tl-md rounded-tr-md"
           : "rounded-md"

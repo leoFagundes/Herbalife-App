@@ -82,12 +82,12 @@ export default function Sidebar() {
           >
             <FiLogOut size={20} /> Sair da conta
           </span>
-          <div className="flex items-end py-2 flex-1">
+          <div className="flex items-end py-2 flex-1 ">
             <span
-              onClick={() => router.push(`/${username}`)}
+              onClick={() => router.push(`/${username}/about`)}
               className={`${
                 isMenuOpen ? "flex" : "hidden sm:flex"
-              }  animate-fadein text-center flex items-center text-primary font-medium hover:cursor-pointer py-2 px-4 bg-white shadow-card rounded-lg`}
+              } animate-fadein text-center flex items-center text-primary font-medium hover:cursor-pointer py-2 px-4 bg-white shadow-card rounded-lg`}
             >
               {username}
             </span>

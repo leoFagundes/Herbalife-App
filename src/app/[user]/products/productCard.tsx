@@ -69,7 +69,7 @@ export default function ProductCard({ product, params }: ProductCardProps) {
 
       <p className="text-center w-full text-lg font-medium">{product.name}</p>
       {product.isFavorite && (
-        <span className="flex items-center gap-1 absolute top-1 left-1 text-primary bg-white/10 py-1 px-2 rounded-sm backdrop-blur-sm font-semibold">
+        <span className="flex items-center gap-1 absolute top-1 left-2 text-primary bg-white/10 py-1 px-2 rounded-md backdrop-blur-sm font-semibold border border-primary/50">
           <FiStar /> Campeão de vendas
         </span>
       )}
